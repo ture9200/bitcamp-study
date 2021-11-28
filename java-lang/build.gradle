@@ -1,0 +1,14 @@
+plugins{
+    id 'java' // 자바 빌드 관련 작업을 수행할 수 있는 도구를 추가한다. 
+    id 'eclipse' // 이클립스 관련 작업을 수행할 수 있는 도구를 추가한다. 
+    //id application 
+}
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.google.guava:30.1.1-jre'
+}
