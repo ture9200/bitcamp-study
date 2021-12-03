@@ -16,26 +16,26 @@ public class Exam4 {
   public String test1() {
     float value=987.6543f;
     //4바이트 메모리 사용하는 리터럴 
-    return "부동소수점: " +value; 
-  }
+    return "부동소수점: " +value; } //부동소수점: 987.6543
 
   @GetMapping("/test2")
   public String test2() {
     double value=987654321.1234567;
     //8바이트 메모리 사용하는 리터럴 
-    return "부동소수점: " +value; 
+    return "부동소수점: " +value; //부동소수점:9.876543211234567E84
+    //https://blog.naver.com/sorang226/221864738797 내용참고 
   }
 
   @GetMapping("/test3")
   public String test3() {
-    double value=987.654321f; 
+    double value=987.654321f; //부동소수점: 987.654296875
     //4바이트 메모리 크기(유효자릿수 7자리)를 넘어서는 값은 짤린다.  
     return "부동소수점: " +value; 
   }
 
   @GetMapping("/test4")
   public String test4() {
-    double value=987654321.1234567897654; 
+    double value=987654321.1234567897654; //부동소수점: 9.876543211234568E8
     //8바이트 메모리 크기(유효자릿수 15자리)를 넘어서는 값은 짤린다.  
     return "부동소수점: " +value; 
   }
