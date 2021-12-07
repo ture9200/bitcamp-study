@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수활용</title>
+</head>
+
+<body>
+<h1>배열 다루기</h1>
+<button type="button" id="x-btn" onclick="">배열 가져오기</button>
+<ul>
+  <li>홍길동</li>
+  <li>임꺽정</li>
+  <li>유관순</li>
+</ul>
+
+<script>
+var xBtn= document. getElementById("x-btn");
+
+xBtn.onclick=function() {
+	console.log('눌렀음2!')
+	//버튼을 클릭했을때 눌럿음1 이 안나오고 눌렀음 2만나온다. 
+	//그래서 onclick에 console.log ('눌렀음1')을 넣는게 의미가 없다. 
+};
+</script>
+</body>
+</html>

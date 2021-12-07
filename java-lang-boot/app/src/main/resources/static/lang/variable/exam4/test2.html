@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수활용</title>
+</head>
+
+<body>
+<h1>계산기: client- side rendering</h1>
+<form>
+<input type="text" name="v1">
+<select name="op">
+<option>+</option>
+<option>-</option>
+<option>*</option>
+<option>/</option>
+<option>%</option>
+</select>
+<input type="text" name="v2">
+<button type="button" id="x-btn">=</button>
+<input id="x-result" type="text">
+<!--버튼 타팁입을 지정하지 않으면 form에 등록된 submit 이 되기때문에 
+서버에 값이 요청되어서 button 으로 꼭 지정해줘야한다.
+type을 button으로 설정해준다면, 일반 버튼의 기능만 하게 되기때문이다.
+action이 등록되어 있지 않다면 현재 URL을 요청해서 페이지가 새로고침 된다.
+type을 reset으로 설정한다면 button을 감싸고 있는 form 데이터의 입력된 데이터를 초기화 한다.
+-->
+</form>
+
+
+<script>
+//입력폼의 각 태그를 찾는다. 
+var xV1= document.querySelector("input[name='v1']");
+//input[name='v1']  css 스타일 지정 선택자 
+
+var xV2= document.querySelector("input[name='v2']");
+var xOp= document.querySelector("select[name='op']");
+var xBtn= document.querySelector("#x-btn"); 
+var xResult= document.querySelector("#x-result"); 
+
+//버튼을 클릭하면 웹브라우저에서 별도의 요청을 수행한다. 
+
+// 1) 버튼을 클릭했을 때 수행할 작업을 등록한다. 
+//var xBtn= document.querySelector("#x-btn"); 
+//selector 가지고 찾으라 
+//기존에 있는거랑 충돌하지 않기위해 앞에 접두사 'x' 를 붙인다. 
+//자바스크립트 변수명은 '-'  사용불가, id 는 가능 
+// # 은 아이디를 찾으라는거고  없으면 태그 
+//찾을 일없으면 태그를 굳이 붙이지 말것! 
+xBtn.onclick= function() { 
+	//버튼을 클릭했을때 아래를 호출하라. 
+	
+	//서버에 요청할 때 사용할 도구를 준비한다. 
+	var xhr= new XMLHttpRequest();
+	
+	//서버에서 응답을 받았을 때 (load 이벤트 발생) 호출될 함수를 등록한다. 
+	//xhr.addEventListener(이벤트명, 호출될함수);
+	//xhr =XMLHttpRequest 의 약자 
+	//load 서버에서 응답이 오면 발생하는 이벤트 
+	//function() =응답이 오면 호출될 함수로 서버가 보낸 실행 결과를 처리한다.
+	//서버에서 응답 받은 것을 보려면  xhr.responseText를 적어준다.
+	xhr.addEventListener("load", function() {
+		xResult.value=xhr.responseText;
+	}); 
+	
+	//서버와 연결한다.
+	//주의! -웹브라우저에서 직접 요청할 때는 'URL 인코딩'을 따로 처리하지 않아도 된다. 
+	//왜? 웹브라우저가 알아서 url 인코딩을 해준다. 
+	//자바스크립트를 이용해서 요청할 때는 개발자가 직접 'url 인코딩'을 처리해야 한다. 
+	// 즉 url 인코딩을 하지 않았을 때 문제가 발생할 문자에 대해 반드시 url 인코딩을 처리해야한다.
+	// encodeURIComponent(문자열) <== URL에서 특별한 의미로 사용되는 문자도 URL인코딩한다. 
+	// 이러한 문자에는 예를들면 ? 나 +, # 이런게 있다. 
+	
+	xhr.open( //서버에 연결 
+			"GET", //HTTP 요청방식
+			"/lang/variable/exam4/test2?v1=" +xV1.value 
+					+ "&v2=" +xV2.value 
+					+"&op="+ encodeURIComponent(xOp.value),  //요청 URL					
+			true); //비동기 여부 지정
+					
+	//서버에 요청 정보를 보낸다. 
+			xhr.send(); 	
+};
+</script>
+
+</body>
+</html>

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController //Exam1이 요청 오면 실행해줘라 는 것을 의미 
 @RequestMapping("/lang/literal/exam1")
 public class Exam1 {
 

@@ -77,6 +77,7 @@ public class Exam3 {
 
 
   //"가",  "A" => char
+  // 가나를 입력하면 에러가 나온다! char은 한글자만 저장  
   //테스트 URL:
   //=> http://localhost:8080/lang/variable/exam3/test8?value=가
   @GetMapping("/test8")
@@ -90,6 +91,8 @@ public class Exam3 {
   //=> http://localhost:8080/lang/variable/exam3/test9?value=2021-12-06
   @GetMapping("/test9")
   public String test9(java.sql.Date value) {
+    //해당 클래스의 사용 목적은 년도, 월, 일을 유지하는 SQL 데이터를 다루기 위함이다.
+    //즉, 시간 정보는 다루지 않고 0으로 초기화된다.
     return "==>" + value;
   }
 }
