@@ -7,6 +7,7 @@
 
 <body>
 <h1>배열 다루기</h1>
+<a href="/lang/variable/exam4/test3">서버에 요청하기</a>
 <button type="button" id="x-btn" onclick="">배열 가져오기</button>
 <ul>
   <li>홍길동</li>
@@ -20,15 +21,19 @@ var xBtn= document. querySelector("#x-btn");
 // #x-btn 은 태그 아이디 
 
 xBtn.addEventListener("click", function() {
+	//별도의 요청작업을 실행한다. => ajax
+	//var xhr= new XMLHttpRequest();~ xhr.send(); 활둉
 	var xhr= new XMLHttpRequest();
 	xhr.onload= function() { 
-		
-	  var names= JSON.parse(xhr.responseText);
+		console.log(xhr.responseText); 
+		// onload 라는 등록된함수가 호출되면서 실행된다. 콜백함수 
+	 // var names= JSON.parse(xhr.responseText);
 	//서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다. 
-	
-	xhr.open("GET","/lang/variable/exam4/test3", true); 	          
-	//서버에 요청 정보를 보낸다. 
+	};
+	xhr.open("GET","/lang/variable/exam4/test3", true); 	
+	///lang/variable/exam4/test3 => 동적자원의 주소, 이주소로 연결할 것이다! 
 	xhr.send();
+	//서버에 요청 정보를 보낸다. 
 	});
 
 </script>

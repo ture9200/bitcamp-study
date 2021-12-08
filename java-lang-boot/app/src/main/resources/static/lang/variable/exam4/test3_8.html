@@ -24,13 +24,24 @@ xBtn.addEventListener("click", function() {
 	xhr.onload= function() { 
 		
 	  var names= JSON.parse(xhr.responseText);
+	  
+	  /*
+	  for(var i=0; i<names.length; i++) {
+		  console.log(name[i]);
+	  }
+	  */
+	  
 	//서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다. 
+	// 객체도 자바스크립트 객체로 변환한다. 
+	// 범위를 조절할거라면 이부분으로 강추 
 	
+		
 		for(var name of names) {
 	  console.log(names);
-		}
-	  }; //이름만 출력 
-	
+		} //이름만 출력, 위의 for문과 같은 동작원리 배열전체를 돌릴거라면 이부분 강추  
+		
+	  };  
+	  
 	xhr.open("GET","/lang/variable/exam4/test3", true); 	          
 	//서버에 요청 정보를 보낸다. 
 	xhr.send();
