@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-//# 흐름 제어문 - for 반복문
+// # 흐름 제어문 - for 반복문
 //
 public class Exam0413 {
   public static void main(String[] args) {
@@ -10,7 +10,8 @@ public class Exam0413 {
     // 조건문 제거
     int i = 1;
     for (;;) {
-      if (i > 5)
+
+      if (i > 5) // i가 5보다 크면 for문 나간다.
         break;
       System.out.println(i);
       i++;

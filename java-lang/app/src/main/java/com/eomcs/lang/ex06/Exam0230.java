@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-//# 흐름 제어문 - switch 문법
+// # 흐름 제어문 - switch 문법
 //
 public class Exam0230 {
   public static void main(String[] args) {
@@ -29,7 +29,9 @@ public class Exam0230 {
       default:
     }
 
-    char c = 'A'; // A문자의 유니코드 값(UTF-16) 0x41(65)을 c에 저장한다.
+    char c = 'A';
+    // A문자의 유니코드 값(UTF-16) 0x41(65)을 c에 저장한다.
+    // 문자에 부여된 유니코드 숫자번호가 저장된다.
     switch (c) {
       // case 의 값도 int 값이면 무엇이든 된다.
       case 'A': // 0x41 = 65
