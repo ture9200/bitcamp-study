@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<title>연락처</title>
+  <meta charset="utf-8">
+  <title>연락처</title>
 </head>
 <body>
+
   <h1>새 연락처</h1>
-<form>
-이름: <input id="x-name" type="text"><br>
-이메일: <input id="x-email" type="email"><br>
-전화: <input id="x-tel" type="tel"><br>
-회사: <input id="x-company" type="text"><br>
-<button id="x-add-btn" type="button" >추가</button>
-<button id="x-cancel-btn" type="button" >취소</button>
-</form>
+
+  <form>
+  이름*: <input id ="x-name" type= "text"><br>
+  이메일*: <input id ="x-email" type= "text"><br>
+  전화*: <input id= "x-tel" type= "text"><br>
+  회사: <input id = "x-company" type= "text"><br>
+  별표(*) 항목은 필수 입력입니다.<br>
+  <button id="x-add-btn" type="button"> 등록 </button>
+  <button id="x-cancel-btn" type="button"> 취소 </button>
+  </form>
 
 <script type="text/javascript">
+document. querySelector("#x-add-btn").onclick=function() {
+  var xName = document.querySelector ("#x-name");
+  var xEmail = document.querySelector ("#x-email");
+  var xTel = document.querySelector ("#x-tel");
+  var xCompany = document.querySelector ("#x-company");
+  
+  if(xName. value == "" || xEmail.value == "" || xTel.value== "") {
+    window.alert("필수 입력 항목이 비어 있습니다.");
+    return;
+  }
 
-var xName= document.querySelector("#x-name");
-var xEmail= document.querySelector("#x-email");
-var xTel= document.querySelector("#x-tel");
-var xCompany= document.querySelector("#x-company");
-
-document.querySelector("#x-add-btn").onclick = function() {
   fetch(`/contact/add?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
-   .then(function(response) {
-     return response.text();
-     //응답완료되면 text를 꺼내는 것
-     //서버에서 보낸 데이터를 그냥 그대로 텍스트로 리턴해줘 json 문자열로 처리하지마!
-
-   })
-   // 등록한 함수가 호출된다.
-   //서버에 응답왔을때 호출된다. json형식을 parsing해서 리턴하도록..
-   .then(function(result) {
-     console.log(result);
-     location.href = "index.html";
-   });
+  .then(function(response) {
+    return response.text();
+    //json 형식 문자열 => 자바스크립트 문자열 객체
+    //json형식의 문자열은 "" 이 나와야한다.
+    // 객체 :{} , 배열: [] , 숫자는 그냥 숫자로.
+  })
+  .then(function(text) {
+    console.log(text);
+    location.href ="index.html" ;
+  });
 };
 
-document.querySelector("#x-cancel-btn").onclick = function() {
-  window.location.href ="index.html";
+document. querySelector("#x-cancel-btn").onclick=function() {
+  window.location.href = "index.html" ;
+  // window에 location이라는 객체가 있는데 객체의 값중에서 href값을 index.html로 바꿔버린다.
 };
-
-//현재 출력하는 페이지를 통제 제어하는게 자바스크립트이다
 </script>
 
 </body>
