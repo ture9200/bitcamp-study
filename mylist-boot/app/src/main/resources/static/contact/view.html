@@ -21,10 +21,11 @@
 
 <script type="text/javascript">
 //1)URL에서 쿼리 스트링을 추출한다.
+//예) http://localhost:8080/contact/view.html?email=aaa@test.com
 var arr= location.href.split("?");
-//물음표를 기준으로 쪼갠 배열을 리턴한다.
+//물음표를 기준으로 쪼갠 배열을 리턴한다
 
-console.log(arr);
+console.log(arr); // ["http://localhost:8080/contact/view.html" , "email=aaa@test.com"]
 
 if(arr. length == 1) {
   alert ("요청 형식이 올바르지 않습니다.")
@@ -34,6 +35,7 @@ if(arr. length == 1) {
   console.log(qs);
 
 //2) 쿼리 스트링에서 이메일 값을 추출한다.
+//예) email = aaa@test.com&name=aaa&tel=1111
 var params = new URLSearchParams(qs);
 var email=params.get("email");
 

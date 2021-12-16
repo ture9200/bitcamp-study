@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>exam</title>
+</head>
+<body>
+  <h1>요점 정리 - 5.HTML 태그와 DOM 트리 객체 응용</h1>
+  <form>
+    <div id="inputNameContainer">
+	    <div class="inputName">
+	      <span class="name">이름1</span>: <input type="text" name="name1"><br>
+	    </div>
+      <!--<div class="inputName">
+	      <span class="name">이름2</span>: <input type="text" name="name2"><br>
+	    </div> 	inputNameContainer.appendChild(e); 설명-->
+    </div>
+    <button id="btnAddName" type="button">추가</button><br>
+    <button id="btn1">확인</button>
+  </form>
+
+<script>
+var inputNameIndex = 1;
+var btnAddName = document.getElementById("btnAddName");
+var inputNameContainer = document.querySelector("#inputNameContainer");
+var inputNameDiv = document.querySelector(".inputName");
+
+btnAddName.onclick = function() {
+	inputNameIndex++; // 1에서 2로 증가
+	var e = inputNameDiv.cloneNode(true);  //<div class> - <div>를 그대로 복제
+	e.querySelector(".name").innerHTML = "이름" + inputNameIndex; // name인 클래스를 찾아서 안에 콘텐츠를 이름 + inputNameindex로 바꿈
+	e.querySelector("input").name = "name" + inputNameIndex;
+  e.querySelector("input").value= ""; //복제한게 마음에 안들면 빈문자열로 초기화
+	inputNameContainer.appendChild(e); // inputname container 의 자식태그로 inputname 을 추가
+};
+
+</script>
+</body>
+</html>

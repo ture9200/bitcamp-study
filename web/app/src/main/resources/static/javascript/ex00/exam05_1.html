@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>exam</title>
+</head>
+<body>
+  <h1>요점 정리 - 5.HTML 태그와 DOM 트리 객체</h1>
+  <p id="p1">오호라!</p>
+  <button id="btn1">확인</button>
+
+<script>
+var tag1 = document.getElementById("btn1");
+//queryselector는 태그를 가리킬때 아이디에 해당될때는 #, 여기는 안붙임 태그를 찾는 다는 의미 //
+
+tag1.onclick = function() { // Observer 패턴: 리스너 => 이벤트 리스너 => 이벤트 핸들러 => 콜백함수(callback; cb)
+  //태그를 클릭 했을때 웹브라우저가 이벤트가 발생했을 떄 호출하는 함수에 대해서 붙이는 이름
+  // 함수를 등록하면 이러한 조건이 완성되었을때 호출을 당한다. => 콜백함수
+  var tag2 = document.getElementById("p1");
+  tag2.innerHTML = "비트캠프!";
+};
+
+</script>
+</body>
+</html>

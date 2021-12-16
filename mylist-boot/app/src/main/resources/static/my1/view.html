@@ -7,10 +7,10 @@
   <body>
     <h1>음식 메뉴 보기</h1>
     <form>
-      이름*: <input id="x-Name" type= "text"> <br>
-      가격*: <input id="x-Price"type= "text"> <br>
-      종류*: <input id="x-Type" type = "text"> <br>
-      대/중/소: <input id="x-Size" type="text"> <br>
+      이름*: <input id="x-name" type= "text"> <br>
+      가격*: <input id="x-price"type= "text"> <br>
+      종류*: <input id="x-type" type = "text"> <br>
+      대/중/소: <input id="x-size" type="text"> <br>
       * 별표항목은 필수 입력 항목입니다. * <br>
       <button id ="x-update" type = "button"> 변경 </button>
       <button id ="x-minus" type = "button"> 삭제 </button>
@@ -38,10 +38,10 @@
     }
     console.log(name);
 
-       var Name= document.querySelector("#x-Name");
-       var Price=document.querySelector("#x-Price");
-       var Type= document.querySelector("#x-Type");
-       var Size= document.querySelector("#x-Size");
+       var Name= document.querySelector("#x-name");
+       var Price=document.querySelector("#x-price");
+       var Type= document.querySelector("#x-type");
+       var Size= document.querySelector("#x-size");
 
        fetch(`/food/get?name=${name}`)
        .then(function(response) {
