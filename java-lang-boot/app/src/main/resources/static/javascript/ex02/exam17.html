@@ -11,10 +11,10 @@
 
 // 배열을 만들 때 크기를 결정하지 않는다.
 // 배열에 추가된 값에 따라 배열 크기(length)가 결정된다.
-// => 자바스크립트의 배열은 자바의 ArrayList와 비슷하게 동작한다. 
+// => 자바스크립트의 배열은 자바의 ArrayList와 비슷하게 동작한다.
 var arr = new Array();
 
-// 단 자바의 ArrayList와 다른 점은 대괄호 []를 이용하여 배열 값을 넣을 수 있다. 
+// 단 자바의 ArrayList와 다른 점은 대괄호 []를 이용하여 배열 값을 넣을 수 있다.
 arr[0] = "aaa";
 arr[1] = "bbb";
 arr[2] = "ccc";
@@ -25,6 +25,8 @@ console.log(arr);
 console.log("----------------------");
 
 // 중간에 인덱스를 건너 뛰고 값을 넣을 수 있다.
+// 중간에 4,5,6 이 비어있는 채로 출력
+// 객체 항목이 없으면 undefied,  값을 할당받지 않으면 is not defined 
 arr[7] = "eee";
 console.log(arr.length);
 console.log(arr);
@@ -32,18 +34,3 @@ console.log(arr);
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>연락처</title>
+</head>
+  <body>
+    <h1>연락처</h1>
+    <table id = "x-contact-table" border="1">
+      <thead>
+    <tr>
+  <th>이름</th>
+  <th>이메일</th>
+  <th>전화</th>
+  <th>회사</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<script type="text/javascript">
+  var contacts= [
+    "aaa1,aaa@test.com,1111,비트캠프" ,
+      "aaa2,aaa@test.com,1111,비트캠프" ,
+        "aaa3,aaa@test.com,1111,비트캠프" ,
+          "aaa4,aaa@test.com,1111,비트캠프" ,
+            "aaa5,aaa@test.com,1111,비트캠프"
+  ];
+    //하나씩 문자열 꺼내 출력
+
+var tbody = document.querySelector("#x-contact-table tbody")
+
+  for(var contact of contacts) {  //  "aaa1,aaa@test.com,1111,비트캠프"
+    var values=contact.split(",");  // 콤마를 기준으로 쪼개라
+    // 예)  [ "aaa1","aaa@test.com","1111",""비트캠프" ]
+    var tr= document.createElement("tr");
+      //  // tr태그를 만들어 달라는것
+    tr.innerHTML=`<td>${values[0]}</td>
+    <td>${values[1]}</td>
+    <td>${values[2]}</td>
+    <td>${values[3]}</td>`;
+
+    tbody.appendChild(tr);
+    ////tr 시작태그와 끝태그에 들어갈 값을 innerhtml로 저장한다.
+  //tr테그를 tbody의 막내자식태그로 등록시킨다.
+  }
+</script>
+</body>
+</html>

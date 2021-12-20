@@ -6,14 +6,18 @@
 </head>
 <body>
   <h1>요점 정리 - 4.객체와 프로퍼티</h1>
-  
+
 <script>
+//1) Object라는 원 //틀을 기반으로 기본 객체를 생성한다.
 var obj1 = new Object(); // => HashMap<String,Object> obj1 = new HashMap<>();
+
+//기본 객체에 프로퍼티를 덧붙인다.
 obj1.name = "홍길동"; // => obj1.put("name", "홍길동");
 obj1.age = 20; // => obj1.put("age", 20);
 obj1.working = true; // => obj1.put("working", true);
 obj1.hello = function() {
   console.log("안녕하세요, " + this.name + "님!");
+  //함수가 소속된 객체안에서 name을 찾는다.
 }; // => obj1.put("hello", 함수);
 
 console.log(obj1);
@@ -21,31 +25,25 @@ obj1.hello(); // obj1.get("hello")();
 
 // 자바스크립트 객체 정의 단축 표기법
 // => JavaScript Object Notation(JSON) 데이터 포맷의 근원이다.
+//실무에서는 이걸 많이쓴다.
 var obj2 = {
-    name:"임꺽정", 
-    age:30, 
-    working:true, 
+    name:"임꺽정",
+    age:30,
+    working:true,
     hello:function() {
       console.log("안녕하세요, " + this.name + "님!")
     },
-    hello2() {
+    hello2() {  //앞에 function을 붙이면 에러다. 실무에서는 위의 hello:function() 이 방법보다 이것을 많이쓴다.
       console.log("안녕하세요, " + this.name + "님2!")
     }
 };
 
 console.log(obj2);
+//객체 안에 소속된 함수를 출력할 때는 객체이름. 함수 프로퍼티이름 적어줘야한다. 
 obj2.hello();
 obj2.hello2();
 
 
-</script>  
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-

@@ -3,9 +3,12 @@ package com.eomcs.lang.ex07;
 import java.util.Scanner;
 
 // 1단계: 공백 출력 코드를 메서드로 추출하기
-//
 public class Exam0111 {
 
+  //static 끼리 호출할 수 있다. 
+  //static 안붙은거는 안붙은거끼리 호출할 수 있다. 
+
+  //공백 출력하기 
   static void printSpaces(int len) {
     int spaceCnt = 1;
     while (spaceCnt <= len) {

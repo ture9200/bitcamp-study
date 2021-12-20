@@ -10,10 +10,14 @@
     <div id="inputNameContainer">
 	    <div class="inputName">
 	      <span class="name">이름1</span>: <input type="text" name="name1"><br>
+        <!-- input 박스에 name이 없으면 안보내진다. -->
 	    </div>
     </div>
     <button id="btnAddName" type="button">추가</button><br>
     <button id="btn1">확인</button>
+    <!--타입을 설정하지 않으면 자동으로 submit 이 된다. 누르는 순간 form에 설정된 주소로 서버에 요청한다.
+    // form에 주소를 설정한다는 것은 form 에 action 설정에 대한 주소인데 설정하지 않으면 현재 url로 요청하게 된다. -->
+
   </form>
 
 
@@ -31,14 +35,6 @@ btnAddName.onclick = function() {
 	inputNameContainer.appendChild(e);
 };
 
-</script>  
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-

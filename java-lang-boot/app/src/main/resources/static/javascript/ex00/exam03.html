@@ -6,27 +6,35 @@
 </head>
 <body>
   <h1>요점 정리 - 3.함수 정의와 호출</h1>
-  
+
 <script>
 function plus(a, b) {
+  // function + 함수이름 + 외부에서 넘어오는 값을 담을 변수 (파라미터 변수)
+  //파라미터 변수 앞에 var 안붙인다. => 에러 발생
+  // plus 도 함수객체의 주소 이고 자바스크립트는 함수도 객체로 다룬다. 
   return a + b;
 }
 console.log(plus(10, 20));
+ // log라는 함수를 호출 및 실행하기 이전에 plus라는 함수호출이 먼저 이루어진다.
+
+var ok;
+console.log(ok); //변수에 값을 넣은 적이 없기때문에 타입을 알수 없다. => undefined
+
+ ok = plus;
+ console.log(ok(100,200));
+ //ok 에 들어있는게 함수주소라 판단하고 ok에 들어있는 주소를 찾아가서
+ //들어있는 함수객체에 들어있는 코드를 실행
 
 var ok = plus;
 console.log(ok(100, 200));
 
-var haha = ok;
+var haha = ok; //함수객체에 주소를 갖고있을 때 함수를 쓸 수 있다.
 console.log(haha(1000, 2000));
 
-</script>  
+ok = "Hello";
+// ok에 Hello라는 문자열을 집어넣는다.
+// Hello라는 문자열이 들어가있는 객체가 만들어진다.
+ok (100,200); //마치 함수인 마냥 호출하면 에러
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
