@@ -9,7 +9,11 @@
 <script>
 "use strict"
 
+// 3) 함수를 이용해 객체 생성
+
 // 함수를 이용하여 객체를 초기화시키기
+// createScore 호출하면 createScore 메서드 안에서 기본객체를 만들고 변수들을 추가한다음에 객체주소를 리턴후 레퍼런스 배열에 저장. 
+
 function createScore(name, kor, eng, math) {
 	var obj = new Object();
 	obj.name = name;
@@ -18,15 +22,15 @@ function createScore(name, kor, eng, math) {
 	obj.math = math;
 	obj.sum = kor + eng + math;
 	obj.aver = obj.sum / 3;
-	return obj;
+	return obj; //객체주소를 리턴
 }
 
 var scores = []; // new Array();
-scores[0] = createScore("홍길동", 100, 100, 100);
+scores[0] = createScore("홍길동", 100, 100, 100); // 이름하고 국,영,수를 객체담고 합계 평균까지 계산해서 객체를 리턴
 scores[1] = createScore("임꺽정", 90, 90, 90);
 scores[2] = createScore("유관순", 80, 80, 80);
 
-for (var score of scores) {
+for (var score of scores) { //반복문 돌림.
     console.log(score.name, score.kor, score.eng, score.math, score.sum, score.aver);
 }
 
@@ -44,8 +48,3 @@ for (var score of scores) {
 </script>
 </body>
 </html>
-
-
-
-
-

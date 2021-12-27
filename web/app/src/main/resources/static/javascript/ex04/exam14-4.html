@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>객체 - 프로퍼티의 소속과 사용법</h1>
+<script>
+"use strict"
+
+// 생성자 정의
+function Score(name, kor, eng, math) {
+  this.name = name;
+  this.kor = kor;
+  this.eng = eng;
+  this.math = math;
+}
+
+// 4) 함수 소속 프로퍼티의 적절한 예
+// => 다음과 같이 특정 객체의 값을 다루는 함수( 객체생성 후 객체를 호출해야하는 함수나 변수)는 prototype 소속으로 만들라!
+Score.prototype.sum = function() {
+  return this.kor + this.eng + this.math;
+
+  // sum이라는 메서드를 호출할 때 객체주소가 this에 넘어온다.
+};
+Score.prototype.aver = function() {
+  return this.sum() / 3;
+};
+
+// 프로토타입에 소속을 시키는 경우는 그 함수나 변수는 특정 객체에 대해서 작동하는 변수나 함수의 경우는
+// 프로토타입에 소속을 시키고 특정객체 상관없이 모든 객체 일반적으로 공통으로 사용하는 변수나 함수의 경우에는
+// 프로토타입이 아니라 함수에 직접 소속을 시키면 된다.
+
+// => 특정 객체를 다루지 않는 경우 함수 소속 프로퍼티로 만들라!
+Score.count = 0; // 함수에 소속된 변수
+Score.create = function(csv) { //함수에 소속된 함수
+  Score.count++;
+  var values = csv.split(",");
+  return new Score(values[0], parseInt(values[1]), parseInt(values[2]), parseInt(values[3]));
+}; //parseInt 글로벌함수이고 window. parseInt 해도 되고 그냥 parseInt 해도된다.
+//문자열을 숫자로 출력하기 위해서 parseInt 사용한다.
+// 이름옆에 점수가 숫자이기 때문에 형변환을 해줘야한다.
+
+// 함수에 소속된 프로퍼티를 사용할 때는
+// 함수 이름을 통해 사용한다.
+// create 의 역할: 외부에서 받은 값을 가지고 내부적으로 score 객체를 만들어서 리턴
+var score1 = Score.create("홍길동,100,100,100");
+var score2 = Score.create("임꺽정,90,90,90,90");
+
+console.log(Score.count);
+console.log(score1.sum(), score1.aver());
+// sum을 호출할 때 score1 객체주소가 sum() 한테 넘어갈거고
+// aver 호출할 때는 score1 객체주소가 aver()한테 넘어간다.
+// 객체에 대해서 합과 평균을 구한다.
+console.log(score2.sum(), score2.aver());
+
+/* 전체
+김가네김밥.체인점수();
+김가네김밥.팜플렛();
+김가네김밥.체인점수();
+김가네김밥.전년도전체지점매출();
+
+특정
+var 강남1호점 = new 김가네김밥();
+var 강남2호점 = new 김가네김밥();
+강남1호점.주문(김밥4개);
+강남2호점.주문(김밥4개);
+*/
+</script>
+</body>
+</html>

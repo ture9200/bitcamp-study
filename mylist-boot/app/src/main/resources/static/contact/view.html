@@ -51,18 +51,19 @@ var xTel = document.querySelector ("#x-tel");
 var xCompany = document.querySelector ("#x-company");
 
 //3) 서버에서 데이터 가져오기
-fetch(`/contact/get?email=${email}`)
+fetch(`/contact/get?email=${email}`) //서버 요청
 .then(function(response) {
-  return response.text();
+  return response.json();
+  //서버로부터 json형식으로 받음 parsing해서 자바스크립트 객체로 만들어줘 parsing이 끝나면 다음 메서드 호출해주고 끝난 데이터를 파라미터로 넘겨줘
 })
-.then(function(contact) {
-  var values = contact.split(",");
+.then(function(contact) { //호출될 함수 등록, json 리턴값이 contact로 넘어온다.
+//  var values = contact.split(","); //넘어온게 객체이기때문에 콤마로 자를필요가 없다. 
 
 //4) 연락처 상세 정보를 화면에 출력한다.
-  xName.value= values[0];
-  xEmail.value= values[1];
-  xTel.value= values[2];
-  xCompany.value= values[3];
+  xName.value= contact.name;
+  xEmail.value= contact.email;
+  xTel.value= contact.tel;
+  xCompany.value= contact.company;
 });
 
 document. querySelector("#x-update-btn").onclick=function() {

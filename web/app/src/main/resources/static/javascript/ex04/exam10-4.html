@@ -9,6 +9,8 @@
 <script>
 "use strict"
 
+// 4) 객체 프로퍼티에 함수 저장
+
 // 객체의 값을 다루는 함수를 객체에 추가한다.
 function createScore(name, kor, eng, math) {
 	var obj = new Object();
@@ -16,11 +18,12 @@ function createScore(name, kor, eng, math) {
 	obj.kor = kor;
 	obj.eng = eng;
 	obj.math = math;
-	obj.sum = function() { 
-		return this.kor + this.eng + this.math;
+	obj.sum = function() { //합계를 계산해주는 함수
+		return this.kor + this.eng + this.math; //함수를 호출하는 순간에 함수가 소속되어있는 이 객체의 국 영 수 값을 가져와서 합쳐서 리턴
 	};
-	obj.aver = function() { 
-		return this.sum() / 3;
+	obj.aver = function() { //평균을 계산해주는 함수
+		return this.sum() / 3; //함수를 호출하는 순간에 합계를 가져와서 3으로 나눠서 리턴
+		// exam 10-3 은 변수, 10-4는 함수  
 	};
 	return obj;
 }
@@ -31,7 +34,7 @@ scores[1] = createScore("임꺽정", 90, 90, 90);
 scores[2] = createScore("유관순", 80, 80, 80);
 
 for (var score of scores) {
-    console.log(score.name, score.kor, score.eng, score.math, 
+    console.log(score.name, score.kor, score.eng, score.math,
             score.sum(), score.aver());
 }
 
@@ -41,14 +44,9 @@ console.log("--------------------------------------------");
 scores[2].kor = 100;
 
 for (var score of scores) {
-    console.log(score.name, score.kor, score.eng, score.math, 
+    console.log(score.name, score.kor, score.eng, score.math,
     		score.sum(), score.aver());
 }
 </script>
 </body>
 </html>
-
-
-
-
-

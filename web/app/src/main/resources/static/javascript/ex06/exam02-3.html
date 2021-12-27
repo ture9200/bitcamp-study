@@ -14,25 +14,30 @@
 "use strict"
 
 // 태그 객체의 onclick 프로퍼티에 리스너 등록하고 이벤트 정보 추출
-/*
+
+//아래 방법보다 이 방법을 더 사용해라
+// function(event)라고 표현해도 된다. 로컬변수이기 때문에 충돌이 일어나지 않는다. 보통은 간단하게 e 라고 쓴다.
+// event로 받고 싶으면 이렇게 써라! 
 document.getElementById("btn1").onclick = function(e) {
 	console.log(
-			e.altKey, e.ctrlKey, e.button, 
-			e.offsetX, e.offsetY, 
-			e.clientX, e.clientY, 
+		// event.altkey,event.ctrlKey,event.button, //undefined와 값이 출력된다.
+		// event.offsetX,event.offsetY,
+		// event.clientX,event.clientY,
+		// event.screenX,event.screenY)
+			e.altKey, e.ctrlKey, e.button,
+			e.offsetX, e.offsetY,
+			e.clientX, e.clientY,
 			e.screenX, e.screenY)
 };
-*/
 
 // id가 부여된 태그는 window 객체를 통해 바로 접근할 수 있다.
+// window 생략가능! 그런데 태그와 똑같은 btn1 이름으로 변수를 쓰게되면 기존걸 덮어써버리기때문에 방지하기 위해서 생략하지않고 쓴다.
+// 생략하고 위에 똑같은 이름으로  변수를 선언하게 되면 에러가 뜨게된다.
+/*
 window.btn1.onclick = function() {
 	console.log("test..ok!");
 };
+*/
 </script>
 </body>
 </html>
-
-
-
-
-

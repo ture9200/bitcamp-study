@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+</head>
+<body>
+<h1>생성자2 - 일반함수로 동작할 때와 생성자로 동작할 때의 차이점</h1>
+<script>
+"use strict"
+
+function f1() {
+	console.log(this);
+  // 생성자로 동작할 때는 this 내장 변수에 객체 주소가 들어 있다.
+	// 정의할때 함수가 생성 
+}
+
+new f1(); // 생성자로 사용, 함수호출 전에 객체를 생성
+f1(); // 일반 함수로 사용 , 아무런 객체주소를 갖고 있지 않기 때문에 undefined가 된다.
+
+
+</script>
+</body>
+</html>

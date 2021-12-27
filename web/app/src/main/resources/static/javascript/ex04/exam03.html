@@ -9,11 +9,12 @@
 <script>
 "use strict"
 // 일반적인 값 뿐만 아니라, 함수와 객체까지 저장할 수 있다.
+// 함수 객체는 객체에다 함수코드가 추가된것이다.
 
 var obj = new Object();
 
 obj.name = "홍길동";
-obj.f1 = () => console.log("f1()....");
+obj.f1 = () => console.log("f1()...."); //f1에는 함수 주소가 들어간것!!
 
 var obj2 = new Object();
 obj2.v1 = 100;
@@ -31,14 +32,10 @@ console.log(obj.other.v2);
 console.log(obj.other.v3);
 
 // 객체의 함수 호출
+// obj에 포함된 함수객체로 호출할 때는 함수주소를 갖고있는 변수를 마치 함수처럼 쓴다.
 obj.f1();
 obj.other.v4();
 
 </script>
 </body>
 </html>
-
-
-
-
-

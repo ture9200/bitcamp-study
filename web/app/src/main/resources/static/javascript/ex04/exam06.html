@@ -8,28 +8,26 @@
 <h1>객체 - {}을 이용하여 기본 객체에 프로퍼티 추가하기</h1>
 <script>
 "use strict"
-// {}은 기본 객체를 생성할 뿐만 아니라 프로퍼티도 바로 추가할 수 있다. 
+// {}은 기본 객체를 생성할 뿐만 아니라 프로퍼티도 바로 추가할 수 있다.
+// 프로퍼티는 변수와 함수를 퉁처서 말하는 것!
+// 자바스크립트 프로퍼티는 name, kor, eng, math,sum, aver 을 말할수 있고
+// 자바는 getter,setter 같은 getname ,setname 이런거를 말한다. 다름!!
 
-var obj = {
-	name: "홍길동", 
-	kor: 100, 
-	eng: 90, 
+var obj = { //기본객체를 만들고 name이란 이름으로 홍길동을 집어넣는다.
+	name: "홍길동",
+	kor: 100,
+	eng: 90,
 	math:80,
-	sum: function() {
-	    return this.kor + this.eng + this.math; 
+	sum: function() { //sum이란 이름으로 함수객체 주소를 집어넣는다.
+	    return this.kor + this.eng + this.math;
 	},
-	aver: function() {
+	aver: function() { //aver가 소속된 객체에 sum 을 가리킨다. 
 	    return this.sum() / 3;
 	}
-}; 
+};
 
 console.log(obj.sum(), obj.aver());
-
+//console.log (obj);
 </script>
 </body>
 </html>
-
-
-
-
-

@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>DOM API - id 값으로 태그 찾기</h1>
+<!-- DOM = html 태그들의 구성된걸 다루는 인터페이스 (도구) -->
 <h1 id="header1" class="g1">제목1</h1>
 <h2 id="header2" class="g1">제목1.1</h2>
 <h2 id="header3" class="g1">제목1.2</h2>
@@ -17,17 +18,15 @@
 <script>
 "use strict"
 
-// 자바스크립트는 태그를 다룰 때 사용할 도구를 제공한다.
-// 그 도구를 "DOM(Document Object Model) API"라 부른다.
-//
-// document 객체
-// => 웹브라우저에서 기본으로 제공하는 객체이다.
-// => 태그를 찾고 생성하는 것과 관련된 함수를 갖고 있다.
-// => var document = new Document();
-//
-// getElementById("태그아이디")
-// => Element 객체 리턴
-var e1 = document.getElementById("header4");
+// Document. prototype.getElementById("태그아이디") =>Document. getElementById
+// 해당 아이디의 태그를 찾아서 그 태그 정보를 담은 객체를 리턴
+// 그 객체는 특정 HTML 관련된 생성자에 의해서 초기화된 객체이다.
+// HTML 태그는 모두 다 HTMLElement 와 Element 와 Node , EventTarget에 들어있는 메서드는 모두 다 사용할 수 있다
+
+// Document. prototype. querySelector () => Document. querySelector()
+// => 리턴 값: HTMLElement 하위 생성자에 의해 초기화된 객체를 리턴
+var e1 = document.getElementById("header4"); //# 붙이지 말기 
+// => 생성자 상속 관계 : HTMLHeadingElement()  ---> HTMLElement() -->  Element() ---> Node() --> EventTarget() --> Object()
 
 console.log(e1);
 console.log(e1.name); // undefined
@@ -36,6 +35,7 @@ console.log(e1.constructor.name); // 객체의 생성자 이름
 
 console.log("----------------------------");
 
+// => 생성자 상속 관계 : HTMLHeadingElement()  ---> HTMLElement() -->  Element() ---> Node() --> EventTarget() --> Object()
 console.log(e1 instanceof HTMLHeadingElement); // true
 console.log(e1 instanceof HTMLElement); // true
 console.log(e1 instanceof Element); // true
@@ -45,8 +45,3 @@ console.log(e1 instanceof Object); // true
 </script>
 </body>
 </html>
-
-
-
-
-

@@ -21,14 +21,14 @@
 "use strict"
 
 // 태그를 삭제하기 II
-// 
 
 // 방법2) 부모 태그를 모른다면 찾은 태그에서 부모 태그를 알아낸다.
 // => 삭제할 태그를 찾는다.
 var e = document.querySelector("article:first-child");
 
 // => 부모 태그를 알아낸다.
-// => Node.parentElement 또는 Node.parentNode를 사용한다.
+// => Node.parentElement 또는 Node.parentNode를 사용한다. 이 둘은 같다. 
+// parentElement = parent 태그 객체주소가 저장되어있다.
 var parent = e.parentElement;
 
 // => 부모 태그에서 자식 태그를 제거한다.
@@ -37,8 +37,3 @@ parent.removeChild(e);
 </script>
 </body>
 </html>
-
-
-
-
-

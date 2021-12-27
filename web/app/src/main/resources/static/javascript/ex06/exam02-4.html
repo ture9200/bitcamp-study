@@ -13,17 +13,15 @@
 
 // addEventListener() 사용
 document.getElementById("btn1").addEventListener("click", function(e) {
+	//태그를 찾았고 찾은 태그에 대해서 즉시 이벤트리스너를 호출.
+	// 클릭이벤트가 발생했을 때 function에 파라미터 이름을 지정, 지정안하면 아규먼츠에서 꺼내야한다.
+	// 이벤트 받을 일없으면 파라미터 빼버리기
 	console.log(
-		e.altKey, e.ctrlKey, e.button, 
-		e.offsetX, e.offsetY, 
-		e.clientX, e.clientY, 
+		e.altKey, e.ctrlKey, e.button,
+		e.offsetX, e.offsetY,
+		e.clientX, e.clientY,
 		e.screenX, e.screenY)
 });
 </script>
 </body>
 </html>
-
-
-
-
-

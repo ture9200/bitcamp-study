@@ -10,30 +10,26 @@
 "use strict"
 
 var obj = {
-	name: "홍길동", 
-	kor: 100, 
-	eng: 90, 
+	name: "홍길동",
+	kor: 100,
+	eng: 90,
 	math:80,
 	/*
   sum: function() {
 	  return this.kor + this.eng + this.math;
-  },
+  },//함수객체를 만들고 정의하고 객체주소를 sum에 저장한다
   */
-	sum() {
-	    return this.kor + this.eng + this.math; 
+	sum() {  //앞에 function을 붙이면 안된다. 이 방식을 더 많이 쓴다.
+	    return this.kor + this.eng + this.math;
 	},
 	aver() {
 	    return this.sum() / 3;
 	}
-}; 
+};
 
 console.log(obj.sum(), obj.aver());
+//console.log(obj);
 
 </script>
 </body>
 </html>
-
-
-
-
-

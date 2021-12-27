@@ -23,20 +23,17 @@ var el2 = document.querySelectorAll(".b2");
 var btnClick = function(e) {
 	alert("===> " + this.getAttribute("data-no"));
 	alert("===> " + e.target.getAttribute("data-no"));
-	for (var e of el2) {
-		e.style["background-color"] = "yellow";
+	for (var e of el2) { // css 적용
+		e.style["background-color"] = "yellow"; // e.style.backgrondColor = "yellow";  
+		// e.style ["color"] ="green"; // =e.style.color ="green"
+		// e.style ["border"] ="1px dashed red" // e.style.border = "1px dashed red";
 	}
 };
 
-for (var e of el) {
-	  e.addEventListener("click", btnClick);
+for (var e of el) { // el에 속한 태그를 꺼내서 그 태그에 클릭이벤트가 발생되었을 // 호출될 함수에 주소를 준다.
+	  e.addEventListener("click", btnClick); //btnClick =함수주소 , btnClick() = 호출 명령
 }
 
 </script>
 </body>
 </html>
-
-
-
-
-
