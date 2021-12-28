@@ -40,21 +40,8 @@
   document.querySelector("#x-todo-input").onkeyup = function(e) {
     if (e.keyCode == 27) {
       e.target.value = "";
-
     } else if (e.keyCode == 13) {
-      if (e.target.value == "") {
-        window.alert("필수 입력 항목이 비어 있습니다.");
-        return;
-      }
-
-      fetch(`/todo/add?title=${e.target.value}`)
-        .then(function(response) {
-          return response.text();
-        })
-        .then(function(text) {
-          console.log(text);
-          location.reload();
-        });
+      console.log("추가");
     }
   };
 
@@ -79,7 +66,6 @@
         <td><button type="button" onclick="deleteTodo(${i})">삭제</button></td>`;
         tbody.appendChild(tr);
       }
-      document.querySelector("#x-todo-input").focus();
     });
 
  function deleteTodo(no) {

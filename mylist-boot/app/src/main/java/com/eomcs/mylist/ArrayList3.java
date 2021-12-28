@@ -1,6 +1,6 @@
 package com.eomcs.mylist;
 
-public class ArrayList {
+public class ArrayList3 {
   static Object[] list= new Object[5]; 
   static int size = 0;
 
@@ -20,7 +20,7 @@ public class ArrayList {
   // - 기존 배열의 값을 복사해온다.
   //
   static Object[] grow() {
-    Contact[] arr = new Contact[newLength()];
+    Board[] arr = new Board[newLength()];
     copy(list, arr);
     return arr;
   }
@@ -80,6 +80,13 @@ public class ArrayList {
     Object old = list[index]; // 이 위치에 있던 값을 old 에 저장 
     list[index] = obj; // 새 값을 그 위치에 저장 
     return old; // 기존 값은 사라지고 옛날 값을 리턴 
+  }
+
+  static Object get (int index) {
+    if (index < 0 || index >= size) { //값이 저장된 위치가 무효한 인덱스라면 
+      return null;
+    }
+    return list[index];
   }
 }
 
