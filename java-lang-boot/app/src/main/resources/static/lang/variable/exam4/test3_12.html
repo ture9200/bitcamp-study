@@ -2,47 +2,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>변수활용</title>
+<title>변수 활용</title>
 </head>
-
 <body>
+
 <h1>배열 다루기</h1>
-<button type="button" id="x-btn" onclick="">배열 가져오기</button>
-<ul>
-  <li>홍길동</li>
-  <li>임꺽정</li>
-  <li>유관순</li>
+<button type="button" id="x-btn">배열 가져오기</button>
+<ul id="x-namelist">
 </ul>
 
 <script>
-var xBtn= document. querySelector("#x-btn");
-// css selector 임 
-// #x-btn 은 태그 아이디 
+var xNamelist = document.querySelector("#x-namelist");
+var xBtn = document.querySelector("#x-btn");
 
 xBtn.addEventListener("click", function() {
-  var xhr= new XMLHttpRequest();
-  xhr.onload= function() { 
-    
-    var names= JSON.parse(xhr.responseText);
-  //서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다. 
-  
-    forEach(names, function(name) {
-    var li= document. createElement("li"); // <li></li>
-    li.innerHTML= name; //<li>홍길동</li> --<li>유관순</li>
-    xNamelist.appendChild(li);
-      });
-    }; 
-  
-    xhr.open("GET","/lang/variable/exam4/test3", true);             
-    //서버에 요청 정보를 보낸다. 
-    xhr.send();
-  });
-  
-    function forEach(arr,cb) {  // cb = 콜백함수 
-	  for (var item of arr ) {
-		  cb(item);
-	  }
-  }
+  var xhr = new XMLHttpRequest();
+  //XMLHTTPRequest 객체 생성 
+  xhr.onload = function() {
+	  // 그 객체에 onload , 서버에서 응답이 완료되었을 때 호출될 함수를 등록 
+    // 서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다.
+    var names = JSON.parse(xhr.responseText);
+    // 배열에 내장된(built-in) forEach() 사용하기
+    names.forEach(function(name) {
+    	//배열에 들어있는 함수를 지정하기 위해 먼저 names라는 이름을 지정한다.
+    	// 그리고 배열에 들어있는 함수를 호츌하면 된다. 
+      var li = document.createElement("li");
+      li.innerHTML = name;
+      xNamelist.appendChild(li);
+    });
+  };
+  xhr.open("GET", "/lang/variable/exam4/test3", true);
+  xhr.send();
+});
 </script>
+
 </body>
 </html>

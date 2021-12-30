@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>자유게시판</title>
+  <title>게시판</title>
   <style>
   .x-text{
     align-items: : center;
@@ -20,6 +20,8 @@
   }
   table{
     margin:auto;
+    border: 1px solid black;
+
   }
   thead{
     text-align: center;
@@ -31,15 +33,15 @@
   tbody {
     text-align:center;
   }
-  p{
-
+  tbody:hover{
+    font-style: italic;
   }
   .mt-1 { margin-top: 10px; }
   </style>
 </head>
 <body>
   <div id = "menu">
-    <h1>자유게시판</h1>
+    <h1>게시판</h1>
   </div>
   <!-- // #menu -->
   <div id = "content">
@@ -49,7 +51,7 @@
     <div id = "body">
       <section>
         <h2 class="x-list">목록</h1>
-          <table id="x-text-table" border="1">
+              <table id="x-text-table" border="1">
             <thead>
               <tr>
                 <th>*</th>

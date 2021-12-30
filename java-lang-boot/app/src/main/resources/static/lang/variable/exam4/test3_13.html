@@ -22,42 +22,32 @@ var xBtn= document. querySelector("#x-btn");
 
 xBtn.addEventListener("click", function() {
 	
-	//var result= fetch("/lang/variable/exam4/test3");
-	// result. then (function() {
-	//	console.log("결과받았음!");
-	//});
-	
-	//var result= fetch("/lang/variable/exam4/test3");
-  // result. then (function() {
-  //  console.log(arguments);
-  //});
-	//자바스크립트는 arguments 라는 배열에 저장 빌트인(내장)되어있음
-	
-	//var result= fetch("/lang/variable/exam4/test3");
-  // result. then (function(response) {
-  //  console.log(response.json());
-  //});
-  //자바스크립트 배열 객체로 반환해주세요라는 것을 요청 
-  
-  var xhr= new XMLHttpRequest();
-  xhr.onload= function() { 
-    
-    var names= JSON.parse(xhr.responseText);
-  //서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다. 
-  
-  //배열에 내장된(built-in) forEach() 사용하기 
-    names.forEach(function(name) {
-    var li= document. createElement("li"); // <li></li>
-    li.innerHTML= name; //<li>홍길동</li> --<li>유관순</li>
-    xNamelist.appendChild(li);
-      });
-    }; 
-  
-    xhr.open("GET","/lang/variable/exam4/test3", true);             
-    //서버에 요청 정보를 보낸다. 
-    xhr.send();
-  });
-
+	var result = fetch("/lang/variable/exam4/test3");
+	  var result2 = result.then(function(response) {
+	    return response.json();
+	  });
+	  result2.then(function(jsonData) {
+	    console.log(jsonData)
+	  });
+	  
+	  
+	  /*
+	  var xhr = new XMLHttpRequest();
+	  xhr.onload = function() {
+	    // 서버에서 받은 JSON 형식의 배열을 자바스크립트 배열로 변환한다.
+	    var names = JSON.parse(xhr.responseText);
+	    
+	    // 배열에 내장된(built-in) forEach() 사용하기
+	    names.forEach(function(name) {
+	      var li = document.createElement("li");
+	      li.innerHTML = name;
+	      xNamelist.appendChild(li);
+	    });
+	  };
+	  xhr.open("GET", "/lang/variable/exam4/test3", true);
+	  xhr.send();
+	  */
+	});
 </script>
 </body>
 </html>

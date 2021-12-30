@@ -1,18 +1,13 @@
-package com.eomcs.mylist;
-
-import java.sql.Date;
+package com.eomcs.mylist.domain;
 
 public class Board {
   String title;
   String content;
-  Date date;
+  //Date date;
   int viewCount;
-  //java.sql.Date CreatedDate;
-  public boolean done;
+  java.sql.Date createdDate;
+  //public boolean done;
 
-  public String getTitle() {
-    return title;
-  }
   public void setTitle(String title) {
     this.title = title;
   }
@@ -20,27 +15,31 @@ public class Board {
   public String getContent() {
     return content;
   }
+
   public void setContent(String content) {
     this.content = content;
   }
+
   public int getViewCount() {
     return viewCount;
   }
+
   public void setViewCount(int viewCount) {
     this.viewCount = viewCount;
   }
-  public Date getDate() {
-    return date;
+
+  public java.sql.Date getCreatedDate() {
+    return createdDate;
   }
-  public void setDate(Date date) {
-    this.date = date;
+
+  public void setCreatedDate(java.sql.Date createdDate) {
+    this.createdDate = createdDate;
   }
 
   @Override
   public String toString() {
     return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
-        + ", Date=" + date + "]";
+        + ", CreatedDate=" + createdDate + "]";
   }
-
 
 }
