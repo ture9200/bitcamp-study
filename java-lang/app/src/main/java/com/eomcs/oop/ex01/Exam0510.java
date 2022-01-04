@@ -47,7 +47,7 @@ public class Exam0510 {
     // bin/main/com/eomcs/oop/ex01/Exam0510$1D.class
     class D {}
 
-    // 4) 익명 클래스(anonymouse class)
+    // 4) 익명 클래스(anonymous class)
     // - 클래스 이름이 없는 중첩 클래스이다.
     // - 딱 한 개의 인스턴스를 생성할 때 사용한다.
     // - 클래스를 정의할 때 수퍼 클래스나 인터페이스를 지정해야 한다.

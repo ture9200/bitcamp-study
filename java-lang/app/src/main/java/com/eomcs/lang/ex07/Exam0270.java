@@ -34,8 +34,11 @@ public class Exam0270 {
   public static void main(String[] args) {
     // 컴파일 확인하라!
 
-    //가변 파라미터 사용 예: 
-    System.out.printf("==> %s|%s\n", "aaa","bbb");
+    // 가변 파라미터 사용 예: 
+    System.out.printf("%s,%s\n","aaa","bbb");
+    System.out.printf("===> \n");
+    System.out.printf("===> %s\n","aaa"); 
+    System.out.printf("===> %s|%s\n","aaa","bbb");
   }
 }
 

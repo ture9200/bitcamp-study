@@ -6,6 +6,7 @@ public class Exam0440 {
 
   static int m1(int value) {
     int r1 = m2(value);
+    // r1에 값을 집어넣으려는데  m2를 호출해서 그 리턴값을 집어넣는다. 
     int r2 = m3(value);
     return r1 + r2;
   }
@@ -20,6 +21,7 @@ public class Exam0440 {
 
   public static void main(String[] args) {
     int r = m1(5);
+    // m1호출할 때 5라는 숫자를 위 파라미터 value에 넣는다. 
     System.out.println(r);
   }
 }

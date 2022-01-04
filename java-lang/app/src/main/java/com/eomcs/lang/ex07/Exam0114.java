@@ -20,6 +20,7 @@ public class Exam0114 {
     }
   }
 
+  // 전체 별갯수에서 출력할 별 갯수 두개 파라미터를 주면 공백을 계산해서 리턴 
   static int getSpaceLength(int totalStar, int displayStar) {
     return (totalStar - displayStar) / 2;
   }
@@ -32,8 +33,11 @@ public class Exam0114 {
 
     for (int starLen = 1; starLen <= len; starLen += 2) {
       printSpaces(getSpaceLength(len, starLen));
+      // 전체길이에서 현재출력할 별 갯수 두 개를 주면 공백이 얼마인지 알려주고 그 공백을 출력한다. 
       printStars(starLen);
+      // 별 출력 
       System.out.println();
+      //다음라인 간다. 
     }
   }
 }

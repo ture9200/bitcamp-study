@@ -6,11 +6,16 @@ public class Exam0420 {
 
   static int[] getArray() {
     int[] arr = new int[] {100, 200, 300};
+    // => int배열 주소를 담을 arr 변수를 JVM Stack 영역에 준비하라! 
+    //    (int 배열 주소를 담을 메모리를 만들고 그 메모리 이름을 arr 로 짓는다.)
+    // => 100, 200, 300 값을 담은 배열을 Heap 영역에 준비하라 
+    // => Heap 영역에 준비한 배열 메모리의 주소를 JVM Stack메모리에 있는 arr 변수에 넣어라. 
+
     return arr;
   }
 
   public static void main(String[] args) {
-    int[] arr;
+    int[] arr; // 변수 선언 => 변수를 만들라는 명령문 ! 
     arr = getArray();
     System.out.println(arr[1]); // 200
   }

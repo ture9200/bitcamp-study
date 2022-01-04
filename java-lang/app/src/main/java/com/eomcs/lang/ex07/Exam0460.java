@@ -25,6 +25,7 @@ public class Exam0460 {
     // 재귀호출을 써도 되지만,
     // 호출 단계가 많은 큰 수를 다룰 때는 재귀호출 대신 반복문을 사용하라!
     System.out.println(sum(10000));
+    System.out.println(sum(19000));
     //System.out.println(sum(20000)); =>에러 
 
     // 메소드 호출이 너무 깊어지는 경우는 재귀호출 대신 다른 방법을 사용하라.

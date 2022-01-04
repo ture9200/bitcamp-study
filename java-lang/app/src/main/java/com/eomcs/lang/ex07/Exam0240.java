@@ -8,6 +8,8 @@ public class Exam0240 {
   // => "이 돈 갖고 과자좀 사와!"
   static String hello(String name, int age) {
     String retVal = String.format("%d살 %s님을 환영합니다!", age, name);
+    // String 클래스에 format 이라는 메서드가 있는데 age, name 변수의 값을 각 자리에 넣고 
+    // 최종적으로 문자열을 만들고 그 문자열을 리턴 
     return retVal;
   }
 

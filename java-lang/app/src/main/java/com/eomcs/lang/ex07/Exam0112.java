@@ -16,6 +16,7 @@ public class Exam0112 {
   }
 
   static void printStars(int len) {
+    // 별 갯수를 파라미터로 받는다 .
     int starCnt = 1;
     while (starCnt <= len) {
       System.out.print("*");

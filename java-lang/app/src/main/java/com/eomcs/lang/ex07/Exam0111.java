@@ -10,6 +10,9 @@ public class Exam0111 {
 
   //공백 출력하기 
   static void printSpaces(int len) {
+    // void = 리턴하지 않겠다. 작업만 하겠다. 
+    // 이름을 지을때 동사구 형태를 쓴다. 
+    // 파라미터로 공백들을 출력하는 작업에 필요한 정보를 받을 변수 선언 
     int spaceCnt = 1;
     while (spaceCnt <= len) {
       System.out.print(" ");
@@ -18,6 +21,8 @@ public class Exam0111 {
   }
 
   public static void main(String[] args) {
+    // static 메서드는 같은 static 메서드만 호출할 수 있다. 
+    // static이 안붙어있는 메서드는 안붙어있는 메서드만 호출할 수 있다. 
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
     int len = keyScan.nextInt();
