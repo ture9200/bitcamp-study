@@ -26,12 +26,12 @@ public class Exam0161 {
     Member m4 = new Member();
     m4.id = "aaa";
     m4.password = "1111";
-    m4.type = GUEST;
+    m4.type = GUEST; // 숫자로 타입을 지정하는 대신 변수명을 사용했기 때문에 주석을 달 필요가 없다. 
 
     Member m5 = new Member();
     m5.id = "bbb";
     m5.password = "1111";
-    m5.type = MANAGER;
+    m5.type = MANAGER; 
 
     Member m6 = new Member();
     m6.id = "ccc";

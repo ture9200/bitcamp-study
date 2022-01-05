@@ -7,6 +7,8 @@ public class Exam0113 {
   // 여러 메서드에서 클래스를 사용한다면
   // 이렇게 메서드 밖에 선언해야 한다.
   // => static 메서드에서 사용할 수 있게 클래스도 static으로 선언한다.
+  //  메인 메서드 안에 클래스를 정의하면 메인 메서드 안에서만 사용가능하다. 
+  //  만약 안에서 쓰면 class 앞에 static을 빼야한다. 
   static class Score {
     String name;
     int kor;

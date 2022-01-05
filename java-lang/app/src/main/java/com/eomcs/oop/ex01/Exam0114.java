@@ -33,7 +33,7 @@ public class Exam0114 {
   static Score createScore(String name, int kor, int eng, int math) {
     Score s = new Score();
 
-    s.name = "홍길동";
+    s.name = name;
     s.kor = kor;
     s.eng = eng;
     s.math = math;
@@ -41,6 +41,7 @@ public class Exam0114 {
     s.aver = s.sum / 3;
 
     return s; // s에 저장된 인스턴스의 주소를 리턴한다.
+    // 정확히는 s에 들어있는 값을 리턴한다. 
     // 강사님! 로컬 변수는 메서드 호출이 끝난 다음에 삭제된다고 했는데
     // 위에서 생성한 s 변수도 삭제되고, 
     // 파라미터 name, kor, eng, math도 삭제되는게 아닌가요?

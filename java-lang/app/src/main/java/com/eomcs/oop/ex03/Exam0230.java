@@ -4,6 +4,7 @@ package com.eomcs.oop.ex03;
 public class Exam0230 {
   static class Calculator {
     // new 명령을 실행하면, 다음 변수 선언이 실행되어 Heap에 메모리를 만든다.
+    //  정수값을 담을 4바이트 메모리를 준비하라! 그 메모리 이름을 result로 하자! 
     int result;
 
     // 주의!
@@ -11,6 +12,8 @@ public class Exam0230 {
     // => 클래스의 모든 코드는 Method Area 영역에 로딩 된다.
     public void plus(int value) {
       this.result += value;
+      // this.result  this.result+value; 
+      // this에 저장된 주소로 찾아가서 그 인스턴스의 result 변수 값을 value와 합쳐서 다시 result 변수에 담아라! 
     }
     public void minus(int value) {
       this.result -= value;
@@ -28,9 +31,11 @@ public class Exam0230 {
 
     // c1이 가리키는 인스턴스를 가지고 Method Area에 있는 plus()를 호출한다.
     c1.plus(123);
+    // c2가 가리키는 인스턴스를 가지고 Method Area에 있는 plus()를 호출한다.
+    c2.plus(30);
 
     // c2가 가리키는 인스턴스를 가지고 Method Area에 있는 minus()를 호출한다.
-    c2.minus(30);
+    //c2.minus(30);
   }
 }
 

@@ -1,7 +1,7 @@
 package com.eomcs.oop.ex01;
 
 //# 레퍼런스와 인스턴스 - 가비지
-//
+// 만든 인스턴스 주소를 잃어버리면 그 인스턴스는 어떻게 될까? 가 주제임. 
 public class Exam0320 {
   public static void main(String[] args) {
     class Score {
