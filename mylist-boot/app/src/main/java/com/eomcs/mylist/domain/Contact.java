@@ -6,6 +6,9 @@ public class Contact {
   String tel;
   String company;
 
+  public Contact() {
+    System.out.println("Contact() 호출됨!");
+  } 
 
   @Override
   public String toString() {

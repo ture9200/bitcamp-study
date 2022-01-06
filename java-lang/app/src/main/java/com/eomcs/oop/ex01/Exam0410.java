@@ -19,7 +19,9 @@ public class Exam0410 {
         s.name, s.kor, s.eng, s.math, s.sum, s.aver);
   }
 }
-
+// 잊지마라! 이클립스는 컴파일러가 아니다!
+// 다만 우리를 대신해서 JDK에 설치된 폴더로가서 javac.exe를 사용해서 컴파일을 해줄 뿐 
+// 이클립스가 컴파일러가 아니라는 것을 명심해라! 
 // Exam0410.java 컴파일 오류!
 // - 콘솔에서 이 소스 파일을 컴파일 할 때
 //   Score 클래스를 찾을 수 없다고 오류가 발생할 것이다.
@@ -35,6 +37,7 @@ public class Exam0410 {
 //   > javac -encoding UTF-8 -d bin/main -classpath bin/main src/main/com/eomcs/oop/ex01/Exam0410.java
 //
 // 방법2) Score 클래스의 소스 파일이 있다면 소스 파일의 위치를 알려줘라.
+//    sourcepath는 패키지 폴더가 있는데까지 그 경로다. 
 //   > javac -encoding UTF-8 -d bin/main -sourcepath src/main/java src/main/com/eomcs/oop/ex01/Exam0410.java
 //
 // 언제 이렇게 해야 하는가?

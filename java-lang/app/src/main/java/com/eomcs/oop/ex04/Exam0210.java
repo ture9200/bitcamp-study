@@ -17,7 +17,7 @@ public class Exam0210 {
     System.out.println(s1.contains("ll"));
     System.out.println(s1.contains("ee"));
 
-    // 두 문자열을 연결하여 새 문자열을 만들자!
+    // 두 문자열을 연결하여 새 문자열을 만들자! => 티몬에서 기술면접으로 나온 문제 
     String s2 = s1.concat(", world!");
     System.out.println(s1); // 기존 인스턴스의 값은 변경하지 않는다.
     System.out.println(s2); // 새로 문자열을 만든다.
@@ -25,7 +25,7 @@ public class Exam0210 {
     // 두 인스턴스에 들어 있는 문자열이 같은 지 비교할 때 
     System.out.println(s1.equals("aaa")); // false
     System.out.println(s1.equals("Hello")); // true
-    System.out.println(s1 == "Hello"); // false
+    System.out.println(s1 == "Hello"); // false, s1에 들어있는 게 주소라서 성립되지 않는다. 
 
     System.out.println("-------------------------");
 

@@ -16,6 +16,7 @@ public class Exam0130 {
     // - 계산을 수행할 때마다 인스턴스의 주소를 파라미터로 받아야 한다.
     // - 매우 번거롭다.
     //
+    // - static은 반드시 public 뒤에 와야하며 그 앞에 올 수 없고 뒤에서는 순서를 바꿔도 된다. 
     // public static void calculate(Score score) {
     //   score.sum = score.kor + score.eng + score.math;
     //   score.average = score.sum / 3f;
@@ -46,9 +47,9 @@ public class Exam0130 {
 
     // 다음은 Score의 값을 다루기 위해 non-instance 메서드를 호출하는 예이다.
     // => non-instance 메서드 = static 메서드 = 클래스 메서드
-    /*
-     * Score.calculate(score);
-     */
+
+    // Score.calculate(score);
+
 
     // 클래스 메서드를 사용할 때 마다 매번 인스턴스의 주소를 파라미터로 넘겨줘야 했다.
     // 그러나 인스턴스 메서드를 사용하면 인스턴스 주소를 넘기기가 더 편하다.

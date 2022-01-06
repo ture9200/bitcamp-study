@@ -8,6 +8,7 @@ public class Exam0120 {
     String s2 = new String("Hello");
 
     // 두 String 인스턴스는 분명히 서로 다르다.
+    // 자바스크립트는 가능하지만 자바에서 불가하다. 
     System.out.println(s1 == s2);
 
     // 두 인스턴스가 갖고 있는 문자열이 같은지를 비교하고 싶다면,
@@ -18,7 +19,7 @@ public class Exam0120 {
     // - 인스턴스가 같은지 비교한다.
     //
     // String의 equals()?
-    // - Object에서 상속 받은 것을 오버라이딩하였다.
+    // - Object에서 상속 받은 것을 오버라이딩(재정의)하였다.
     // - 문자열이 같은지 비교한다.
     //
   }

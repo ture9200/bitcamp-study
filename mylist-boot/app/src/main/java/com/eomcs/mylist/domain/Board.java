@@ -8,6 +8,10 @@ public class Board {
   java.sql.Date createdDate;
   //public boolean done;
 
+  public Board() {
+    System.out.println("Board() 호출됨!");
+  } 
+
   public void setTitle(String title) {
     this.title = title;
   }

@@ -11,6 +11,8 @@ public class Exam0420 {
     int sum;
     float average;
 
+    //Score() {}
+
     // 생성자가 한 개라도 있으면 컴파일러는 자동으로 기본 생성자를 만들어주지 않는다.
     // Score(){}
 

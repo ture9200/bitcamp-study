@@ -11,6 +11,10 @@ public class BoardController {
   //Board 객체 목록을 저장할 메모리를 준비한다. 
   ArrayList boardList = new ArrayList();
 
+  public BoardController() {
+    System.out.println("BoardController()호출됨!");
+  }
+
   @RequestMapping("/board/list")
   public Object list() { //클라이언트 요청을 처리한다. 
     return boardList.toArray(); // 배열을 다룬다. 
@@ -18,7 +22,7 @@ public class BoardController {
 
   @RequestMapping("/board/add")
   public Object add(Board board) {
-    // Calendar calendar =Calendar.getInstance();
+    //Calendar calendar =Calendar.getInstance();
     //현재 시간을 일반 시간이 아닌 요일, 오전/오후 등인 달력 기준으로 표기해주는 방식이다.  
     //board.setCreatedDate(new Date(System.currentTimeMillis()));
     //함수를 사용해서 현재 시간을 받아오고 board 에 날짜를 설정하라는 뜻. 

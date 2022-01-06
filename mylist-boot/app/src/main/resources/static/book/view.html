@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>독서록</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+#book-list tbody tr td input { width: 98%; }
+table { font-family:'Poor Story';
+  border-collapse: collapse; border-spacing: 0; margin:auto;}
+table tbody td {font-family:'Poor Story'; border: 1px solid #ccc; text-align:center; margin-right:auto; margin-left:auto;
+background-color: pink;}
+h1{
+  font-family:'Poor Story';
+  margin: auto;
+  text-align: center;
+}
+h2{
+  font-family:'Poor Story';
+  margin: auto;
+  text-align: center;
+}
+
+thead{
+  font-family:'Poor Story';
+  text-align: center;
+  font-weight: bold;
+  font-size:30px;
+  border-style:solid;
+  background-color:coral;
+}
+#x-warning{
+  font-family:'Poor Story';
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+#body {
+  margin:0 auto;
+  width:50%;
+  height:50px;
+  display:block;
+  text-align: center;
+
+}
+.mt-1 { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>독서록 상세</h1>
+
+    <form>
+      <table id="book-list">
+        <tbody>
+          <tr>
+            <th>제목*</th>
+            <td><input id="x-title" type="text" ></td>
+          </tr>
+          <tr>
+            <th>작가</th>
+            <td><input id="x-author" type="text"></td>
+          </tr>
+          <tr>
+            <th>출판사</th>
+            <td><input id="x-press" type="text"></td>
+          </tr>
+          <tr>
+            <th>페이지수</th>
+            <td><input id="x-page" type="text"></td>
+          </tr>
+          <tr>
+            <th>가격</th>
+            <td><input id="x-price" type="text"></td>
+          </tr>
+          <tr>
+            <th>소감*</th>
+            <td><textarea rows="10" id="x-review" cols="60" type="text"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    <!--
+    제목*: <input id="x-title" type="text"><br>
+    작가: <input id ="x-author" type="text"></br>
+    출판사: <input id ="x-press" type="text"></br>
+    페이지수: <input id="x-page" type="text"></br>
+    가격: <input id="x-price" type="text"><br>
+    소감*: <textarea id="x-review" type="text"></textarea><br>
+  -->
+  </form>
+
+  <div id= "body">
+  <text id = "x-warning"> *항목은 필수 입력입니다.</text><br>
+  <button id="x-update-btn" type="button"> 변경 </button>
+  <button id="x-delete-btn" type="button"> 삭제 </button>
+  <button id="x-cancel-btn" type="button"> 취소 </button>
+</div>
+
+<script type="text/javascript">
+//1)URL에서 쿼리 스트링을 추출한다.
+//예) http://localhost:8080/contact/view.html?email=aaa@test.com
+var arr= location.href.split("?");
+//물음표를 기준으로 쪼갠 배열을 리턴한다
+
+console.log(arr); // ["http://localhost:8080/contact/view.html" , "email=aaa@test.com"]
+
+if(arr. length == 1) {
+  alert ("요청 형식이 올바르지 않습니다.")
+  throw "URL 형식 오류!" ;
+}
+  var qs =arr[1];
+  console.log(qs);
+
+//2) 쿼리 스트링에서 이메일 값을 추출한다.
+//예) email = aaa@test.com&name=aaa&tel=1111
+var params = new URLSearchParams(qs);
+var index = params.get("index");
+
+if (index == null) {
+  alert("번호가 없습니다.");
+  throw "파라미터 오류!";
+}
+console.log(index);
+
+var xTitle = document.querySelector ("#x-title");
+var xAuthor = document.querySelector ("#x-author");
+var xPress = document.querySelector("#x-press");
+var xPage = document.querySelector("#x-page");
+var xPrice = document.querySelector ("#x-price");
+var xReview = document.querySelector ("#x-review");
+
+//3) 서버에서 데이터 가져오기
+fetch(`/book/get?index=${index}`) //서버 요청
+.then(function(response) {
+  return response.json();
+  //서버로부터 json형식으로 받음 parsing해서 자바스크립트 객체로 만들어줘 parsing이 끝나면 다음 메서드 호출해주고 끝난 데이터를 파라미터로 넘겨줘
+})
+.then(function(book) { //호출될 함수 등록, json 리턴값이 contact로 넘어온다.
+//  var values = contact.split(","); //넘어온게 객체이기때문에 콤마로 자를필요가 없다.
+
+//4) 연락처 상세 정보를 화면에 출력한다.
+  xTitle.value= book.title;
+  xAuthor.value= book.author;
+  xPress.value = book.press;
+  xPage.value= book.page;
+  xPrice.value = book.price;
+  xReview.value = book.review;
+});
+
+document.querySelector("#x-update-btn").onclick =function(){
+  if (xTitle.value == "" ||  xReview.value == "") {
+    window.alert("필수 입력 항목이 비어있습니다.");
+    return;
+}
+
+var params = `&title=${xTitle.value}`;
+params += `&author=${xAuthor.value}`;
+params += `&press=${xPress.value}`;
+params += `&page=${xPage.value}`;
+params += `&price=${xPrice.value}`;
+params += `&review=${xReview.value}`;
+
+  //fetch(`/book/update?index=${index}&title=${xTitle.value}&review=${xReview.value}`)
+  fetch(`/book/update?index=${index}${params}`)
+  .then(function(response) {
+    return response.text(); //json 형식 문자열 => 자바스크립트 문자열 객체
+  })
+  .then(function(text) {
+    console.log(text);
+    location.href ="index.html" ;
+  });
+};
+
+
+document. querySelector("#x-cancel-btn").onclick=function() {
+  window.location.href = "index.html" ;
+};
+
+document. querySelector("#x-delete-btn").onclick= function() {
+  fetch(`/book/delete?index=${index}`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    console.log(result);
+    location.href="index.html";
+  });
+};
+
+</script>
+
+</body>
+</html>

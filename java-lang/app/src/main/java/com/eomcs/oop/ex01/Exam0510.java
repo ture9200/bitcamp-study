@@ -11,6 +11,7 @@ package com.eomcs.oop.ex01;
 // - 패키지 멤버 클래스는 접근 권한이 있다면 누구든 사용할 수 있다.
 //
 // bin/main/com/eomcs/oop/ex01/A.class
+// -컴파일하고 난 클래스가 놓이는 위치 => bin/main 
 class A {}
 
 // => bin/main/com/eomcs/oop/ex01/Exam0510.class
@@ -26,13 +27,13 @@ public class Exam0510 {
   //   4) 익명 클래스(anonymous class)
   //
 
-  // 1) 스태틱 중첩 클래스
+  // 1) 스태틱 중첩 클래스(static nested class) 
   // - 이 클래스를 소유하고 있는 클래스 뿐만 아니라 다른 클래스도 사용할 수 있다.
   //
   // bin/main/com/eomcs/oop/ex01/Exam0510$B.class
   static class B {}
 
-  // 2) 논-스태틱 중첩 클래스
+  // 2) 논-스태틱 중첩 클래스(non-static nested class) 
   // - 특정 인스턴스에 종속된 클래스인 경우 논-스태틱 중첩 클래스로 정의한다.
   //
   // bin/main/com/eomcs/oop/ex01/Exam0510$C.class
@@ -43,7 +44,7 @@ public class Exam0510 {
     // 3) 로컬 클래스(local class)
     // - 메서드 블록 안에 정의된 클래스
     // - 오직 그 메서드 블록 안에서만 사용된다.
-    //
+    // - static을 붙일 수 없다. 
     // bin/main/com/eomcs/oop/ex01/Exam0510$1D.class
     class D {}
 
@@ -52,7 +53,7 @@ public class Exam0510 {
     // - 딱 한 개의 인스턴스를 생성할 때 사용한다.
     // - 클래스를 정의할 때 수퍼 클래스나 인터페이스를 지정해야 한다.
     // - 클래스를 정의할 때 new 연산자를 사용하여 즉시 인스턴스를 생성해야 한다.
-    //
+    // - static을 붙일 수 없다. 
     // bin/main/com/eomcs/oop/ex01/Exam0510$1.class
     Object obj = new Object() {
       String name;

@@ -10,6 +10,7 @@ public class Exam0124 {
     // b1, b2는 서로 다른 인스턴스이다.
     System.out.println(b1 == b2); // false
 
+    // 시험문제에 많이 나온다 !!! 
     // StringBuffer는 Object에서 상속 받은 equals()를 오버라이딩 하지 않았다.
     System.out.println(b1.equals(b2)); // false
     // => 따라서 원래 Object의 equals()를 사용한다.
