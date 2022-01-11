@@ -22,4 +22,9 @@ public class Calculator2 {
   static int abs(int a) {
     return a >= 0 ? a : a * -1;
   }
+
+  public int getResult() {
+    // TODO Auto-generated method stub
+    return this.result;
+  }
 }

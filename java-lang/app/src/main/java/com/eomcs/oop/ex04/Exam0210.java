@@ -10,13 +10,14 @@ public class Exam0210 {
     char c = s1.charAt(1);
     System.out.println(c);
 
-    System.out.println(s1.compareTo("Helli"));
+    System.out.println(s1.compareTo("Helli")); // o보다 6번째 앞에있어서 6
     System.out.println(s1.compareTo("Hello"));
-    System.out.println(s1.compareTo("Hellq"));
+    System.out.println(s1.compareTo("Hellq")); //o보다 2번째로 뒤에있어서 -2
 
-    System.out.println(s1.contains("ll"));
+    System.out.println(s1.contains("ll")); //인스턴스 메서드 
     System.out.println(s1.contains("ee"));
 
+    // 기술면접에 나옴!! 
     // 두 문자열을 연결하여 새 문자열을 만들자! => 티몬에서 기술면접으로 나온 문제 
     String s2 = s1.concat(", world!");
     System.out.println(s1); // 기존 인스턴스의 값은 변경하지 않는다.
@@ -53,17 +54,19 @@ public class Exam0210 {
     // 즉 "클래스 메서드=스태틱 메서드"를 제공한다.
 
     // => 형식을 갖춘 문자열을 만들기
+    // 클래스 메서드 
     String s4 = String.format("%s님 반갑습니다", "홍길동");
     System.out.println(s4);
 
     // => 구분자와 문자열들을 파라미터로 받아서 새 문자열을 만든다.
+    // 연결할 문자열 목록 그리고 문자열 사이를 :로 붙여서(구분해서) 리턴한다.
     String s5 = String.join(":", "홍길동", "임꺽정", "유관순");
     System.out.println(s5);
 
     // => primitive 값을 문자열로 만든다.
-    String s6 = String.valueOf(true);
-    String s7 = String.valueOf(3.14f);
-    String s8 = String.valueOf(100);
+    String s6 = String.valueOf(true); // "true"
+    String s7 = String.valueOf(3.14f); // "3.14"
+    String s8 = String.valueOf(100); // "100"
     System.out.println(s6);
     System.out.println(s7);
     System.out.println(s8);

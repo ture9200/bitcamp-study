@@ -28,6 +28,7 @@ public class Exam0240 {
     long currMillis = System.currentTimeMillis();
 
     // 생성자 활용
+    // 1970년 1월 1일 0시 0분 0초부터 측정된 밀리초를 가지고 지금까지 경과된 시간 측정한다. 
     java.sql.Date today = new java.sql.Date(currMillis);
 
     // 인스턴스 메서드 활용 

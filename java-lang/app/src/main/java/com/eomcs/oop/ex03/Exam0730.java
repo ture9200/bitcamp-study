@@ -8,7 +8,7 @@ public class Exam0730 {
     int b;
     int c;
 
-    A() {
+    A() { // 생성자 
       // 자바 컴파일러는 필드 초기화(variable initializer)나 
       // 인스턴스 초기화 블록(initializer block)이 있으면 
       // 선언된 순서대로 모든 생성자의 첫 부분에 복사한다.
@@ -56,6 +56,7 @@ public class Exam0730 {
     // 여러 개의 생성자가 있으면,
     // - 인스턴스 초기화 블록 코드는 존재하는 모든 생성자의 앞 부분에 삽입된다.
     // - 바이트코드(Exam0730$A.class)를 확인해 보라!
+    // - 초기화 블록을 실행한 다음에 생성자가 실행된다. 
   }
   public static void main(String[] args) {
     A obj1 = new A();
@@ -74,6 +75,7 @@ public class Exam0730 {
     System.out.println("--------------------------");
   }
 }
+
 
 
 

@@ -8,6 +8,17 @@ public class Exam0270 {
   // - Calculator.java 파일로 분리한다.
 
   public static void main(String[] args) {
+
+    int result = Integer.compare(121, 120); // compare : 클래스 
+    System.out.println(result);
+
+    Integer i1= new Integer(100);
+    Integer i2 = new Integer(120);
+
+    int result2 = i1.compareTo(i2); // compareTo: 인스턴스 
+    //i1에 들어있는 값과 i2에 들어있는 값을 비교해서 계산결과를 출력 
+    System.out.println(result2);
+
     // 다음 두 개의 식을 분리하여 계산해 보자!
     // - 연산자 우선 순위를 고려하지 않고 순서대로 계산하라!
     // 식1) 2 + 3 - 1 * 7 / 3 = ?

@@ -12,7 +12,7 @@ public class Exam0440 {
     float average;
 
     Score() {
-
+      //System.out.println("Score()"); // 첫줄에 쓰면 에러남! 
       // 다른 생성자를 호출할 때는 this()를 사용한다.
       // 단, 생성자의 첫 문장으로 와야 한다.
       this("이름없음"); // Score(String) 생성자 호출

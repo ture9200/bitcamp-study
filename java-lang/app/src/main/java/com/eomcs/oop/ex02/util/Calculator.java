@@ -29,4 +29,9 @@ public class Calculator {
   public static int abs(int value) {
     return value >= 0 ? value : value * -1;
   }
+
+  public int getResult() {
+    // TODO Auto-generated method stub
+    return this.result;
+  }
 }

@@ -4,7 +4,7 @@ package com.eomcs.oop.ex03;
 public class Exam0970 {
 
   static class Monitor {
-
+    //아래 방법은 비추다. 
     int bright; // 밝기 (0% ~ 100%)
     int contrast = 50; // 명암 (0% ~ 100%)
     int widthRes; // 해상도 너비

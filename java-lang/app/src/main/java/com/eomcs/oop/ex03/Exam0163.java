@@ -3,7 +3,7 @@
 package com.eomcs.oop.ex03;
 
 // Member 클래스를 외부의 다른 클래스에서도 사용한다면, 
-// nested class 로 선언하지 않고 패키지 멤버로 분리하라. 
+// nested class(중첩클래스)로 선언하지 않고 패키지 멤버로 분리하라. 
 
 // 패키지 멤버의 스태틱 필드를 사용할 때는 다음과 같이 import로 
 // 그 변수의 소속을 미리 밝힐 수 있다. 
@@ -23,7 +23,8 @@ public class Exam0163 {
     Member m4 = new Member();
     m4.id = "aaa";
     m4.password = "1111";
-    m4.type = GUEST; // import static 명령문에서 변수의 소속을 이미 밝혔기 때문에 클래스 이름을 적을 필요가 없다. 
+    m4.type = GUEST; 
+    // import static 명령문에서 변수의 소속을 이미 밝혔기 때문에 클래스 이름을 적을 필요가 없다. 
     // 만약 import에서 선언하지 않았다면 스태틱 변수명 앞에 클래스명을 붙여야 한다. 
     // 예) Member.GUEST 
 

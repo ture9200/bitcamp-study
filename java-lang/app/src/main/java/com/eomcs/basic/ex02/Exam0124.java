@@ -13,6 +13,9 @@ public class Exam0124 {
     // 시험문제에 많이 나온다 !!! 
     // StringBuffer는 Object에서 상속 받은 equals()를 오버라이딩 하지 않았다.
     System.out.println(b1.equals(b2)); // false
+    // String 클래스 경우, equals는 내용물을 비교하는게 맞지만 
+    // StringBuffer에 있는 equals는 인스턴스 주소를 비교하는데 쓰인다. 
+    // 그래서 결과는 false이다. 
     // => 따라서 원래 Object의 equals()를 사용한다.
     // => 즉 두 개의 인스턴스가 같은지를 비교한다.
     // 그러니 결과는 false이다.
