@@ -11,7 +11,9 @@ public class Exam0410 {
     System.out.println("-------------------------");
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
+    java.io.PrintStream obj = new java.io.PrintStream(new java.io.FileOutputStream("a.data"));
+
     Sedan sedan = new Sedan();
     sedan.model = "티코";
     sedan.cc = 800;

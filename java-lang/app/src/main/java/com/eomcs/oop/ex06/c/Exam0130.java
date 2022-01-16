@@ -1,4 +1,6 @@
 // 오버라이딩(overriding) - 필드 오버라이딩
+// 실무에서 잘 사용하지는 않는다. 
+
 package com.eomcs.oop.ex06.c;
 
 public class Exam0130 {

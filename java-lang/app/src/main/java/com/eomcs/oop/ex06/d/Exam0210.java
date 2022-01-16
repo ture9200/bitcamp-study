@@ -2,9 +2,9 @@
 package com.eomcs.oop.ex06.d;
 
 
-abstract class Car {
+abstract class Car  {
   public abstract void run();
-  public void m() {}
+  public void m() {} 
 }
 
 class Sedan extends Car {

@@ -50,7 +50,7 @@ public class Exam0112 {
 
     char[] arr=s2.toCharArray();
     for (char c : arr) {
-
+      System.out.println(Integer.toHexString(c));
     }
   }
 }

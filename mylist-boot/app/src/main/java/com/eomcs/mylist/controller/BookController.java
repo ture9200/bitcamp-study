@@ -1,8 +1,10 @@
 package com.eomcs.mylist.controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.PrintWriter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.eomcs.io.FileWriter2;
 import com.eomcs.mylist.domain.Book;
 import com.eomcs.util.ArrayList;
 
@@ -14,12 +16,11 @@ public class BookController {
   public BookController() throws Exception {
     System.out.println("BookController() 호출됨!");
 
-    com.eomcs.io.FileReader2 in = new com.eomcs.io.FileReader2("books.csv"); 
-    //FileReader in = new FileReader("books.csv");
-
+    BufferedReader in = new BufferedReader(new FileReader("books.csv"));
 
     String line;
-    while ((line = in.readLine()).length() != 0) {
+    while ((line = in.readLine()) != null) { 
+      //readLine이 null을 리턴한다면 더이상 읽을 데이터가 없다는 뜼 
       bookList.add(Book.valueOf(line)); 
     }
     in.close();
@@ -63,7 +64,7 @@ public class BookController {
 
   @RequestMapping("/book/save")
   public Object save() throws Exception {
-    FileWriter2 out = new FileWriter2("books.csv"); // 따로 경로를 지정하지 않으면 파일은 프로젝트 폴더에 생성된다.
+    PrintWriter out = new PrintWriter("books.csv"); // 따로 경로를 지정하지 않으면 파일은 프로젝트 폴더에 생성된다.
 
     Object[] arr = bookList.toArray();
     for (Object obj : arr) {

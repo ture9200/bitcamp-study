@@ -5,7 +5,8 @@ public final class Exam0410 {
 
   public void m1() {
     // 로컬 변수에 final을 붙이면 값을 변경할 수 없는 상수로 사용된다.
-    final int a = 100;
+    final int a = 100; // 회사에서 이렇게 사용하는 것을 권장한다! 
+    // 자바스크립트에서는 이렇게 사용하지 못한다. 
 
     // final 로컬 변수는 값을 변경할 수 없다.
     //    a = 200; // 컴파일 오류!

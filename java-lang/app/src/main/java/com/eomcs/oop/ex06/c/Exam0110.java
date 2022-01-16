@@ -17,7 +17,7 @@ public class Exam0110 {
   }
 
   static class A2 extends A {
-    int age = 20;
+    int age = 20; 
 
     void print2() {
       System.out.println("A2.print2():");

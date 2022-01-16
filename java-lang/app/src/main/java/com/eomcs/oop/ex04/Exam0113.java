@@ -6,6 +6,7 @@ public class Exam0113 {
   public static void main(String[] args) throws Exception {
 
     // UTF-8 문자 코드의 바이트 배열을 사용하여 String 인스턴스 초기화시키기.
+    // 16진수 
     byte[] bytes = {
         (byte)0x41, // A
         (byte)0x42, // B

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>게시판</title>
+  <style>
+  .x-text{
+    align-items: : center;
+    font-size:20px;
+    text-align: left;
+    margin: auto;
+  }
+  h1{
+    margin: auto;
+    text-align: center;
+  }
+  h2{
+    margin: auto;
+    text-align: center;
+  }
+  table{
+    margin:auto;
+    border: 1px solid black;
+
+  }
+  thead{
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size:30px;
+    border-style:solid;
+  }
+  tbody {
+    text-align:center;
+  }
+  tbody:hover{
+    font-style: italic;
+  }
+  .mt-1 { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div id = "menu">
+    <h1>게시판</h1>
+  </div>
+  <!-- // #menu -->
+  <div id = "content">
+    <p class="x-text"> 제목 <input id = "x-text-input" type="text"> </p>
+    <br/><br/>
+
+    <div id = "body">
+      <section>
+        <h2 class="x-list">목록</h1>
+              <table id="x-text-table" border="1">
+            <thead>
+              <tr>
+                <th>*</th>
+                <th>번호</th>
+                <th>제목</th>
+                <th>날짜</th>
+                <th>수정</th>
+                <th>변경</th>
+                <th>삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </section>
+        <input type="text" id="x-title-input">
+      </div>
+      <!-- // #body -->
+    </div>
+
+<script type = "text/javascript">
+"use strict"
+
+  var titleInput = document.querySelector("#x-title-input");
+  titleInput.style["display"] = "none";
+
+  var tbody = document.querySelector("#x-text-table tbody");
+
+  document.querySelector("#x-text-input").onkeyup = function(e) {
+    if (e.keyCode == 27) {
+      e.target.value = "";
+
+    } else if (e.keyCode == 13) {
+      if (e.target.value == "") {
+        window.alert("아무것도 입력되지않았어요!!!");
+        return;
+      }
+
+      fetch(`/board/add?title=${e.target.value}`)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(text) {
+          console.log(text);
+          location.reload();
+        });
+    }
+  };
+
+  fetch("/board/list")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(textList) {
+      console.log(textList);
+      for (var i = 0; i < textList.length; i++) {
+        var tr = document.createElement("tr");
+        tr.setAttribute("data-no", i);
+        var checkedOption = "";
+        var titleTdOption = "";
+        if (textList[i].done) {
+          checkedOption = "checked";
+          titleTdOption = "class='text-checked'";
+        }
+
+        tr.innerHTML = `<td><input type="checkbox" ${checkedOption} onchange="checkTodo(${i}, event.target.checked)"></td>
+          <td>${i+1}</td>
+          <td class="text-title"><span ${titleTdOption}>${textList[i].title}</span></td>
+          <td>${textList[i].date}</td>
+          <td><button type="button" onclick="updateTodo(${i})">수정</button></td>
+          <td><button type="button" onclick="saveTodo(${i})">변경</button></td>
+          <td><button type="button" onclick="deleteTodo(${i})">삭제</button></td>`;
+        tbody.appendChild(tr);
+      }
+      document.querySelector("#x-text-input").focus();
+    });
+
+ function deleteTodo(no) {
+   fetch(`/board/delete?index=${no}`)
+     .then(function(response) {
+       return response.json();
+     })
+     .then(function(result) {
+       if (result == 0) {
+         window.alert("삭제하지 못했습니다!");
+       } else {
+         location.reload();
+       }
+     });
+ }
+
+ function checkTodo(no, checked) {
+   console.log(no, checked);
+   fetch(`/board/check?index=${no}&done=${checked}`)
+     .then(function(response) {
+       return response.json();
+     })
+     .then(function(result) {
+       if (result == 0) {
+         window.alert("변경하지 못했습니다!");
+       } else {
+         var titleSpan = document.querySelector(`tr[data-no="${no}"] > td.text-title > span`);
+         if (checked) {
+           titleSpan.classList.add("text-checked");
+         } else {
+           titleSpan.classList.remove("text-checked")
+         }
+       }
+     });
+ }
+
+function updateTodo(no) {
+
+   // 현재 Todo 항목을 편집 중인 상태에서 변경 버튼을 눌렀다면
+   if (titleInput.parentNode instanceof HTMLTableCellElement)
+   {
+     // 다른 항목을 편집하기 위해 이동하기 전에 편집 전의 상태로 되돌린다.
+     titleInput.parentNode.querySelector("span").style["display"] = "";
+   }
+   var titleTd = document.querySelector(`tr[data-no="${no}"] > td.text-title`);
+   var titleSpan = titleTd.querySelector("span");
+   titleSpan.style["display"] = "none";
+   console.log(titleSpan.innerHTML);
+   titleInput.value = titleSpan.innerHTML;
+   titleInput.setAttribute("data-no", no);
+   titleTd.appendChild(titleInput);
+   titleInput.style["display"] = "";
+ }
+
+/*
+titleInput.onkeyup = function(e)
+ {
+   var no = titleInput.getAttribute("data-no");
+   var titleSpan = titleInput.parentNode.querySelector("span");
+   var originTitle = titleSpan.innerHTML;
+
+   if (e.keyCode == 27) { // ESC 키를 눌러 편집을 취소한다면
+     cancelTodoEditing();
+   }
+   else if ( e.keyCode == 13 && titleInput.value != "" && originTitle != titleInput.value)
+   {
+     fetch(`/board/update?index=${no}&title=${titleInput.value}`)
+       .then(function(response) {
+         return response.json();
+       })
+       .then(function(result) {
+         if (result == 0) {
+           window.alert("변경하지 못했습니다!");
+         } else {
+           console.log("변경했습니다.");
+           titleSpan.innerHTML = titleInput.value;
+           cancelTodoEditing();
+         }
+       });
+   }
+ };
+ */
+
+  function saveTodo(no)
+  {
+    //var no = titleInput.getAttribute("data-no");
+    var titleSpan = titleInput.parentNode.querySelector("span");
+    var originTitle = titleSpan.innerHTML;
+
+    if ( titleInput.value != "" /*&& originTitle != titleInput.value */)
+    {
+      fetch(`/board/update?index=${no}&title=${titleInput.value}`)
+        .then(function(response) {
+          console.log(response);
+          return response.json();
+        })
+        .then(function(result) {
+          if (result == 0) {
+            window.alert("변경하지 못했습니다!");
+          } else {
+            console.log("변경했습니다.");
+            titleSpan.innerHTML = titleInput.value;
+            cancelTodoEditing();
+          }
+        });
+    }
+  }
+
+   function cancelTodoEditing() {
+     titleInput.parentNode.querySelector("span").style["display"] = "";
+     titleInput.style["display"] = "none";
+     document.body.appendChild(titleInput);
+   }
+  </script>
+
+  </body>
+  </html>

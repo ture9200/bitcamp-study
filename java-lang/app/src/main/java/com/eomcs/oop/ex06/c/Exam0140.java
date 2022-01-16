@@ -32,7 +32,9 @@ public class Exam0140 {
       System.out.printf("  => this.name(%s)\n", this.name);
       System.out.printf("  => this.tel(%s)\n", this.tel);
       System.out.printf("  => this.working(%s)\n", this.working);
-      System.out.printf("  => super.working(%b)\n", super.working);
+
+      System.out.printf("  => super.working(%b)\n", super.working); 
+      // super클래스에서 찾으라는 뜻이 아닌 super클래스부터 찾아올라가라는 뜻이다. 
     }
   }
 
