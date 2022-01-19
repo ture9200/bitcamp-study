@@ -14,7 +14,7 @@ public class BufferedInputStream {
     this.in = in;
   }
 
-  public int read() throws IOException {
+  public int read() throws IOException { // 1바이트를 읽어줘 
     if (cursor == size) { // 버퍼에 저장되어 있는 데이터를 모두 읽었다는 의미
       if ((size = in.read(buf)) == -1) { // 파일에서 데이터를 읽으려 했는데 데이터가 없다.
         return -1;

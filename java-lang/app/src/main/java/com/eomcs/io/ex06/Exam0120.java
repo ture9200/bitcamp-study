@@ -9,13 +9,14 @@ public class Exam0120 {
     FileInputStream in = new FileInputStream("temp/jls11.pdf");
 
     byte[] buf = new byte[8192]; // 보통 8KB 정도 메모리를 준비한다.
-    int len = 0;
+    int len = 0; // 한번에 몇바이트씩 읽었는지 ... 
 
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int callCount = 0;
 
     while ((len = in.read(buf)) != -1) {
+      //System.out.printf("읽은 바이트의 수:%d\n", len);
       callCount++; // 파일을 끝까지 읽는다.
     }
 

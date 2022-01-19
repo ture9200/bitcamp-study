@@ -17,7 +17,7 @@ public class Exam0130 {
           break;
         System.out.printf("%02x ", b);
       }
-     */
+     */ // 아래와 같이 쓰는것을 더 추천한다. 
     while ((b = in.read()) != -1) {
       System.out.printf("%02x ", b);
     }

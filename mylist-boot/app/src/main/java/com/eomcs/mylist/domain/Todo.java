@@ -1,6 +1,6 @@
 package com.eomcs.mylist.domain;
 
-public class Todo {
+public class Todo implements java.io.Serializable{
   String title;
   boolean done;
 
@@ -9,7 +9,7 @@ public class Todo {
   } 
 
   public Todo(String csvStr) {
-    // 예) csvStr => "홍길동,hong@test.com,010-1111-2222,비트캠프"
+    // 예) csvStr => "제목, 완료여부"
 
     String[] values = csvStr.split(","); // 예) ["홍길동","hong@test.com","010-1111-2222","비트캠프"]
     this.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.

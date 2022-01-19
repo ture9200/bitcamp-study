@@ -1,8 +1,11 @@
 package com.eomcs.mylist.controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.PrintWriter;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Contact;
@@ -27,13 +30,15 @@ public class ContactController {
     contactList = new ArrayList();
     System.out.println("ContactController() 호출됨!");
 
-    BufferedReader in = new BufferedReader(new FileReader("contacts.csv"));
+    try {
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("contacts.ser2")));
 
-    String line;
-    while ((line = in.readLine()) != null) {
-      contactList.add(Contact.valueOf(line)); 
+      contactList = (ArrayList) in. readObject();
+      in. close();
+
+    }catch (Exception e) {
+      System.out.println("연락처 데이터 로딩중 오류발생!");  
     }
-    in.close();
   }
 
   @RequestMapping("/contact/list")
@@ -81,17 +86,11 @@ public class ContactController {
 
   @RequestMapping("/contact/save")
   public Object save() throws Exception {
-    PrintWriter out = new PrintWriter("contacts.csv");
-    // 따로 경로를 지정하지 않으면 파일은 프로젝트 폴더에 생성된다.
 
-    Object[] arr = contactList.toArray();
-    for (Object obj : arr) {
-      Contact contact = (Contact) obj;
-      out.println(contact.toCsvString());
-    }
-
-    out.close(); //쓰고 닫으라는 의미
-    return arr.length;
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("contacts.ser2")));
+    out.writeObject(contactList);
+    out.close();
+    return contactList.size();
   }
 
   int indexOf(String email) {

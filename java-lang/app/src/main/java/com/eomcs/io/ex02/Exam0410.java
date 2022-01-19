@@ -7,12 +7,14 @@ import java.io.FileInputStream;
 public class Exam0410 {
 
   public static void main(String[] args) throws Exception {
+    //자바 jpeg 라이브러리 참고 
 
     // 1) 파일 정보를 준비한다.
     File file = new File("sample/photo1.jpg");
 
     // 2) 파일을 읽을 도구를 준비한다.
     FileInputStream in = new FileInputStream(file);
+    //FileInputStream in = new FileInputStream("sample/photo1.jpg");
 
     // => SOI(Start of Image) Segment 읽기: 2바이트
     int b1 = in.read(); // 00 00 00 ff

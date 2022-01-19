@@ -8,7 +8,7 @@ public class Exam0320 {
   public static void main(String[] args) throws Exception {
     FileInputStream in = new FileInputStream("temp/test1.data");
 
-    // 데이터를 저장할 바이트 배열을 준비한다.
+    // 데이터를 저장할 바이트 100개의 빈 배열을 준비한다.
     byte[] buf = new byte[100];
 
     // 바이너리 데이터를 읽어 배열에 저장하기
@@ -24,8 +24,8 @@ public class Exam0320 {
 
     System.out.printf("%d\n", count);
 
-    for (int i = 0; i < 20; i++)
-      System.out.printf("%02x ", buf[i]);
+    for (int i = 0; i < 100; i++)
+      System.out.printf("%d: %02x \n", i, buf[i]);
 
     System.out.println();
 

@@ -1,8 +1,11 @@
 package com.eomcs.mylist.controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.PrintWriter;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Book;
@@ -16,14 +19,15 @@ public class BookController {
   public BookController() throws Exception {
     System.out.println("BookController() 호출됨!");
 
-    BufferedReader in = new BufferedReader(new FileReader("books.csv"));
+    try {
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("books.ser2")));
 
-    String line;
-    while ((line = in.readLine()) != null) { 
-      //readLine이 null을 리턴한다면 더이상 읽을 데이터가 없다는 뜼 
-      bookList.add(Book.valueOf(line)); 
+      bookList = (ArrayList) in. readObject();
+      in. close();
+
+    }catch (Exception e) {
+      System.out.println("독서록 데이터 로딩중 오류발생!");  
     }
-    in.close();
   }
 
   @RequestMapping("/book/list")
@@ -64,16 +68,28 @@ public class BookController {
 
   @RequestMapping("/book/save")
   public Object save() throws Exception {
-    PrintWriter out = new PrintWriter("books.csv"); // 따로 경로를 지정하지 않으면 파일은 프로젝트 폴더에 생성된다.
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("books.ser2")));
 
-    Object[] arr = bookList.toArray();
-    for (Object obj : arr) {
-      Book book = (Book) obj;
-      out.println(book.toCsvString());
-    }
+    //    Object[] arr = bookList.toArray();
+    //    for (Object obj : arr) {
+    //      Book book = (Book) obj;
+    //      out.writeUTF(book.getAuthor());
+    //      out.writeInt(book.getPage());
+    //      out.writeUTF(book.getPress());
+    //      out.writeInt(book.getPrice());
+    //out.writeUTF(book.getReadDate().toString());
+    //      if(book.getReadDate() == null) {
+    //        out.writeUTF("");
+    //      } else { 
+    //        out.writeUTF(book.getReadDate().toString());
+    //      }
+    //      out.writeUTF(book.getReview());
+    //      out.writeUTF(book.getTitle());
+    //    }
 
+    out.writeObject(bookList);
     out.close();
-    return arr.length;
+    return bookList.size();
   }
 }
 

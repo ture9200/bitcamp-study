@@ -19,7 +19,7 @@ public class Exam0121 {
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
 
     // file.encoding이 UTF-8로 되어 있다면,
-    // => 영어는 1바이를 읽어서 2바이트 UCS2로 변환한다.
+    // => 영어는 1바이트를 읽어서 2바이트 UCS2로 변환한다.
     int ch1 = in.read(); // 41 => 0041('A')
     int ch2 = in.read(); // 42 => 0042('B')
 

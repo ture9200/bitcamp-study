@@ -22,6 +22,8 @@ public class C {
   public void m1(short a, String b) {} // OK
 
   // => 파라미터 이름이 다른 것으로는 메서드를 구분할 수 없다.
+  // 무엇을 호출해야할지 모르기때문에 구분할 수가 없다. 
+  // 즉 float a를 호출해야하냐 아니면 float f를 호출해냐 구분이 안간다는 뜻. 
   //  public void m1(float f) {} // 컴파일 오류!
 
   // => 접근 범위는 상관없다.

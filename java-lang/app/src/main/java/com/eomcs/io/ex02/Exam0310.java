@@ -14,6 +14,7 @@ public class Exam0310 {
     // write(byte[], 시작인덱스, 출력개수) : 시작 위치부터 지정된 개수를 출력한다.
     //
     out.write(bytes, 2, 3); // 2번 데이터부터 3 바이트를 출력한다.
+    // 5c 4d 3e => 3개
 
     out.close();
 

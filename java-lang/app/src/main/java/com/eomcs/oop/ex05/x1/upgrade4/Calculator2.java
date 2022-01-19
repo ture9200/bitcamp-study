@@ -20,6 +20,7 @@ public class Calculator2 {
     origin. result *= value;
   }
 
+  //직접 변수에 접근못하니까 변수에 접근할 수 있도록 getResult를 해야한다. 
   public int getResult() {
     return origin.result;
   }

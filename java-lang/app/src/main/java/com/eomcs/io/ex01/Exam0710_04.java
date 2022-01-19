@@ -21,6 +21,7 @@ public class Exam0710_04 {
     // ...
 
     File dir = new File(".");
+    //계산된 절대경로 출력하기 
     System.out.println(dir.getCanonicalPath());
 
     printList(dir);
@@ -32,8 +33,11 @@ public class Exam0710_04 {
 
     // 리턴 받은 파일 배열에서 이름을 꺼내 출력한다.
     for (File file : files) {
+      // 파일이 디렉토리이고 감추지 않았다면 파일을 꺼내 출력하고 
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
+
+        // 그냥 파일이라면 
       } else if (file.isFile()) {
         System.out.printf("%s\n", file.getName());
       }

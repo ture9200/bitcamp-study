@@ -1,4 +1,4 @@
-// 상속 - 생성자 호출 순서
+// 상속 - 생성자 호출 순서- 기술면접... 
 package com.eomcs.oop.ex05.g;
 
 public class Exam01 {

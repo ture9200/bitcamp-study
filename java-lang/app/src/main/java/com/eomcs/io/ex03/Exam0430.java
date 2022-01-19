@@ -12,8 +12,9 @@ public class Exam0430 {
     // 데코레이터를 붙인다.
     // => 버퍼 기능 + 한 줄 읽기 기능
     BufferedReader in2 = new BufferedReader(in);
+    // 문자 스트림을 버퍼 스트림에 저장시킨다. (쉽게 말해 데이터를 버퍼라는 상자에 가공하여 적재시키는 단계) 
 
-    System.out.println(in2.readLine());
+    System.out.println(in2.readLine()); // 
 
     in.close();
   }

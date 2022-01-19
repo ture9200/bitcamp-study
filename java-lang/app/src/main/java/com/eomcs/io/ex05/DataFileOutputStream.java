@@ -11,8 +11,8 @@ public class DataFileOutputStream extends FileOutputStream {
   public void writeUTF(String str) throws Exception {
     // 상속 받은 write() 메서드를 사용하여 문자열 출력
     byte[] bytes = str.getBytes("UTF-8");
-    this.write(bytes.length);
-    this.write(bytes);
+    this.write(bytes.length); // 바이트 개수 출력 ob = 11 byte 항상 몇개인지 알려줘야한다. 
+    this.write(bytes); // 바이트 출력 
   }
 
   public void writeInt(int value) throws Exception {

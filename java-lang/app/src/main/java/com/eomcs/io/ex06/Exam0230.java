@@ -10,7 +10,7 @@ public class Exam0230 {
 
     for (int i = 0; i < 1000000; i++) {
       out.write(0x55);
-      // BufferedOutputStream은
+      // BufferedFileOutputStream은
       // 내부적으로 1바이트를 파일로 바로 출력하지 않고
       // 일단 byte[] 배열에 저장한다.
       // 바이트 배열이 꽉 찼을 때 파일로 출력한다.

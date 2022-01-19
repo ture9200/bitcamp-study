@@ -21,6 +21,7 @@ public class Exam0524 {
     // String 객체를 만들 때 바이트 배열의 인코딩 문자 집합을 정확하게 알려준다면,
     //  UCS2 코드 값으로 정확하게 변환해 줄 것이다.
     String str = new String(buf, 0, count, "UTF-16"); // UTF-16 == UTF-16BE
+    // UTF-16이 없으면 UTF-8로 착각한다. 
     System.out.println(str);
   }
 

@@ -14,7 +14,7 @@ public class Exam0210 {
     // FileWriter 는 char[] 을 출력한다.
     out.write(chars); // 문자 배열 전체를 출력한다.
 
-    // 당연히 UCS2를 JVM 환경 변수 'file.encoding'에 설정된 문자 코드표에 따라 변환하여 출력한다.
+    // 당연히 UCS2(UTF-16)를 JVM 환경 변수 'file.encoding'에 설정된 문자 코드표에 따라 변환하여 출력한다.
     // JVM이 입출력 문자 코드표로 UTF-8을 사용한다면
     // 영어는 1바이트로 변환되어 출력될 것이고,
     // 한글은 3바이트로 변환되어 출력될 것이다.

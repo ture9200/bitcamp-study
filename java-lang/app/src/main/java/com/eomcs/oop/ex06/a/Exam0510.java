@@ -11,6 +11,8 @@ public class Exam0510 {
     // => 또는 그 상위/하위 클래스의 인스턴스인지 검사한다.
     //
     System.out.println(v instanceof Sedan);
+    //v에 들어있는게 sedan맞냐 
+    //v가 가리키는 객체가 sedan이 맞냐 
     System.out.println(v instanceof Car);
     System.out.println(v instanceof Vehicle);
     System.out.println(v instanceof Object);

@@ -39,6 +39,8 @@ public class Exam0710_06 {
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
         printList(file, level + 1);
+        //prefix와 자신의 문자열 표현을 '/'로 묶어서 표현함
+
       } else if (file.isFile()) {
         System.out.printf("%s\n", file.getName());
       }

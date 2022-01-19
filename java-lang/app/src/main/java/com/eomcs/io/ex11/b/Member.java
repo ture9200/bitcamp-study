@@ -1,6 +1,6 @@
 package com.eomcs.io.ex11.b;
 
-// ObjectOutputStream/ObjectInputStream을 통해 인스턴스의 값을
+// ObjectOutputStream/ObjectInputStream을 통해 인스턴스의 필드 값을
 // 바이트 배열로 자동으로 변환하여 출력하고 읽으려면
 // java.io.Serializable 인터페이스를 구현해야 한다.
 // 인스턴스의 값을 바이트 배열로 자동 변환(Serialize)할 수 있도록 허가한다는 표시다.
@@ -14,7 +14,7 @@ package com.eomcs.io.ex11.b;
 //    ObjectOutputStream/ObjectInputStream으로
 //    serialize/deserialize 할 수 있다.
 //
-public class Member implements java.io.Serializable    {
+public class Member implements java.io.Serializable {
   String name;
   int age;
   boolean gender; // true(여자), false(남자)
