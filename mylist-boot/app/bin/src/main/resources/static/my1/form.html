@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>프로젝트1</title>
+  </head>
+  <body>
+    <h1>음식 메뉴 등록</h1>
+    <form>
+      이름*: <input id="x-name" type= "text"> <br>
+      가격*: <input id="x-price"type= "text"> <br>
+      종류*: <input id="x-type" type = "text"> <br>
+      대/중/소: <input id="x-size" type="text"> <br>
+      * 별표항목은 필수 입력 항목입니다. * <br>
+      <button id="x-plus" type = "button"> 추가 </button>
+      <button id ="x-minus" type = "button"> 삭제 </button>
+    </form>
+
+    <script type="text/javascript">
+      //document.querySelector("#x-plus").onclick=function() {
+      // 변수값을 가져옴
+       var Name= document.querySelector("#x-name");
+       var Price=document.querySelector("#x-price");
+       var Type= document.querySelector("#x-type");
+       var Size= document.querySelector("#x-size");
+
+       // 버튼 아이디 x-plus에 이벤트 리스너 추가
+       // 입력값이 입력되지 않았으면 리턴
+        var clickPlus= document.getElementById('x-plus');
+       clickPlus.addEventListener('click', function (event)
+       {
+          if(Name.value == "" || Price.value == "" || Type.value == "") {
+            alert("필수 입력 항목이 비어있습니다.");
+            return false;
+          }
+
+
+          // /food/plus 로 입력값을 보내고
+          fetch(`/food/plus?name=${Name.value}&price=${Price.value}&type=${Type.value}&size=${Size.value}`)
+          .then(function(response) {
+          //  return response.text();
+          console.log("response: "+response);
+          })
+          .then (function(text) {
+            console.log(text);
+            location.href="index.html";
+          });
+      });
+
+      // 삭제 버튼 클릭시 index.html로 감
+      document.getElementById('x-minus').addEventListener('click',() =>{
+      // document. querySelector("#x-minus").onclick=function() {
+        location.href = "index.html" ;
+      },false);
+      </script>
+  </body>
+</html>

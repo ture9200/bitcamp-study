@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>To-do</title>
+</head>
+<body>
+<h1>To-do</h1>
+<a href="form.html">추가</a>
+<table id="x-todo-table" border="1">
+<thead>
+  <tr>
+    <th>해야 할 일</th>
+    <th>삭제</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<script type="text/javascript">
+  var tbody = document.querySelector("#x-todo-table tbody")
+  //x-todo - table tbody라는 태그를 찾아서 t-body에 넣어준다.
+
+  // 삭제 버튼을 클릭 했을 때 호출될 리스너 등록하기
+  // => 삭제 버튼은 동적으로 생성된다.
+  // => 따라서 부모 태그에 리스너를 등록해야 한다.
+
+  tbody.onclick = function(e) {
+    //tbody를 클릭했을 때
+
+    // if (e.target.localName == "button") {
+    if (e.target instanceof HTMLButtonElement) {
+      // e.target이 HTMLButtonElement생성자에 의해서
+      //초기화되었다면
+      var no = e.target.getAttribute("data-no");
+      // 이벤트가 발생한곳 데이터 번호를 꺼내서 no에 넣는다.
+      fetch(`/todo/delete?index=${no}`)
+      //delete의 index의 데이터를 가져왔는데
+        .then(function(response) {
+          // response함수를 호출하면
+          return response.json();
+          //json 문자열 배열로 리턴한다.
+        })
+        .then(function(result) {
+          // 그후 result 함수를 호출하는데
+          if (result == 0) {
+            // 삭제한게 없으면
+            window.alert("삭제하지 못했습니다!");
+            // 윈도우창에서 경고로 삭제하지 못했다고 알려주고
+          } else {
+            // 삭제한게 있으면
+            location.reload();
+            // 윈도우에서 다시 리로드 한다.
+          }
+        });
+    }
+  };
+
+  fetch("/todo/list")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(todoList) {
+      console.log(todoList);
+      for (var i = 0; i < todoList.length; i++) {
+        var tr = document.createElement("tr");
+        tr.innerHTML = `<td>${todoList[i].title}</td>
+        <td><button type="button" data-no="${i}">삭제</button></td>`;
+        tbody.appendChild(tr);
+      }
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@ public class Exam0120 {
 
   public static void main(String[] args) {
 
-    My obj = new My();
+    My obj = new My(); //인스턴스 생성 
 
     // Object에서 상속 받은 메서드 
     //
