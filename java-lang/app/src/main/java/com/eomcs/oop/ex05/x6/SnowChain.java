@@ -7,6 +7,7 @@ public class SnowChain extends Option{
 
   @Override
   public void run() {
+    System.out.println("도로 마찰력을 증가시킨다.");
     car.run();
   }  
 }

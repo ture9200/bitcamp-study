@@ -10,6 +10,7 @@ public class Exam0410 {
     File file = new File("temp2/a/test.txt");
 
     if (file.createNewFile()) { // 빈 파일 생성
+      // 마우스 오른쪽 클릭해서 property 클릭하면 0byte인것 확인할 수 있다. 
       System.out.println("test.txt 파일을 생성하였습니다.");
     } else {
       // 이미 파일이 있다면 다시 생성할 수 없다.

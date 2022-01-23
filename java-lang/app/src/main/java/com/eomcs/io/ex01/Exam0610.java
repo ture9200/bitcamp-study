@@ -20,8 +20,12 @@ public class Exam0610 {
         // true를 리턴하면 배열에 포함되고,
         // false를 리턴하면 배열에 포함되지 않는다.
 
-        // 파일,디렉토리 이름이 .java 로 끝나는 경우만 리턴 배열에 포함시키다.
-        if (name.endsWith(".java"))
+        // 파일,디렉토리 이름이 .java 로 끝나는 경우만 리턴 배열에 포함시킨다.
+        if (name.endsWith(".java")) // 문자열끝이 .java로 끝나는지 
+          // if (name.endsWith(".c")) 
+          // if (name.startsWith("t")) 
+          // if (name.startsWith("h")) 
+          // 끝나면 true, 안 끝나면 false 리턴 
           return true; // 조회 결과에 포함시켜라!
         return false; // 조회 결과에서 제외하라!
       }
@@ -31,10 +35,13 @@ public class Exam0610 {
 
     // => 확장자가 .java 인 파일의 이름만 추출하기
     // 1) 필터 준비
-    JavaFilter javaFilter = new JavaFilter();
+    JavaFilter javaFilter = new JavaFilter();  //자바필터 객체 생성 
 
     // 2) 필터를 사용하여 디렉토리의 목록을 가져오기
-    String[] names = dir.list(javaFilter);
+    String[] names = dir.list(javaFilter); 
+    // dir.list 메서드호출할때 파라미터값으로 원하는 
+    // filenamefilter 규칙에 따라 만든 자바필터 객체주소를 넘겨준다.
+    // javafilter를 파라미터 값으로 안받을때는 모든 디렉토리와 파일을 리턴
 
     for (String name : names) {
       System.out.println(name);

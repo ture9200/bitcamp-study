@@ -13,6 +13,6 @@ public class SUV extends Car {
   }
 
   public void active4wd(boolean enable) {
-    this.enabled4wd = true;
+    this.enabled4wd = enable;
   }
 }

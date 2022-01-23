@@ -12,14 +12,16 @@ public class Blackbox extends Option{
 
   @Override
   public void start() {
-    super.start();
-    System.out.println("녹화시작!");
+    super.start(); // 시동건다. 
+    System.out.println("녹화시작!"); // 녹화시작 
+    // 문장이 반대면 녹화시작 후 시동건다. 
   }
 
   @Override
   public void stop() {
-    super.stop();
-    System.out.println("녹화종료!");
+    super.stop(); // 시동끈다. 
+    System.out.println("녹화종료!"); //녹화종료 
+    // 문장이 반대면 녹화종료후 시동끈다. 
 
   }
 }  

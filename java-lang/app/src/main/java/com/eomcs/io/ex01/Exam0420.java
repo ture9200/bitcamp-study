@@ -14,6 +14,8 @@ public class Exam0420 {
     } else {
       // 존재하지 않는 파일은 삭제할 수 없다.
       // 경로가 존재하지 않으면 당연히 그 경로에 파일이 없으니까 삭제할 수 없다.
+      // delete의 리턴값이 true => 정상적으로 삭제 
+      // delete의 리턴값이 false => 삭제 못함 
       System.out.println("test.txt 파일을 삭제할 수 없습니다.");
     }
 

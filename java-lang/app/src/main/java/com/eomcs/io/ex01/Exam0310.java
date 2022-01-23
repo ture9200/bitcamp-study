@@ -11,9 +11,14 @@ public class Exam0310 {
     //
     File dir = new File("temp");
     if (dir.mkdir()) { // 디렉토리 생성
+      // 파일 클래스에 디렉토리 만드는 메서드가 있다. mkdir 
+      // 파일클래스로 디렉토리 만들 수 있다. 
+      // 정상적으로 생성했으면 리턴값이 true
+      // 리턴하지 않았으면 리턴값이 false 
       System.out.println("temp 디렉토리를 생성하였습니다.");
     } else {
       System.out.println("temp 디렉토리를 생성할 수 없습니다.");
+      // 파일이 존재하는데 또 디렉토리를 생성한다고 하면 생성할 수 없다고 출력
     }
 
 

@@ -13,6 +13,7 @@ public class Exam0720 {
     deleteFile(dir);
   }
 
+  //손코딩 기술문제 나온다. 
   static void deleteFile(File dir) {
     // 주어진 파일이 디렉토리라면 하위 파일이나 디렉토리를 찾아 지운다.
     if (dir.isDirectory()) {

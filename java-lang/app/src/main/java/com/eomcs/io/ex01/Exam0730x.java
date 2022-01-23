@@ -2,10 +2,6 @@
 package com.eomcs.io.ex01;
 
 import java.io.File;
-import java.io.FileFilter;
-import java.io.IOException;
-import java.lang.invoke.MethodHandles.Lookup.ClassOption;
-import org.apache.logging.log4j.core.jackson.ContextDataAsEntryListSerializer;
 
 public class Exam0730x {
 
@@ -17,19 +13,11 @@ public class Exam0730x {
     printClasses(dir);
   }
 
-  static void printClasses(File dir) {
-
-    File[] files = dir.listFiles(new FileFilter() {
-
-      for(File f: files) {
-        if(f.isFile() && f.getName().endsWith(".class")) {
-
-        }ContextDataAsEntryListSe 
-        printClasses(f);
-      } else {
-        System.out.println(f.getName());
-      }
-    }
+  static void printClasses(File dir) throws Exception {
+    //IO Exception해도 된다. Exception의 서브라서 
+    System.out.println(dir.getCanonicalPath());
   }
+}
+
 
 
