@@ -7,5 +7,5 @@ public interface Sorter {
   // 인터페이스는 호출 규칙을 정의하는 것이기 때문에 
   // 모든 메서드는 기본이 public 이고, abstract 이다.
   // => 다음과 같이 메서드 선언에 public 과  abstract를 생략해도 된다.
-  void sort(int[] values);
+  void sort(int[] values); // 물려줄 필드와 메서드가 없다. 이런 경우 인터페이스로 바꾸는게 훨씬 더 유연해진다. 
 }

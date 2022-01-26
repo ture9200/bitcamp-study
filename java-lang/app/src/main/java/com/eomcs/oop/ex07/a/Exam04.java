@@ -6,11 +6,11 @@ abstract class A4 {
   // 추상 클래스의 용도는
   // - 서브 클래스들이 가져야할 공통 변수나 메서드를 제공하는 것이다.
   // - 그래서 다음과 같이 일반 변수나 메서드를 정의할 수 있다.
-  public static int value1 = 100;
-  static void m1() {System.out.println("A4.m1() 호출됨!");}
+  public static int value1 = 100; // static 변수 
+  static void m1() {System.out.println("A4.m1() 호출됨!");} // static 메서드 
 
-  public String value2 = "Hello!";
-  void m2() {System.out.println("A4.m2() 호출됨!");}
+  public String value2 = "Hello!"; // 인스턴스 변수 
+  void m2() {System.out.println("A4.m2() 호출됨!");} // 인스턴스 메서드 
 
   // 추상 클래스는 추상 메서드도 가질 수 있다.
   // 의미?
@@ -28,7 +28,7 @@ abstract class A4 {
   //   "이 메서드는 서브 클래스에서 반드시 정의해야 해. 
   //    왜냐하면 수퍼 클래스에 정의한 다른 메서드가 이 메서드를 사용하기 때문이야!"
   //
-  public abstract void m3();
+  public abstract void m3(); // 있어야할 기능이지만 서브클래스마다 동작이 다르기때문에 기능을 정의를 하지 않았다. 
 }
 
 class A4Sub extends A4 {

@@ -16,7 +16,7 @@ public class Exam02 {
 
     //use(new ToolD()); // 컴파일 오류! 
     // 비록 ToolD 클래스에 Spec에 정의된 m1() 메서드가 있다 하더라도 
-    // 문벚거으로 ToolD 클래스는 Spec 인터페이스를 구현한 것이 아니기 때문에 
+    // 문법적으로 ToolD 클래스는 Spec 인터페이스를 구현한 것이 아니기 때문에 
     // use 파라미터 값으로 넘길 수 없다. 
   }
 

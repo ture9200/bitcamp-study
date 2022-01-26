@@ -59,6 +59,8 @@ public class Exam01 {
     // => Worker 객체를 저장하는 (변수) w.
     // => Worker 객체를 가리키는 (변수) w.
     // => Worker 타입 객체 w. 
+    // 클래스가 됐든 인터페이스를 구현한 클래스가 됐든 추상클래스나 일반클래스를 상속받은 클래스가 됐든 서브클래스가 됐든 
+    // 인터페이스를 구현한 클래스가 됐든 상관없이 타입이라고 퉁친다. 
 
     // 프로그램을 짜다가 인터페이스를 만나게 되면,
     // - 누가 호출자이고 누가 피호출자인지 확인하라.
@@ -66,6 +68,25 @@ public class Exam01 {
     //   아니면 피호출자를 만드는 것인지 확인하라.
 
   }
+
+  //  static void work(Worker worker) { //BlueWorker, WhiteWorker, JubuWorker에게 일을 시키든 동일한 메서드를 사용해서 일을 시킬 수 있다. 
+  //    // BlueWorker, WhiteWorker, JubuWorker 다 객체를 받을 수 있다. Object로 받을 수 있지만 아래처럼 조건문 써야한다. 
+  //    // 앞으로 Worker라는 규칙에 따라 만들라고 정해버리면 넘어오는 이 클래스가 어떤 클래스인지 알 필요가 없다. 
+  //    // 어차피 규칙을 따르니까! 규칙을 따른다는 것은 메서드를 갖고 있다는 뜻이기 때문에 그냥 메서드를 호출하면 된다! 
+  //    worker.execute();
+  //  }
+
+  //  static void work(Object worker) {
+  //    if(worker.getClass() == JubuWorker.class) {
+  //      ((JubuWorker)worker).execute();
+  //    }
+  //    if(worker.getClass() == WhiteWorker.class) {
+  //      ((WhiteWorker)worker).execute();
+  //    }else if(worker.getClass() == BlueWorker.class) {
+  //      ((BlueWorker)worker).execute();
+  //    }
+  //  }
+
 }
 
 
