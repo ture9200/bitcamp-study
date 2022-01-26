@@ -47,6 +47,7 @@ public class Exam0120 {
     c.rule1(); // OK
     c.rule2(); // OK
     c.rule3(); // OK
+    // c.m1(); // 컴파일 오류! 
     System.out.println("-------------------------------");
 
     //    b.rule1(); // 컴파일 오류!

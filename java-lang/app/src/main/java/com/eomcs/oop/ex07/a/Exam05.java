@@ -14,7 +14,7 @@ abstract class Letter {
   // => 템플릿의 역할을 하는 메서드를 수퍼 클래스에 둔다.
   // => 자세한 구현은 서브 클래스에 맡긴다.
   public void print() { // <== 템플릿 메서드 디자인 패턴에서 "템플릿 메서드"에 해당한다. 
-    this.printHeader();
+    this.printHeader(); // 실무에는 this를 안붙인다. printHeader(); 
     System.out.println(this.content);
     System.out.println();
     System.out.printf("              From %s!\n", this.getSign());

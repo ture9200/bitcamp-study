@@ -25,6 +25,7 @@ public class Exam01 {
   public static void main(String[] args) {
 
     int[] values = createRandomNumbers(100000);
+    // System.out.printf("배열개수:%d\n", values.length);
     int[] values2 = Arrays.copyOf(values, values.length);
 
     BubbleSort s1 = new BubbleSort();

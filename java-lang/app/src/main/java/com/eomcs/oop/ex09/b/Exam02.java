@@ -15,7 +15,7 @@ interface MyInterface2 {
   public final int v3 = 300;
   public static int v4 = 400;
 
-  int v5 = 500; // 모두 생략된 상태!
+  int v5 = 500; // 모두 생략된 상태!, 500이란 값을 안주면 오류 발생, 초기화하라고 한다. 
 }
 
 // 인터페이스 필드 사용

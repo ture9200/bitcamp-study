@@ -25,7 +25,7 @@ class MyInterface5Impl extends Parent implements MyInterface5 {
 public class Exam05 {
   public static void main(String[] args) {
     // 인터페이스의 스태틱 메서드 호출하기
-    MyInterface5.m1();
+    MyInterface5.m1(); //권장 사용하지 않음. 
 
     // 클래스의 스태틱 메서드 호출하기
     Parent.m2();

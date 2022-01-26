@@ -14,25 +14,27 @@ public class Exam0732 {
     File dir = new File("bin/main");
     System.out.println(dir.getCanonicalPath());
 
-    printClasses(dir, "");
+    printClasses(dir, ""); //패키지이름이 없다. 
   }
 
   static void printClasses(File dir, String packageName) {
-
+    // 패키지이름을 받아야해서 파라미터에 추가 
     // 기존의 익명 클래스를 람다 문법으로 교체한다.
     File[] files = dir.listFiles(
         f -> f.isDirectory() || (f.isFile() && f.getName().endsWith(".class")));
 
-    if (packageName.length() > 0) {
-      packageName += ".";
+    if (packageName.length() > 0) { // 현재 패키지가 0보다 클때만 
+      packageName += "."; //. 을 찍는다. 
     }
 
     for (File file : files) {
       if (file.isDirectory()) {
         printClasses(file, packageName + file.getName());
+        //패키지이름에다가 파일이름 출력 
 
       } else {
         System.out.println(packageName + file.getName().replace(".class", ""));
+        //패키지이름 그리고 파일이름.class를 빈문자열로 만들어서 출력  
       }
     }
   }

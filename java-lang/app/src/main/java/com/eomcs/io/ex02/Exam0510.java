@@ -46,7 +46,7 @@ public class Exam0510 {
     //      Linux: UCS2 ==> UTF-8
     //      macOS: UCS2 ==> UTF-8
     //
-    for (byte b : bytes) {
+    for (byte b : bytes) { // 1바이트씩 반복문돌면서 값을 출력 
       System.out.printf("%x ", b);
     }
     System.out.println();

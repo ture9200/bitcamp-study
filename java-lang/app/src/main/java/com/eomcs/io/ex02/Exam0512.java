@@ -14,8 +14,9 @@ public class Exam0512 {
 
     // => UTF-16BE로 인코딩 하기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
-    byte[] bytes = str.getBytes("UTF-16BE"); // UCS2 ==> UTF-16BE
+    byte[] bytes = str.getBytes("UTF-16BE"); // UCS2 ==> UTF-16BE, 이게 마로 자바에서 쓰는 유니코드 
 
+    //ac 00 : 한글 가 ac01 : 한글 각
     for (byte b : bytes) {
       System.out.printf("%02x ", b);
     }
