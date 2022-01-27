@@ -12,7 +12,7 @@ public class ClientApp {
     //1) 서버 어플리케이션과 네트워크 연결을 수행한다. 
     // Socket socket = new Socket("127.0.0.1", 8888); // 서버와 연결될 대까지 객체를 생성하지 않는다. 
     // Socket socket = new Socket("192.168.0.4", 8888); //ip주소를 소켓번호 대신 쓰면 남한테 연결 
-    Socket socket = new Socket("192.168.0.12", 8888);
+    Socket socket = new Socket("52.78.169.43", 8888);
     System.out.println("서버와 연결되었음!");
 
     // 데이터를 주고 받기 위한 입출력 스트림을 준비한다. 
