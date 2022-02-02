@@ -9,14 +9,14 @@ public class Exam0110 {
     FileOutputStream out = new FileOutputStream("temp/test4.data");
 
     Member member = new Member();
-    member.name = "AB가각간";
-    member.age = 27;
-    member.gender = true;
+    member.name = "AB가각간"; //이름
+    member.age = 27;        // 나이
+    member.gender = true;   // 성별
 
     // 인스턴스의 값을 출력하라!
     // 1) 이름 출력 
     byte[] bytes = member.name.getBytes("UTF-8");
-    out.write(bytes.length); // 1 바이트
+    out.write(bytes.length); // 1 바이트, 문자에 코드값이 들어있는 바이트 배열 개수 
     out.write(bytes); // 문자열 바이트 
 
     // 2) 나이 출력 (4바이트)

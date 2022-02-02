@@ -10,7 +10,7 @@ public class Exam0210 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 1000000; i++) { //Members에서 데이터를 하나씩 읽어온다. 버퍼 안쓰고 
       member = new Member();
       member.name = in.readUTF();
       member.age = in.readInt();

@@ -10,10 +10,10 @@ public class Exam0420 {
     FileReader in = new FileReader("temp/test2.txt");
 
     // FileReader 객체가 읽을 데이터를 저장할 메모리를 준비한다.
-    CharBuffer charBuf = CharBuffer.allocate(100);
+    CharBuffer charBuf = CharBuffer.allocate(100); //메모리 100을 준비 
 
     // 읽은 데이터를 CharBuffer 에 저장한다.
-    int count = in.read(charBuf);
+    int count = in.read(charBuf); //charBuf를 주면서 읽으라고 한다. 
 
     in.close();
 

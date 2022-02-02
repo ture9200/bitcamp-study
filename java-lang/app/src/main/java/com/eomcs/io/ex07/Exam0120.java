@@ -5,6 +5,7 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
     DataBufferedFileOutputStream out = new DataBufferedFileOutputStream("temp/members.data");
+    // 데이터 기능 + 버퍼 기능
 
     Member member = new Member();
     member.name = "AB가각간";

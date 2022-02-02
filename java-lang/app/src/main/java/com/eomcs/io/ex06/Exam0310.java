@@ -15,8 +15,8 @@ public class Exam0310 {
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int count = 0;
-    while ((b = in.read()) != -1) {
-      out.write(b);
+    while ((b = in.read()) != -1) { //1바이트 읽어서 
+      out.write(b); //1바이트 출력 
       count++;
     }
 

@@ -8,9 +8,11 @@ public class Exam0420 {
   public static void main(String[] args) throws Exception {
     FileInputStream in = new FileInputStream("temp/test3.data");
 
-    byte[] buf = new byte[100];
+    byte[] buf = new byte[100]; //바이트 배열을 미리 준비 
 
     int count = in.read(buf);
+    // 몇개를 지정하지 않으면 배열을 꽉 채울때까지 읽는다. 
+    // 최대 배열 개수만큼 읽는다. 
 
     // Exam0410의 실행 결과로 만들어진 파일을 읽어라!
     // 바이트 배열에 들어있는 값을 사용하여 String 인스턴스를 만든다.

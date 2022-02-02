@@ -72,6 +72,8 @@ public class Exam0110 {
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
+    // getProperty 스태틱메서드,
+    // 현재 실행하는 jvm을 시스템에서 정보를 추출할때 시스템에 static 메서드 사용 
 
     // => 이 예제를 이클립스에서 실행한다면,
     // 앞의 2바이트는 버리고,
@@ -84,7 +86,7 @@ public class Exam0110 {
 
     // UCS2에서 한글 '가'는 ac00이다.
     out.write(0x7a6bac00);
-    // - 앞의 2바이트(7a6b)는 버린다.
+    // - 앞의 2바이트(7a6b)는 버린다. => 문자는 2바이트만 사용해서 뒤에 2바이트만 출력 
     // - 뒤의 2바이트(ac00)은 UTF-8(eab080) 코드 값으로 변환되어 파일에 출력된다.
 
     // UCS2에서 영어 A는 0041이다.

@@ -10,7 +10,7 @@ public class DataFileInputStream extends FileInputStream {
 
   public String readUTF() throws Exception {
     // 상속 받은 read() 메서드를 사용하여 문자열 출력
-    int size = this.read();
+    int size = this.read(); // 1바이트 읽는다. 
     byte[] bytes = new byte[size];
     this.read(bytes); // 이름 배열 개수 만큼 바이트를 읽어 배열에 저장한다.
     return new String(bytes, "UTF-8");

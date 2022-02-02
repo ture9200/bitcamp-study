@@ -13,7 +13,7 @@ public class Exam0110 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 1000000; i++) { //데이터를 백만개 출력 
       out.writeUTF(member.name);
       out.writeInt(member.age);
       out.writeBoolean(member.gender);

@@ -4,14 +4,14 @@ import java.io.FileOutputStream;
 
 public class Exam0210 {
   public static void main(String[] args) throws Exception {
-    FileOutputStream out = new FileOutputStream("temp/data.bin");
+    FileOutputStream out = new FileOutputStream("temp/data.bin"); //파일 생성 
 
     System.out.println("데이터 쓰는 중...");
 
     long start = System.currentTimeMillis();
 
     for (int i = 0; i < 1000000; i++) {
-      out.write(0x55);
+      out.write(0x55); 
     }
 
     long end = System.currentTimeMillis();

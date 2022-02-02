@@ -11,13 +11,13 @@ public class Exam0220 {
     member = new Member();
 
     // 1) 이름 읽기
-    member.name = in.readUTF();
+    member.name = in.readUTF(); //string 객체를 리턴 
 
     // 2) 나이(int) 읽기
-    member.age = in.readInt();
+    member.age = in.readInt(); //int값을 리턴 
 
     // 3) 성별 읽기
-    member.gender = in.readBoolean();
+    member.gender = in.readBoolean(); //boolean값을 리턴 
 
     in.close();
 

@@ -22,7 +22,7 @@ public class Exam0220 {
     // => JVM의 문자코드표가 UTF-8이라면,
     //    파일을 읽을 때, 영어나 숫자, 특수기호는 1바이트를 읽어 UCS2으로 변환할 것이고
     //    한글은 3바이트를 읽어 UCS2으로 변환할 것이다.
-    int count = in.read(buf);
+    int count = in.read(buf); // 몇 개의 문자열을 읽었는지 리턴 
 
     // File(UTF-8)  JVM(UCS2)
     // 41       ==> 00 41
@@ -40,8 +40,8 @@ public class Exam0220 {
     in.close();
 
     System.out.printf("%d\n", count);
-    for (int i = 0; i < count; i++)
-      System.out.printf("%c(%04x)\n", buf[i], (int)buf[i]);
+    for (int i = 0; i < count; i++) //읽은개수만큼 반복문 돌려서
+      System.out.printf("%c(%04x)\n", buf[i], (int)buf[i]); // buf에 값을 문자로 출력, 16진수로 출력 
 
     System.out.println();
 

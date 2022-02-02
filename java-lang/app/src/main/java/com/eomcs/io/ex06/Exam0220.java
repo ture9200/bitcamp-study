@@ -17,7 +17,7 @@ public class Exam0220 {
       // 일단 바이트 버퍼에 저장한다.
       buf[size++] = 0x55;
 
-      if (size >= buf.length) {
+      if (size >= buf.length) { //사이즈가 버퍼 크기와 같다면 
         out.write(buf); // 버퍼가 꽉 차면 파일로 내보낸다.
         size = 0; // 다시 버퍼를 쓸 수 있도록 size를 0으로 초기화 한다.
       }
