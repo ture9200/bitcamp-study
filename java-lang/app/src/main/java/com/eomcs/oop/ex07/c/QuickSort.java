@@ -2,10 +2,10 @@ package com.eomcs.oop.ex07.c;
 
 public class QuickSort extends Sorter {
 
-  @Override
-  public void sort(int[] values) {
-    start(values, 0, values.length - 1);
-  }
+  //  @Override
+  //  public void sort(int[] values) {
+  //    start(values, 0, values.length - 1);
+  //  } //sorter경우 일반메서드라서 주석처리해도 아래 코드에 에러가 안뜬다. 
 
   private int partition(int[] arr, int low, int high)
   {

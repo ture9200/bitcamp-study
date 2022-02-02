@@ -15,7 +15,7 @@ public class Exam0110 {
     m.setPassword("1111");
     m.setPhoto("hong.gif");
     m.setTel("010-2222-1111");
-    m.setRegisteredDate(new Date(System.currentTimeMillis()));
+    m.setRegisteredDate(new Date(System.currentTimeMillis())); 
 
     // 2) JSON 처리 객체 준비
     Gson gson = new Gson();

@@ -5,6 +5,7 @@ interface MyInterface4 {
   void m1();
 
   default void m2() {
+    //x();
     System.out.println("MyInterface4.m2()");
     x();
   };
@@ -35,7 +36,8 @@ class MyInterface4Impl /* extends Object */  implements MyInterface4 {
     // m2();
 
     // 인터페이스에 선언된 다른 default 메서드를 호출하고 싶다면,
-    MyInterface4.super.m2(); // super 빼지 말아야한다. this를 쓰면 안된다. 
+    MyInterface4.super.m2(); 
+    // super 빼지 말아야한다. this를 쓰면 안된다. 인터페이스에 있는 m2를 찾기위해서 super앞에 인터페이스 이름을 붙인다. 
 
     System.out.println("MyInterface4Impl.m1()");
   }
@@ -60,7 +62,7 @@ public class Exam04 {
     obj.m3();
     System.out.println("-----------------------------");
 
-    // 인터페이스에 정의된 private 메서드는 호출할 수 없다.
+    // 인터페이스에 정의된 private 메서드는 호출할 수 없다. 내부적으로 사용하기 때문이다. 
     //  obj.x()); // 컴파일 오류!
 
   }

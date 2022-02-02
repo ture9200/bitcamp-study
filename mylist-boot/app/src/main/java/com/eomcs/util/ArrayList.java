@@ -7,10 +7,10 @@ public class ArrayList implements java.io.Serializable{
   Object[] list= new Object[5]; 
   int size = 0;
 
-  public ArrayList() {}
+  public ArrayList() {} //기본생성자 
 
-  public ArrayList(Object[] arr) {
-    this.addAll(arr); 
+  public ArrayList(Object[] arr) { // 특정배열을 주면서 arrayList를 만들어달라 
+    this.addAll(arr);  // arr주면서 addall 호출 
   }
 
   // 기능: 
@@ -29,7 +29,7 @@ public class ArrayList implements java.io.Serializable{
 
   public void addAll(Object[] arr) { //배열을 주면 
     for(Object obj : arr) {
-      this.add(obj); // 하니씩 꺼내자 . 
+      this.add(obj); // 하니씩 꺼내서 add를 호출해서 한 개씩 추가하라 . 
     }
   }
 

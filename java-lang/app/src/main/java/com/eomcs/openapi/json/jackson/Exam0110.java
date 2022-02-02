@@ -15,7 +15,7 @@ public class Exam0110 {
     m.setPassword("1111");
     m.setPhoto("hong.gif");
     m.setTel("010-2222-1111");
-    m.setRegisteredDate(new Date(System.currentTimeMillis()));
+    m.setRegisteredDate(new Date(System.currentTimeMillis())); // 1970년 0시 0분 0초부터 경과된 millis 
 
     // 2) JSON 처리 객체 준비
     ObjectMapper mapper = new ObjectMapper();

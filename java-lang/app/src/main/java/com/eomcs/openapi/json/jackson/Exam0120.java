@@ -7,6 +7,8 @@ public class Exam0120 {
   public static void main(String[] args) throws Exception{
 
     // 1) JSON 문자열 준비
+    // 날짜경우 gson 형식과 동일하면 에러가 발생되어 gson형식으로 사용했을때 출력값 millis 를 넣어준다.
+    // 날짜경우 문자열 아니니까 더블 쿼테이션 붙이지 않는다.
     String jsonStr = "{\"no\":100,\"name\":\"홍길동\",\"email\":\"hong@test.com\",\"password\":\"1111\",\"photo\":\"hong.gif\",\"tel\":\"010-2222-1111\",\"registeredDate\":1642991177846}";
 
     // 2) JSON 처리 객체 준비

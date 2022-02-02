@@ -8,7 +8,7 @@ interface MyInterface2 {
   // - 인스턴스를 생성할 수 없기 때문에 인스턴스 필드를 선언할 수 없다.
   // - 규칙이기 때문에 무조건 public 이다.
   // - 인스턴스 필드가 아니기 때문에 값을 변경할 수 없다.
-  public static final int v1 = 100;
+  public static final int v1 = 100; //인스턴스가 아니라서 static이고 값을 한번 정하면 못 바꾼다. 
 
   // public, static, final 을 생략할 수 있다.
   static final int v2 = 200;

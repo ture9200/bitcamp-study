@@ -21,17 +21,12 @@ public class CsvBoardDao extends AbstractBoardDao{
 
     try {
       BufferedReader in = new BufferedReader(new FileReader("boards.csv"));
+      // 파일읽을때는 FileReader, 좀더 빠르게 읽기위해서 BufferedReader 
 
 
-      String csvStr;
-      while ((csvStr = in.readLine()) != null ) {
+      String csvStr; 
+      while ((csvStr = in.readLine()) != null ) { // 한줄을 읽었는데 null이 아니라면 
         boardList.add(Board.valueOf(csvStr)); 
-        // this가 가리키는 필드라던가 this라는 값을 넘겨주면서 
-        // 인스턴스 호출할 때는 this를 붙이기도 하지만 생략한다. 
-        // 없으면 컴파일러가 자동으로 붙인다. 
-        // this에 저장된 레퍼런스로 가서 명령어에 따라서 만들었다. 
-        // boardlist가 메서드 안에 로컬변수가 아닐때만 컴파일러가 this를 붙인다. 
-
       }
       in.close();
     } catch(Exception e) {
@@ -46,12 +41,16 @@ public class CsvBoardDao extends AbstractBoardDao{
     // 매번 저장하고 파일이 쌓이면 성능이 떨어지지 않냐?
     //  => 성능 신경쓰지 말자 
     PrintWriter out = new PrintWriter( new BufferedWriter(new FileWriter("boards.csv")));
+    //bufferedWriter = 출력하면 버퍼에 담아놨다가 버퍼에 꽉차면 왕창 파일로 보내기때문에 출력속도가 빠르다. 
+    //여기다가 printWriter까지 주면 한 줄의 문자열 출력 가능 
 
-    for (int i = 0; i < boardList.size(); i++) {
-      Board board = (Board) boardList.get(i);
-      out.println(board.toCsvString());
+
+    for (int i = 0; i < boardList.size(); i++) { // 반복문 돌면서 
+      Board board = (Board) boardList.get(i); // boardList의 get I번째 객체를 꺼낸다. 
+      out.println(board.toCsvString()); //csv문자열 꺼내서 출력 
     }
-    out.flush();
+    out.flush(); // 마지막 찌끄래기를 수동으로 출력, 버퍼가 꽉안차면 출력안함, 
+    // 명시적으로 호출해서 버퍼에 쌓인거를 출력하라고 해라 
 
     out.close();
   }

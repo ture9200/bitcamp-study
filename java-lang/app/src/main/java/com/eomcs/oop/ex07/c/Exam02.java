@@ -4,7 +4,7 @@ package com.eomcs.oop.ex07.c;
 public class Exam02 {
 
   public static void main(String[] args) {
-    int[] values = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5};
+    int[] values = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5}; // 값을 준비 
 
     // => Sorter는 BubbleSort와 QuickSort 클래스처럼
     //    단지 정렬을 수행하는 클래스를 만들 때 일관성 있게 사용하려고

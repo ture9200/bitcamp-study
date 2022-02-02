@@ -1,4 +1,7 @@
 // String - mutable vs immutable 객체
+// 기술면접에서 mutable과 imutable 차이를 묻는게 나온다. 
+// mutable: 값을 설정하면 값을 바꿀수 있는 객체 (예: StringBuffer, StringbBuilder) 
+// immutable: 값을 한번 설정하면 바꿀 수 없는 객체 (예: String 클래스) 
 package com.eomcs.basic.ex02;
 
 public class Exam0160 {

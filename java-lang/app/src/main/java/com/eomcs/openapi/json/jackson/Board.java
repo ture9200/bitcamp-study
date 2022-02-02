@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 // 그 방법은 다음과 같이 에노테이션을 이용하여 무시할 JSON 프로퍼티의 이름을 명시한다! 
 
 @JsonIgnoreProperties(value = {"name", "email","password","photo","tel"})
+// 파라미터에 배열을 줘야한다. 
 public class Board {
   private int no;
   private String title;

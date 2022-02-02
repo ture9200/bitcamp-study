@@ -26,7 +26,10 @@ public class Exam01 {
     // 정렬 객체의 클래스가 뭔지 상관없다.
     // 그 클래스를 사용할 때는 공통 분모가 되는
     // 수퍼 클래스의 메서드를 호출한다.
-    sorter.sort(values);
+    sorter.sort(values); 
+    //quicksort 오버라이딩 주석처리하면 quicksort에 대한 값은 섞여서 나온다. 
+    // quicksort 오버라이딩 주석하면 quicksort는 순서대로 값이 출력되서 나온다. 
+    // 이유: sort에 아무것도 안하기 때문이다. 
 
     // 정렬된 값을 출력한다.
     for (int  value : values) {

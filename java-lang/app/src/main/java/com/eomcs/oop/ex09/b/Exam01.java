@@ -29,7 +29,8 @@ interface MyInterface {
 }
 
 // 2) 인터페이스 구현
-abstract class MyInterfaceImpl implements MyInterface {
+abstract class MyInterfaceImpl implements MyInterface { //abstract를 안쓰면 에러 
+
   @Override
   public void m1() {}
 

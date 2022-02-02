@@ -30,11 +30,18 @@ public class Exam0120 {
     // ProtocolC 규칙 준수!
     @Override
     public void rule3() {System.out.println("rule3()");}
+
+    public void m1() {System.out.println("m1()");}
   }
 
   void test() {
 
     ProtocolImpl obj = new ProtocolImpl();
+    obj.rule1(); //Ok!
+    obj.rule2(); //Ok!
+    obj.rule3(); //Ok! 
+    obj.m1();    //Ok!
+    System.out.println("----------------------------------");
 
     // 1) 인터페이스 레퍼런스로 구현체의 주소 받기
     ProtocolC c = obj;

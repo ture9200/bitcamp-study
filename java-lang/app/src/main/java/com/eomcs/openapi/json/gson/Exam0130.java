@@ -7,6 +7,8 @@ public class Exam0130 {
   public static void main(String[] args) {
 
     // 1) JSON 문자열 준비
+    // " "을 일반 문자열로 사용할려면 \를 사용해야한다.
+    // 날짜를 프로그램을 실행하는 국가 언어에 맞춰서 다룬다.
     String jsonStr = "{\"no\":100,\"name\":\"홍길동\",\"email\":\"hong@test.com\",\"password\":\"1111\",\"photo\":\"hong.gif\",\"tel\":\"010-2222-1111\",\"registeredDate\":\"1월 24, 2021\"}";
 
     // 2) JSON 처리 객체 준비

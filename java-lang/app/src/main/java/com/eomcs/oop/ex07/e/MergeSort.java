@@ -11,13 +11,13 @@ public class MergeSort extends Sorter {
   // 구현하지 않으면 이 클래스도 추상 클래스가 될 수 밖에 없다.
   @Override
   public void sort(int[] values) {
-    sort(values, 0, values.length - 1);
-  } // 구현안하면 에러가 뜬다. 
+    sort(values, 0, values.length - 1); //0번째부터 길이만큼 sort하라 
+  } // 구현안하면 에러가 뜬다. sort는 추상메서드니까 
 
   //Merges two subarrays of arr[].
   // First subarray is arr[l..m]
   // Second subarray is arr[m+1..r]
-  void merge(int arr[], int l, int m, int r)
+  void merge(int arr[], int l, int m, int r) 
   {
     // Find sizes of two subarrays to be merged
     int n1 = m - l + 1;
@@ -75,7 +75,8 @@ public class MergeSort extends Sorter {
 
   // Main function that sorts arr[l..r] using
   // merge()
-  void sort(int arr[], int l, int r)
+  void sort(int arr[], int l, int r) // 외부에서 merge를 쓸때는 이것을 호출한다. => 규칙일관성이 없다. 
+  //sort 오버라이딩 하지 않았으면 mergesort가 얘를 직접 호출한다. 
   {
     if (l < r)
     {

@@ -1,64 +1,62 @@
-// 인터페이스 다중 구현이 불가한 경우!
+// 디폴트 메서드의 다중 구현 
 package com.eomcs.oop.ex09.c;
 
-import java.lang.invoke.MethodHandles.Lookup.ClassOption;
-import com.eomcs.oop.ex09.c.Exam0110.ProtocolImpl;
 
 public class Exam0310 {
 
   interface ProtocolA {
     void rule1();
     default void rule3() {
-      System.out.println("**ProtocolA. rule3()**");
+      System.out.println("**ProtocolA.rule3()**");
     }
   }
 
   interface ProtocolB {
     void rule2();
     default void rule3() {
-      System.out.println("====> ProtocolB. rule3()");
+      System.out.println("====> ProtocolB.rule3()");
     }
   }
 
-  //  class ProtocolImpl implements ProtocolA, ProtocolB {
-  //    // ProtocolA 입장에서는 rule0() 규칙 준수!
-  //    // ProtocolB 입장에서는 rule0() 규칙을 준수하지 못했다.
-  //    // - 리턴 타입이 다르다.
-  //    @Override
-  //    public void rule3() {}
-  //
-  //    // ProtocolB 입장에서는 rule0() 규칙 준수!
-  //    // ProtocolA 입장에서는 rule0() 규칙을 준수하지 못했다.
-  //    // - 리턴 타입이 다르다.
-  //    @Override
-  //    public int rule0() {return 0;}
-  //
-  //    // 두 메서드를 모두 정의하면 되지 않을까?
-  //    // - 메서드 오버로딩 문법 상 리턴 타입만 다른 메서드를
-  //    //   동시에 정의할 수 없다.
-  //
-  //    // ProtocolA 규칙 준수!
-  //    @Override
-  //    public void rule1("ProtocolImpl.rule1()") {
-  ClassOpt}
-//
+  static class ProtocolImpl implements ProtocolA, ProtocolB {
+    // ProtocolA 규칙 준수!
+    @Override
+    public void rule1() {
+      System.out.println("ProtocolImpl.rule1()");
+    }
 
-//    // ProtocolB 규칙 준수!
-//    @Override
-//    public void rule2() {}
+    // ProtocolB 규칙 준수!
+    @Override
+    public void rule2() {
+      System.out.println("ProtocolImpl.rule2()");
+    }
 
-//    @Override
-//    public void rule3() {}
-//  }
 
-public static void main(String[] args) {
-  ProtocolImpl obj;
-  obj = new ProtocolImpl();
-  obj.rule1();
-  obj.rule2();
-  obj,rule3();
+    // 인터페이스들에 같은 시그너처를 갖는 default 메서드가 여러 개 있을 경우,
+    // 어떤 메서드를 상속 받느냐에 따라 실행 결과가 달라지기 때문에 
+    // 다중 클래스 상속이 불가능 한 것처럼 
+    // 이 경우에도 다중 인터페이스 구현이 불가능 하다.
+    // 
+    // 그러나, 다음과 같이 클래스에서 default 메서드를 오버라이딩을 한다면,
+    // 어차피 인터페이스에서 구현한 default 메서드를 사용하지 않기 때문에 
+    // 이 경우에는 다중 구현이 가능한다.
+    // 
+    @Override
+    public void rule3() {
+      System.out.println("ProtocolImpl.rule3()");
+    } // 주석처리되면 오버라이딩하라고 에러가 뜬다. 
+  }
+
+  public static void main(String[] args) {
+    ProtocolImpl obj = new ProtocolImpl();
+    obj.rule1();
+    obj.rule2();
+    obj.rule3();
+  }
 }
-}
+
+
+
 
 
 
