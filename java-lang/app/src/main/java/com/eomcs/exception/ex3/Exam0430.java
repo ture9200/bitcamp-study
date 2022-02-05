@@ -25,7 +25,7 @@ public class Exam0430 {
     try {
       // try 블록에는 예외가 발생할 수 있는 코드를 둔다.
       m(0);
-      System.out.println("실행 성공!");
+      System.out.println("실행 성공!"); // m(4);
       // try 블록에 있는 코드를 실행하는 중에
       // 예외가 발생하면,
       // 그 예외 객체를 파라미터로 받을 수 있는

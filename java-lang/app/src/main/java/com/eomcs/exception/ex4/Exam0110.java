@@ -1,4 +1,5 @@
 // 예외 던지고 받기
+// 호출한다음에 다시 거꾸로 리턴된다. 
 package com.eomcs.exception.ex4;
 
 public class Exam0110 {

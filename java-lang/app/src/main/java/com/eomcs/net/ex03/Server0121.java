@@ -17,6 +17,7 @@ public class Server0121 {
 
       System.out.println("클라이언트의 연결을 기다리고 있음.");
 
+      // 서버에 접속한다. 
       try (Socket socket = serverSocket.accept();
           OutputStream out = socket.getOutputStream();
           InputStream in = socket.getInputStream()) {
@@ -33,7 +34,7 @@ public class Server0121 {
         }
 
         // 클라이언트에서 받은 바이트 개수 만큼 배열을 출력한다.
-        out.write(buf);
+        out.write(buf); //서버가 먼저 출력한다. 
         // out.flush();
         // byte stream 을 사용할 때는 바로 출력한다.
         // 따라서 flush()를 호출하지 않아도 된다.

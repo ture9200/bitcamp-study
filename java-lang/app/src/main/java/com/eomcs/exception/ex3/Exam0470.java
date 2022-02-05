@@ -7,6 +7,8 @@ import java.sql.SQLException;
 public class Exam0470 {
 
   static void m(int i) throws Exception, RuntimeException, SQLException, IOException {
+    // 이 Exception들은 throwable의 자식이다. 
+
     if (i == 0)
       throw new Exception();
     else if (i == 1)
@@ -24,7 +26,7 @@ public class Exam0470 {
       // try 블록에서 예외가 발생할 수 있는 메서드를 호출한다.
       m(-1);
 
-    } catch (Exception e) {
+    } catch (Exception e) { // Exception의 자식들은 여기서 다 받겠다.
       System.out.println("애플리케이션 예외 발생!");
 
     } catch (Error e) {
@@ -34,6 +36,7 @@ public class Exam0470 {
       // 필수적으로 수행해야 하는 마무리 작업만 수행하도록 하라.
       // 왜?
       // 시스템 예외는 당장 프로그램을 정상적으로 실행할 수 없는 상태일 때 발생한다.
+      // 시스템 예외는 예외가 발생하면 적절한 조치를 취해도 계속 실행하게 하지 말라는 의미다. 
       // 정상적인 복구가 안되는 예외이다.
       // 따라서 이 예외를 처리하려 해서는 안된다.
       // 시스템을 멈출 수 밖에 없다.

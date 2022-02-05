@@ -23,6 +23,7 @@ public class Exam0630 {
         //        String s = "Hello"; // 컴파일 오류!
 
         // 변수 선언만 올 수 있다.
+        // 일반문은 올 수 없다. 
         //                if (true) {} // 컴파일 오류!
 
         ) {

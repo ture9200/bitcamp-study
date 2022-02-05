@@ -4,6 +4,7 @@ package com.eomcs.exception.ex2;
 public class Exam0110 {
   public static void main(String[] args) {
     String op = "#";
+    //String op = "+";
     int a = 100;
     int b = 200;
 
@@ -17,9 +18,10 @@ public class Exam0110 {
     } catch (RuntimeException e) {
       // try 블록 안에서 메서드를 호출하다가 예외가 발생하면
       // catch 블록에서 파라미터로 받는다.
-      System.out.println(e.getMessage());
+      System.out.println(e.getMessage()); // 생성자에 담긴 예외정보를 꺼낼수있다. 
     }
   }
 }
 
-
+// 예외를 안던지면 try 블록만 실행하고 끝난다. 
+// 예외를 던지면 catch에서 받아야한다. 

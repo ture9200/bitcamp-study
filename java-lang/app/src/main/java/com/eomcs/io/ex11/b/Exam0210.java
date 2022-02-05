@@ -1,4 +1,6 @@
 // 인스턴스 입출력 - ObjectOutputStream으로 인스턴스 출력하기
+// ObjectOutputStream 데코레이터는 객체 인스턴스 주소를 주면 인스턴스 필드를 추출해서 출력
+
 package com.eomcs.io.ex11.b;
 
 import java.io.FileOutputStream;

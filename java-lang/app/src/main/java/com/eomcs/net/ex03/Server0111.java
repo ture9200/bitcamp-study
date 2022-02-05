@@ -1,4 +1,6 @@
 // 클라이언트와 입출력 테스트 - byte stream + try with resource 문법 사용
+// try with resource 문법은 자동으로 close하기때문에 finally사용 안해도 된다. 
+// 그게 Server0110.java와 차이점이다. 
 package com.eomcs.net.ex03;
 
 import java.io.InputStream;
@@ -12,11 +14,13 @@ public class Server0111 {
 
 
     try (Scanner keyboard = new Scanner(System.in);
-        ServerSocket serverSocket = new ServerSocket(8888)) {
+        // 변수선언이 아닌 일반 문장 올 수 없다. 오로지 Autocloseable 구현체에 대한 변수선언만 가능!
+        ServerSocket serverSocket = new ServerSocket(8888)) { 
+      // 세미콜론 붙여도 되고 안붙여도 된다. 
 
       System.out.println("클라이언트의 연결을 기다리고 있음.");
 
-      try (Socket socket = serverSocket.accept();
+      try (Socket socket = serverSocket.accept(); // 소켓 객체 생성 
 
           // 클라이언트와 데이터를 주고 받을 입출력 스트림 객체를 준비한다.
           // => 출력 스트림 객체를 준비하기

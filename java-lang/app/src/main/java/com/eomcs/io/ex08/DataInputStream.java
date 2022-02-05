@@ -13,10 +13,11 @@ public class DataInputStream {
 
   public String readUTF() throws Exception {
     // 생성자에서 받은 InputStream 객체의 read() 메서드를 사용하여 문자열  값을 읽어서 리턴한다.
-    int size = in.read();
-    byte[] bytes = new byte[size];
+    int size = in.read(); // 1바이트 읽어서 몇 개의 바이트를 읽어야하는지 확인 
+    //size = 문자열이 저장된 바이트 개수 
+    byte[] bytes = new byte[size]; // 바이트 개수만큼 배열을 만든다. 
     in.read(bytes); // 배열 개수 만큼 바이트를 읽어 배열에 저장한다.
-    return new String(bytes, "UTF-8");
+    return new String(bytes, "UTF-8"); // 바이트 배열에 있는 값을 string으로 만들어 리턴 
   }
 
   public int readInt() throws Exception {

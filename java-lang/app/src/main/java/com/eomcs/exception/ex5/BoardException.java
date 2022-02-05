@@ -1,6 +1,10 @@
 package com.eomcs.exception.ex5;
 
+//오류클래스를 상속받을때 
 public class BoardException extends RuntimeException {
+  // RunTimeException이 serializable을 구현하는데 구현하는 모든 클래스는 serialVersionUID 
+  // 작성 안해도 상관없지만 작성하는게 관리측면에서 좋다. 
+  private static final long serialVersionUID = 1L;
 
   public BoardException() {
     super();

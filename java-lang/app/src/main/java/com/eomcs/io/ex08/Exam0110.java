@@ -21,7 +21,7 @@ public class Exam0110 {
     long startTime = System.currentTimeMillis(); // 밀리초
 
     int callCount = 0;
-    while ((b = in2.read()) != -1)
+    while ((b = in2.read()) != -1) //BufferedInputStream보고 1바이트 읽으라고 요청하게되면
       callCount++; // 파일을 끝까지 읽는다.
 
     long endTime = System.currentTimeMillis();

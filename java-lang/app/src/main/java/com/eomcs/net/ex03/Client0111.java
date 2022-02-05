@@ -1,4 +1,6 @@
 // 서버와 입출력 테스트 - byte stream + try with resource 문법 사용
+// try with resource 문법은 자동으로 close하기때문에 finally사용 안해도 된다. 
+// 그게 Client0110.java와 차이점이다. 
 package com.eomcs.net.ex03;
 
 import java.io.InputStream;

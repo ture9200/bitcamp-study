@@ -1,4 +1,5 @@
 // 예외 처리 전
+// try with Resources 형식으로 씀 
 package com.eomcs.exception.ex5;
 
 import java.sql.Date;
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Exam0110 {
 
   static Board read() {
+    // RuntimeException의 자식이라 NumberformatException, IllegalArgumentException이라고 명시안해도 된다. 
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
 
@@ -27,7 +29,7 @@ public class Exam0110 {
   }
 
   public static void main(String[] args) {
-    Board board = read();
+    Board board = read(); // 번호, 제목, 내용, 등록일 입력받아서 그 객체를 생성하면 리턴
     System.out.println("---------------------");
     System.out.printf("번호: %d\n", board.getNo());
     System.out.printf("제목: %s\n", board.getTitle());

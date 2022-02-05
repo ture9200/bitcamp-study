@@ -16,6 +16,7 @@ public class Exam0320 {
 
     for (int i = 0; i < 1000000; i++) {
       member = new Member();
+      // 출력된 파일 형식에 맞춰서 파일을 읽어야한다. 
       member.name = in2.readUTF();
       member.age = in2.readInt();
       member.gender = in2.readBoolean();

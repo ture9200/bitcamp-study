@@ -17,7 +17,7 @@ public class Exam0310 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 1000000; i++) { //같은 종류를 백만번 출력 
       out2.writeUTF(member.name);
       out2.writeInt(member.age);
       out2.writeBoolean(member.gender);

@@ -15,11 +15,12 @@ public class Exam0231 {
 
   public static void main(String[] args) throws Exception {
 
-    Score obj = new Score();
+    Score obj = new Score(); // Score 객체 생성
 
-    System.out.println(obj instanceof Cloneable);
+    System.out.println(obj instanceof Cloneable); // Cloneable 인터페이스를 구현한 객체만이 클론 가능 
 
-    Score copy = obj.clone(); // 런타임(run-time) 오류!
+    Score copy = obj.clone(); // 런타임(run-time) 오류! 
+    // CloneNotSupportedException = 복제가 지원되지 않는 객체다. 
     // Object에서 상속 받은 clone()을 호출하려면
     // 해당 클래스에 대해 복제 기능을 활성화해야 한다.
     // 방법? java.lang.Cloneable 인터페이스를 구현하라!

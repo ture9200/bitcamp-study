@@ -15,15 +15,16 @@ public class Exam0210 {
     // - 문자열이나 자바 기본 타입의 데이터를 좀 더 쉽게 읽기
     // - FileOutputStream 객체에 타입에 맞춰 데이터를 읽는 기능을 덧붙인다.
     DataOutputStream out2 = new DataOutputStream(out1);
+    // out1 =  FileOutputStream 
 
     Member member = new Member();
     member.name = "AB가각간";
     member.age = 27;
     member.gender = true;
 
-    out2.writeUTF(member.name);
-    out2.writeInt(member.age);
-    out2.writeBoolean(member.gender);
+    out2.writeUTF(member.name); // FileOutputStream이 출력 
+    out2.writeInt(member.age); 
+    out2.writeBoolean(member.gender); 
 
     out2.close();
 

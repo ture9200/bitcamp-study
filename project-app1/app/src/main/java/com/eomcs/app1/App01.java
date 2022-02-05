@@ -2,7 +2,7 @@ package com.eomcs.app1;
 
 import java.util.Scanner;
 
-public class App {
+public class App01 {
   static Scanner keyScan = new Scanner(System.in);
 
   //  static {
@@ -23,7 +23,7 @@ public class App {
       if(command.getName().equals("quit") || command.getName().equals("exit") ) {
         break;
 
-      } else if(command.getName().equals("")) {
+      }else if(command.getName().equals("")) {
         continue;
 
       }else if (command.getName().equals("help")) {
@@ -34,6 +34,12 @@ public class App {
 
       }else if (command.getName().equals("minus")) {
         commandHandler.doMinus(command);
+
+      }else if (command.getName().equals("divide")) {
+        commandHandler.doDivide(command);
+
+        //      }else if (command.getName().equals("multiple")) {
+        //        commandHandler.doMultiple(command);
 
       }else {
         System.out.println("지원하지 않는 연산자입니다.");

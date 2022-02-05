@@ -18,21 +18,23 @@ public class Exam0120 {
   //    예외를 던진다는 것은 이해하지만,
   //    그 예외가 의미하는 바가 무엇인지 즉시 알아보기 힘들다는 얘기다.
   //
-  static Board read() throws RuntimeException {
+  static Board read() /*throws RuntimeException*/ { //RuntimeException 생략가능 안해도 됨
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
 
       System.out.print("번호> ");
       board.setNo(Integer.parseInt(keyScan.nextLine()));
+      // 발생할 수 있는 에러: NumberFormatException
 
       System.out.print("제목> ");
       board.setTitle(keyScan.nextLine());
 
       System.out.print("내용> ");
-      board.setContent(keyScan.nextLine());
+      board.setContent(keyScan.nextLine()); 
 
       System.out.print("등록일> ");
       board.setCreatedDate(Date.valueOf(keyScan.nextLine()));
+      // 발생할 수 있는 에러: IllegalArgumentException
 
       return board;
     }
@@ -48,6 +50,8 @@ public class Exam0120 {
       System.out.printf("등록일: %s\n", board.getCreatedDate());
 
     } catch (RuntimeException e) {
+      // NumberformatException , IllegalArgumentException 으로 에러를 받아도되지만 
+      // 둘다 RuntimeException의 자식이기때문에 이렇게 퉁쳐서 받을 수 있다. 
       System.out.println(e.getMessage());
       System.out.println("게시물 입력 중에 오류 발생!");
       // e.printStackTrace();

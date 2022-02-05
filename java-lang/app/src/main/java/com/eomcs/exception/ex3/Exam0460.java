@@ -1,4 +1,5 @@
 // 던지는 예외 받기 - 다형적 변수의 특징을 이용하여 여러 예외를 한 catch에서 받을 수 있다.
+// 세 개의 exception을 묶고 하나는 분리하고 싶을때 이렇게 사용
 package com.eomcs.exception.ex3;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class Exam0460 {
 
     } catch (RuntimeException | SQLException | IOException e) {
       // OR 연산자를 사용하여 여러 개의 예외를 묶어 받을 수 있다.
+      // || 이렇게 적으면 안된다. 그리고 변수는 맨끝에 하나만 둔다.
       //
     } catch (Exception e) {
 

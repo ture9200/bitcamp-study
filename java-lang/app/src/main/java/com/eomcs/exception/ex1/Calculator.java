@@ -16,6 +16,7 @@ public class Calculator {
       case "%":
         return a % b;
       default:
+        // 예외처리 문법이 없었을 때는 이렇게 처리 
         // 만약 유효한 연산자가 아닐 경우 계산 결과는?
         // => 보통 리턴 값으로 알린다.
         return -1;

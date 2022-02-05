@@ -10,7 +10,7 @@ public class Exam0220 {
     // ObjectInputStream
     // => DataInputStream의 기능을 포함한다.
     // => ObjectOutputStream.writeObject()로 출력한 바이트 배열을 읽어
-    //    인스턴스를 생성하는 기능이 있다.
+    //    인스턴스를 생성하는 기능이 있다. => readObject() 
     // => 단 java.io.Serializable 인터페이스를 구현한 클래스여야 한다.
     //    출력할 때 클래스 버전과 읽을 때 클래스의 버전이 같아야 한다.
     // => 인스턴스 필드를 생성한 후 직접 필드에 값을 저장한다.
@@ -21,6 +21,7 @@ public class Exam0220 {
     ObjectInputStream in = new ObjectInputStream(fileIn);
 
     // Serialize로 출력된 데이터를 읽어 다시 원래의 객체로 만들기
+    // 리턴한 값을 레퍼런스에 담으려면 형변환을 확실히 선언
     Member member = (Member) in.readObject();
 
     in.close();

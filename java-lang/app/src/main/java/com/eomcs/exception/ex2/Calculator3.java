@@ -13,6 +13,9 @@ public class Calculator3 {
       default:
         // 유효하지 않은 연산자인 경우 throw 명령을 이용하여 호출자에게 
         // 오류 상황을 알린다.
+        // RuntimeException = 실행중에 발생된 예외를 던질때 사용하는 클래스 
+        // RuntimeException이라는 상자에다가 예외정보를 담아서 던진다. 
+        // 적절한 상자를 사용하는게 중요! 
         throw new RuntimeException("해당 연산자를 지원하지 않습니다.");
     }
   }

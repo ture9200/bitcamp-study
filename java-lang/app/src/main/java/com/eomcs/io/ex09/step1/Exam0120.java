@@ -7,9 +7,12 @@ public class Exam0120 {
 
   public static void main(String[] args) throws Exception {
 
-    FileInputStream in0 = new FileInputStream("temp/members.data");
-    BufferedInputStream in1 = new BufferedInputStream(in0);
+    FileInputStream in0 = new FileInputStream("temp/members.data"); //FileInputStream + BufferedInputStream
+    BufferedInputStream in1 = new BufferedInputStream(in0); //BufferedInputStream + DataInputStream 
     DataInputStream in2 = new DataInputStream(in1);
+    // 가운데 주석처리하면 시간이 오래걸린다. 
+    // DataInputStream -> BufferedInputStream -> FileInputStream 에게 read() 명령 
+
 
     Member member = null;
 

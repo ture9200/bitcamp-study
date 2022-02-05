@@ -13,6 +13,7 @@ public class Client0110 {
     OutputStream out = null;
     InputStream in = null;
 
+    // 서버에 연결된것 
     try {
       keyScan = new Scanner(System.in);
       socket = new Socket("localhost", 8888);
@@ -28,7 +29,7 @@ public class Client0110 {
 
       // 서버에 데이터를 보내기 전에 잠깐 멈춤!
       System.out.print("데이터를 보내기 전에 잠깐!>");
-      keyScan.nextLine();
+      keyScan.nextLine(); // 엔터치기 
 
       // 서버에게 데이터 보내기
       // - 보통 클라이언트 쪽에서 먼저 서버로 데이터를 보낸다.
@@ -36,7 +37,7 @@ public class Client0110 {
       //   따라서 write() 호출 후 즉시 리턴될 것이다.
       // - 즉 상대편에서 읽을 때까지 기다리는 것이 아니다.
       // - 보낼 데이터를 랜카드의 메모리에 올려 놓으면 바로 리턴한다.
-      out.write(100);
+      out.write(100); // 서버에 100이라는 값을 출력 
       // out.flush();
       // byte stream 을 사용할 때는 바로 출력한다.
       // 따라서 flush()를 호출하지 않아도 된다.
@@ -44,7 +45,7 @@ public class Client0110 {
 
       // 서버의 응답을 받는다.
       // - 서버가 응답을 할 때까지 리턴하지 않는다.
-      // 즉 blocking 모드로 작동한다.
+      // 즉 blocking 모드로 작동한다. => 리턴하지못한 상태를 블로킹 상태라고 한다. 
       int response = in.read();
       System.out.println(response);
 
@@ -52,6 +53,8 @@ public class Client0110 {
       e.printStackTrace();
 
     } finally {
+      // 개발자가 직접 finally구문을 작성해야한다. 
+      // 소켓으로부터 입출력 스트림을 얻었기 때문에 소켓보다 입출력스트림을 먼저 닫아야한다. 
       try {out.close();} catch (Exception e) {}
       try {in.close();} catch (Exception e) {}
       try {socket.close();} catch (Exception e) {}

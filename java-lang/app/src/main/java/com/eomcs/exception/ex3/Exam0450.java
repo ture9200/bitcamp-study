@@ -1,4 +1,5 @@
 // 던지는 예외 받기 - 다형적 변수의 특징을 이용하여 여러 예외를 한 catch에서 받을 수 있다.
+//묶어서 퉁 처리하고 싶으면 이렇게 사용 
 package com.eomcs.exception.ex3;
 
 import java.io.IOException;

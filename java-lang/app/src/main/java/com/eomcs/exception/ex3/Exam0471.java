@@ -24,7 +24,7 @@ public class Exam0471 {
       // try 블록에서 예외가 발생할 수 있는 메서드를 호출한다.
       m(-1);
 
-    } catch (Throwable e) {
+    } catch (Throwable e) {  
       System.out.println("애플리케이션 예외 발생!");
       // catch 문을 작성할 때
       // 이처럼 무심코 Throwable 변수로 선언하면
@@ -33,6 +33,7 @@ public class Exam0471 {
       // 시스템 오류는 애플리케이션에서 처리할 수 없다.
       // 따라서 실무에서는 예외를 받을 때
       // Throwable 변수를 사용하지 않는다.
+      // Exception 변수를 사용 추천
     }
   }
 

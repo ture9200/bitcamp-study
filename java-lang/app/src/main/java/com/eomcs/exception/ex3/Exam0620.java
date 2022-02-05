@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Exam0620 {
 
   public static void main(String[] args) {
-    Scanner keyScan = null;
+    Scanner keyScan = null; //바깥에 선언해야 keyScan에 접근이 가능하다. 
     try {
       keyScan = new Scanner(System.in);
 
@@ -17,7 +17,7 @@ public class Exam0620 {
     } finally {
       // 이렇게 정상적으로 실행되든 예외가 발생하든 상관없이
       // 자원해제 같은 일은 반드시 실행해야 한다.
-      keyScan.close();
+      keyScan.close();  
       System.out.println("스캐너 자원 해제!");
     }
   }

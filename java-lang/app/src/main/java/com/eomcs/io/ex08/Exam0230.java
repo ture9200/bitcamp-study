@@ -14,17 +14,18 @@ public class Exam0230 {
 
     // 문자열, int, long, boolean 값을 읽는 것은 DataInputStream 에 맡긴다.
     // =>ByteArrayInputStream에  DataInputStream 기능을 덧붙인다.
+    // => in1 자리에 ByteArrayInputStream이 있다. 
     DataInputStream in2 = new DataInputStream(in1);
 
     Member member = new Member();
 
-    member.name = in2.readUTF();
-    member.age = in2.readInt();
-    member.gender = in2.readBoolean();
+    member.name = in2.readUTF(); //문자열 읽어 
+    member.age = in2.readInt();  // int값읽어 
+    member.gender = in2.readBoolean(); //Boolean 값 읽어 
 
     in2.close();
 
-    System.out.println(member);
+    System.out.println(member); 
 
     // DataInputStream 은 실제 데이터가 저장된 장소로부터 데이터를 읽는 일을 하지 않는다.
     // 단지 읽어 온 데이터를 중간에서 가공 처리하여 리턴하는 일을 한다.

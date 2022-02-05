@@ -11,9 +11,9 @@ public class Exam0610 {
 
     // 스캐너 객체를 사용하여 키보드 입력을 읽어들인다.
     // => 예외가 발생한다면?
-    System.out.print("입력> ");
-    int value = keyScan.nextInt();
-    System.out.println(value * value);
+    System.out.print("입력> "); 
+    int value = keyScan.nextInt(); // 정수값을 받아서 
+    System.out.println(value * value); // 제곱 
 
     // 프로그램을 즉시 종료한다면,
     // 스캐너를 다 사용하고 난 다음에 굳이 스캐너에 연결된 키보드와 연결을 끊을 필요는 없다.

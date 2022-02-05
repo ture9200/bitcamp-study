@@ -29,11 +29,13 @@ public class Exam0210 {
 
   // 오류를 던진다면 반드시 메서드 선언부에 어떤 오류를 던지는지 선언해야 한다.
   // => 메서드 호출자에게 알려주는 것이다.
-  static void m1() throws Throwable {
+  static void m1() throws Throwable { // throws Throwable 주석처리하면 에러뜬다. 
     throw new Throwable(); // OK!
     // 예외를 던질 때 Throwable 클래스를 직접 사용하지 말라!
     // 그 하위 클래스를 사용하라.
     // 특히 애플리케이션 오류를 의미하는 Exception 클래스를 사용하라.
+    // Error 계열의 클래스 사용하지 말라! 
+    // RuntimeException을 던질때는 위에 throws RuntimeException이라고 굳이 선언안해도 된다. 
   }
 
   // 여러 개의 오류를 던지는 경우 메서드 선언부에 그대로 나열하라.

@@ -5,20 +5,21 @@ import java.io.OutputStream;
 
 public class DataOutputStream {
 
-  OutputStream out;
+  OutputStream out;  //FileOutputStream, ByteArrayOutputStream 포함된다. 
 
   public DataOutputStream(OutputStream out) throws Exception {
     this.out = out;
   }
 
-  public void write(int b) throws IOException {
+  public void write(int b) throws IOException { //int값줄테니 출력해 
     out.write(b);
   }
 
-  public void writeUTF(String str) throws Exception {
-    byte[] bytes = str.getBytes("UTF-8");
-    out.write(bytes.length);
-    out.write(bytes);
+  public void writeUTF(String str) throws Exception { //String 줄테니 출력해 
+    byte[] bytes = str.getBytes("UTF-8"); //String에서 바이트배열 뽑아내서 
+    out.write(bytes.length); //바이트 배열 개수 출력 
+    out.write(bytes); //바이트 배열 출력 
+    // 직접 출력하는게 아니라 생성자에 받아놓은 OutputStream 에게 위임한다. 
   }
 
   public void writeInt(int value) throws Exception {
