@@ -20,9 +20,10 @@ public class Receiver5 {
     System.out.println("클라이언트가 연결됨.");
 
     PrintStream out = new PrintStream(
-        new BufferedOutputStream(socket.getOutputStream()));
+        new BufferedOutputStream(socket.getOutputStream())); // BufferedOutputStream이라는 데코레이터 연결 
     DataInputStream in = new DataInputStream(
         new BufferedInputStream(socket.getInputStream()));
+    //클라이언트에서 보낸 데이터를 읽기위해서 dataInputStream을 연결하기전에 BufferedInputStream이라는 데코레이터 연결 
 
     System.out.println("클라이언트로부터 데이터 수신 중...");
 

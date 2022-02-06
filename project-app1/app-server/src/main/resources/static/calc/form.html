@@ -11,7 +11,7 @@
 <form>
 <input id="x-a" type="text">
 <select id="x-op">
-  <option value="">연산자 선택</option>
+  <option value = "">연산자 선택</option>
   <option>+</option>
   <option>-</option>
   <option>*</option>
@@ -26,28 +26,35 @@
   var xA = document.querySelector("#x-a");
   var xB = document.querySelector("#x-b");
   var xOp = document.querySelector("#x-op");
-  var xResult = document.querySelector("#x-result");
-
+  var xResult = document.querySelector("#x-result"); //미리 아이디 태그를 찾아두자 
   document.querySelector("#x-do-btn").onclick = function() {
     if (xA.value == "" || xB.value == "") {
       window.alert("값을 입력하세요.");
       return;
+      //x-do 버튼을 클릭하면 xA 항목이나 xB항목 비어있는경우 경고창 뜬다. 
     }
-
+    //console.log(xOp.value);  + - * /
     if (xOp.value == "") {
       window.alert("연산자를 선택하세요.");
       return;
+      //xOp 입력값이 비어있는 경우 연산자 선택하세요 창을 뜨게한다. 
     }
-    
+    // 그 밖에는 서버에 요청을 보낸다. 
+    // 메서드를 호출해서 연산자를 그냥 보내지 말고 URLEncoding 해서 보내야한다. 
+    // 자바스크립트에서 인코딩하는 방법은 기존의 URI 명령어를 피하면서 명령어를 문자로써 보내고 싶으면
+    // URLEncoding으로 가공해서 보내야하는데 가공할때는 encodeURIComponent 메서드를 사용한다. 
+    // 기존의 URL 규칙에서 사용되는 문자는 자동으로 인코딩한다. 
+    // 기존 URL 과 충돌이 일어나지 않는 문자열은 그대로 리턴하고, 
+    // 기존 URL과 충돌이 일어나는 문자열은 URLEncoding 한 값을 리턴한다. 
     fetch(`/calc?op=${encodeURIComponent(xOp.value)}&a=${xA.value}&b=${xB.value}`)
       .then(function(response) {
         return response.text();
       })
+      //서버에서 보낸 값을 xResult.value로 받는다. 
       .then(function(text) {
         xResult.value = text;
       });
   };
 </script>
-
 </body>
 </html>

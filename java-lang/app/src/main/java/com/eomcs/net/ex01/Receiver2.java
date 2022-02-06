@@ -11,11 +11,12 @@ public class Receiver2 {
   public static void main(String[] args) throws Exception {
     System.out.println("서버 실행!");
 
-    Scanner keyScan = new Scanner(System.in);
+    Scanner keyScan = new Scanner(System.in); // 키보드 준비     
 
-    ServerSocket serverSocket = new ServerSocket(8888);
-    Socket socket = serverSocket.accept();
+    ServerSocket serverSocket = new ServerSocket(8888); //소켓준비 
+    Socket socket = serverSocket.accept(); //클라이언트 연결 대기 
 
+    // 입출력 스트림 준비 
     PrintStream out = new PrintStream(socket.getOutputStream());
     Scanner in = new Scanner(socket.getInputStream());
 

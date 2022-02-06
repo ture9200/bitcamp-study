@@ -13,7 +13,7 @@ public class Client0211 {
     int count = 0;
     while (true) {
       try {
-        Socket socket = new Socket("localhost", 8888);
+        Socket socket = new Socket("localhost", 8888); // 반복문을 돌면서 소켓 생성 
         System.out.printf("서버에 연결됨! - %d\n", ++count);
         // 서버의 대기열에 접속 순서대로 대기한다.
         // 서버에서 연결이 승인되면, 비로서 입출력을 할 수 있다.
@@ -22,7 +22,7 @@ public class Client0211 {
         keyScan.nextLine();
         // 대기열의 크기에 따라 연결되는 클라이언트 수의 제한을 확인하기 위해
         // 반복해서 서버와 연결한다.
-      } catch (Exception e) {
+      } catch (Exception e) { // 예외가 발생하면 반복문을 나간다. 
         e.printStackTrace();
         break;
       }
