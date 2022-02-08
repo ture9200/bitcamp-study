@@ -15,15 +15,15 @@ public class Server0120 {
 
       System.out.println("서버 실행!");
 
-      while (true) {
+      while (true) { //무한루프 돈다. 
         // 한 클라이언트와 대화가 끝다면 다음 클라이언트와 대화를 한다.
-        try (Socket socket = serverSocket.accept();
+        try (Socket socket = serverSocket.accept(); //대기열에서 클라이언트 한명 가져온다. 
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter out = new PrintWriter(socket.getOutputStream())) {
 
           System.out.println("클라이언트가 연결되었음!");
 
-          while (true) {
+          while (true) { // 클라이언트와 대화를 계속 주고받는다. quit하기전까지 계속 
             String name = in.readLine();
             if (name.equalsIgnoreCase("quit")) {
               out.println("Goodbye!");

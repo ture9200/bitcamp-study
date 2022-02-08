@@ -18,9 +18,9 @@ public class CalcClient {
       out.writeUTF(keyScan.nextLine());
 
       System.out.print("값1? ");
-      out.writeInt(Integer.parseInt(keyScan.nextLine()));
+      out.writeInt(Integer.parseInt(keyScan.nextLine())); //integer값을 출력 
 
-      String str = in.nextLine();
+      String str = in.nextLine(); 
       System.out.println(str);
 
       if (str.equals("quit"))

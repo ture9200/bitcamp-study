@@ -15,9 +15,13 @@ public class Server0150 {
 
       try (Socket socket = serverSocket.accept();
           Scanner in = new Scanner(socket.getInputStream());
+          // scanner는 한 줄의 문자열을 읽어들일 수 있는 메서드가 있다. 
+          // 데코레이터는 아니지만 데코레이터 역할을 한다. 
           PrintStream out = new PrintStream(socket.getOutputStream())) {
+        //프린트 스트림에는 한 줄의 문자열을 쉽게 출력할 수 있는 메서드가 있다. 
 
         System.out.println("클라이언트가 보낸 한 줄의 문자열을 기다리고 있음!");
+
 
         String str = in.nextLine();
         System.out.println(str);

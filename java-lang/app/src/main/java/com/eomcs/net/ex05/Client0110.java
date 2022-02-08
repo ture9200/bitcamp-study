@@ -10,9 +10,11 @@ public class Client0110 {
     Socket socket = new Socket("localhost", 8888);
     System.out.println("서버에 연결됨!");
 
-    Scanner in = new Scanner(socket.getInputStream());
+
+    Scanner in = new Scanner(socket.getInputStream()); // 서버에 연결 
     PrintStream out = new PrintStream(socket.getOutputStream());
 
+    // 연결이 이루어진 후 데이터 입출력을 할 수 있다. 
     out.println("Hello!");
     System.out.println("데이터 보냄!");
 

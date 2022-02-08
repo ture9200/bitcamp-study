@@ -8,7 +8,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ChatServer {
-
+  // 번호 한글 안먹힘
+  // 클로즈 버튼을 눌렀을 때 프로그램을 종료하는 코드를 집어넣어야한다. 
+  // 이벤트 리스너를 등록해야한다. 
   // 연결된 클라이언트의 출력 스트림을 보관하는 목록
   ArrayList<PrintStream> outputStreams = new ArrayList<>();
 

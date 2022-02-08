@@ -31,7 +31,7 @@ public class Client0130 {
       } while (!name.equalsIgnoreCase("quit") && !name.equalsIgnoreCase("stop"));
 
     } catch (Exception e) {
-      e.printStackTrace();
+      e.printStackTrace(); //에러 메세지의 발생 근원지를 찾아 단계별로 에러 출력
     }
 
     keyScan.close();

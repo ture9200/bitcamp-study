@@ -1,4 +1,6 @@
 // stateful 방식의 이점 활용 - 계산기 서버 만들기
+// 네이버하고 다음 웹의 서비스 업체들이 우리 클라이언트를 구분하는 방법 
+// 웹 브라우저와 웹 서버 사이에 http프로토콜로 통신하는데 stateless방식 사용 
 package com.eomcs.net.ex04.stateful2;
 
 import java.io.DataInputStream;

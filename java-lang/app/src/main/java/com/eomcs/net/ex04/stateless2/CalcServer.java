@@ -33,7 +33,10 @@ public class CalcServer {
   }
 
   static void processRequest(Socket socket) throws Exception {
+    // 클라이언트와 연결되는 순간 
     try (Socket socket2 = socket;
+        
+        //입출력 스트림 준비 
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());) {
 
@@ -48,9 +51,9 @@ public class CalcServer {
 
       // 클라이언트를 위한 기존 값 꺼내기
       Integer obj = resultMap.get(clientId);
-      int result = 0;
+      int result = 0; // 작업결과를 담을 변수 result 선언 
 
-      if (obj != null) {
+      if (obj != null) { // 만약 obj가 null이 아니면 
         System.out.printf("%d 기존 고객 요청 처리!\n", clientId);
         result = obj; // auto-unboxing
       } else {
@@ -58,14 +61,14 @@ public class CalcServer {
         // 한 번도 서버에 접속한 적이 없다는 의미다. 
         // 따라서 새 클라이언트 아이디를 발급한다.
         // => 예제를 간단히 하기 위해 현재 실행 시점의 밀리초를 사용한다.
-        clientId = System.currentTimeMillis();
+        clientId = System.currentTimeMillis(); //현재 시점에 접속한 클라이언트 ID 사용 
         System.out.printf("%d 신규 고객 요청 처리!\n", clientId);
       }
 
       String message = null;
-      switch (op) {
+      switch (op) { // 결과를 출력할 메세지 변수를 준비 
         case "+":
-          result += value;
+          result += value; // 기본값은 0 이라서 0에다 입력값을 더하게 된다. 
           break;
         case "-":
           result -= value;
@@ -74,6 +77,7 @@ public class CalcServer {
           result *= value;
           break;
         case "/":
+          Thread.sleep(10000); //10초 지체 
           result /= value;
           break;
         default:
@@ -91,8 +95,8 @@ public class CalcServer {
       if (message == null) {
         message = String.format("계산 결과: %d", result);
       }
-      out.writeUTF(message);
-      out.flush();
+      out.writeUTF(message); // 응답메세지를 보낸다. 
+      out.flush(); //방출해서 나감. 
 
     }
   }

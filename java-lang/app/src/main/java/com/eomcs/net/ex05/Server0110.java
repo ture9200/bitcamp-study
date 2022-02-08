@@ -7,9 +7,10 @@ import java.net.Socket;
 import java.util.Scanner;
 
 // 연결지향(connection oriented)
-// => 연결 후에 데이터를 송수신 하기 때문에 데이터 송수신에 대한 신뢰를 보장한다.
+// => 연결 후에 데이터를 송수신 하기 때문에 데이터 송수신에 대한 신뢰를 보장한다. = TCP통신
 // => TCP 통신 방법이 전형적인 예이다.
-//    예) FTP, Telnet, SMTP, POP3, HTTP 등 
+//    예) FTP, Telnet, SMTP, POP3, HTTP(stateless) 등 
+//        FTP, Telnet, SMTP => stateful방식 
 // 
 public class Server0110 {
   public static void main(String[] args) throws Exception {
@@ -21,10 +22,10 @@ public class Server0110 {
     System.out.println("엔터를 치면 대기열에서 기다리고 있는 클라이언트의 소캣을 생성한다.>");
     keyboardScanner.nextLine();
 
-    Socket socket = ss.accept();
+    Socket socket = ss.accept(); // 대기열에 등록된 클라이언트 중 먼저 하나 꺼내고 
     System.out.println("클라이언트와 통신할 소캣을 준비하였다!");
 
-    Scanner in = new Scanner(socket.getInputStream());
+    Scanner in = new Scanner(socket.getInputStream()); // 입출력 스트림 준비 
     PrintStream out = new PrintStream(socket.getOutputStream());
 
     String str = in.nextLine();

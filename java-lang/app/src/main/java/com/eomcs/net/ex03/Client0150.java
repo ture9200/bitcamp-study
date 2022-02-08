@@ -12,6 +12,8 @@ public class Client0150 {
         Socket socket = new Socket("localhost", 8888);
         PrintStream out = new PrintStream(socket.getOutputStream());
         Scanner in = new Scanner(socket.getInputStream())) {
+      //OutputStream / InputStream으로 끝나는 게 byte stream
+      //Writer / Reader로 끝나는 게 character stream
 
       System.out.println("서버와 연결되었음!");
 
@@ -19,6 +21,8 @@ public class Client0150 {
       System.out.print(">");
       keyScan.nextLine();
 
+      // 이렇게 한줄을 보낸다. 
+      // 엔터(0D 0A)를 포함해서 보낸다
       out.println("ABC가각간");
       // out.flush();
       // byte stream 을 사용할 때는 바로 출력한다.

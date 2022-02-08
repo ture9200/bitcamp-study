@@ -15,6 +15,9 @@ public class Server0140 {
       System.out.println("클라이언트의 연결을 기다리고 있음.");
 
       try (Socket socket = serverSocket.accept();
+          // 연결된 클라이언트와 대화를 나누기 위해서 한개를 꺼내는게 accept
+          // 소켓으로부터 입출력을 하기 위한 입출력스트림을 준비 
+          // close가 자동으로 이루어진다. 
           DataOutputStream out = new DataOutputStream(socket.getOutputStream());
           DataInputStream in = new DataInputStream(socket.getInputStream())) {
 
@@ -24,7 +27,7 @@ public class Server0140 {
         byte value2 = in.readByte();
         float value3 = in.readFloat();
         String value4 = in.readUTF();
-        System.out.printf("%d, %d, %f, %s\n", value, value2, value3, value4);
+        System.out.printf("%d, %d, %f, %s\n", value, value2, value3, value4);// 다 읽으면 출력 
 
 
         System.out.println("데이터를 보내기 전에 잠깐!");
@@ -38,6 +41,8 @@ public class Server0140 {
         // out.flush();
         // byte stream 을 사용할 때는 바로 출력한다.
         // 따라서 flush()를 호출하지 않아도 된다.
+        // character stream은 flush()를 하지 않으면 안 된다
+        // 권장되는건 그래도 out.flush 사용 추천 
         System.out.println("클라인트에게 데이터를 보냈음.");
 
       }

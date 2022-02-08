@@ -26,10 +26,11 @@ public class Server0130 {
           while (true) {
             String name = in.readLine();
             if (name.equalsIgnoreCase("quit")) { // 클라이언트와 연결 끊기
+              // 현재 반복문은 나가기때문에 바깥 반복문은 계속 실행 
               out.println("Goodbye!");
               out.flush();
               break;
-            } else if (name.equalsIgnoreCase("stop")) { // 서버 종료하기
+            } else if (name.equalsIgnoreCase("stop")) { // 서버 종료하기, 바깥 반복문을 나감 
               out.println("Goodbye!");
               out.flush();
               break loop;

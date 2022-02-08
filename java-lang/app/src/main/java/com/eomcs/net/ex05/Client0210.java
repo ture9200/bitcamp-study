@@ -15,7 +15,7 @@ public class Client0210 {
   public static void main(String[] args) throws Exception {
     // connectionless 방식으로 통신을 수행할 소켓 생성
     // - 클라이언트 쪽은 포트 번호를 지정하지 않는다.
-    // - 물론 OS가 자동으로 부여할 것이다.
+    // - 물론 OS가 자동으로 부여할 것이다. =stateful이나 stateless 상관없다. 
     DatagramSocket socket = new DatagramSocket();
 
     // 데이터를 받을 상대편 주소와 포트 번호
@@ -25,6 +25,7 @@ public class Client0210 {
     // 보낼 데이터를 바이트 배열로 준비
     // String message = new String("Hello"); // Heap에 String 객체 생성
     // String message = "Hello"; // constant pool에 String 객체 생성
+    // byte[] bytes= message.getBytes("UTF-8");
     byte[] bytes = "Hello".getBytes("UTF-8");
 
     // 보낼 데이터를 패킷에 담는다.
@@ -32,7 +33,7 @@ public class Client0210 {
     DatagramPacket packet = new DatagramPacket(
         bytes, // 데이터가 저장된 바이트 배열
         bytes.length, // 전송할 데이터 개수
-        InetAddress.getByName(receiver), // 데이터를 받을 상대편 주소
+        InetAddress.getByName("localhost"), // 데이터를 받을 상대편 주소
         port // 포트번호
         );
 

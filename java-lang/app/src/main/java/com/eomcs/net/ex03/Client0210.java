@@ -13,7 +13,9 @@ public class Client0210 {
 
     try (Socket socket = new Socket("localhost", 8888);
         PrintWriter out = new PrintWriter(socket.getOutputStream());
+        // PrintWriter는 printStream처럼 out.println 이라는 메서드가 있다. 
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+      // bufferedReader에는 한 줄을 읽어들이는 in.readLine 이라는 메서드가 있다. 
 
       System.out.println("서버와 연결되었음!");
 
@@ -28,6 +30,8 @@ public class Client0210 {
       // 버퍼가 꽉차거나 flush()를 호출할 때 출력을 수행한다.
       // 따라서 위 출력 문자열은 서버에 보내지 않는다.
       // - BufferedWriter를 붙이지 않아도 이렇게 동작하기 때문에 주의하라!
+      // byte stream이든 character stream이든 무조건 flush() 호출하라!
+      // flush()는 출력에 관계된 것 
       System.out.println("서버에 데이터를 보냈음!");
 
       String str = in.readLine();
