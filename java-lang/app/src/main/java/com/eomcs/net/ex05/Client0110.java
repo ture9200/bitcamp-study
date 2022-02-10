@@ -7,18 +7,17 @@ import java.util.Scanner;
 
 public class Client0110 {
   public static void main(String[] args) throws Exception {
-    Socket socket = new Socket("localhost", 8888);
+    Socket socket = new Socket("localhost", 8888); // 서벼와 연결 후 소켓 생성 
     System.out.println("서버에 연결됨!");
 
-
-    Scanner in = new Scanner(socket.getInputStream()); // 서버에 연결 
+    //연결이 이루어진 후 데이터 입출력을 할 수 있다. 
+    Scanner in = new Scanner(socket.getInputStream()); 
     PrintStream out = new PrintStream(socket.getOutputStream());
 
-    // 연결이 이루어진 후 데이터 입출력을 할 수 있다. 
     out.println("Hello!");
     System.out.println("데이터 보냄!");
 
-    String str = in.nextLine();
+    String str = in.nextLine(); //서버에서 보낸걸 읽는다. 
     System.out.println("데이터 받음!");
     System.out.println(str);
 

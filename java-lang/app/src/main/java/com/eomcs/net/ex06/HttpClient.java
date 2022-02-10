@@ -28,13 +28,13 @@ public class HttpClient {
     // 
     out.print("GET /AllKill/AllDay.aspx?SelectedItemno=C266641719 HTTP/1.1\r\n");
     out.print("Host: corners.auction.co.kr\r\n");
-    out.print("\r\n");
+    out.print("\r\n"); // 이 빈 줄을 보내면 요청이 끝 
     out.flush();
 
     // HTTP 응답 프로토콜에 따라 서버가 보낸 데이터를 수신
     while (true) {
       try {
-        System.out.println(in.nextLine());
+        System.out.println(in.nextLine()); // 서버에서 응답한 한줄씩 출력 
       } catch (Exception e) {
         break;
       }

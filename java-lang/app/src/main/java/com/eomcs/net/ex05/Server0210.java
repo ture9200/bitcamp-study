@@ -27,7 +27,7 @@ public class Server0210 {
     // => 받는 쪽에서는 소켓을 생성할 때 포트번호를 설정한다.
     DatagramSocket socket = new DatagramSocket(8888);
 
-    // 받은 데이터를 저장할 버퍼 준비
+    // 받은 데이터를 저장할 버퍼 바이트배열로 준비
     byte[] buf = new byte[8196];
 
     // 빈 패킷 준비

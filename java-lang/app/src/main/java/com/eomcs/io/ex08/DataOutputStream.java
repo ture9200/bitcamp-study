@@ -50,6 +50,11 @@ public class DataOutputStream {
   public void close() throws IOException {
     out.close();
   }
+
+//  public void flush() {
+//    // TODO Auto-generated method stub
+//    out.flush();
+//  }
 }
 
 

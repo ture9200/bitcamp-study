@@ -19,26 +19,27 @@ public class HttpServer {
     System.out.println("서버 실행!");
 
     while (true) {
-      Socket socket = ss.accept();
+      Socket socket = ss.accept(); //클라이언트가 접속하면 즉시 승인하고 
       Scanner in = new Scanner(socket.getInputStream());
       PrintStream out = new PrintStream(socket.getOutputStream());
 
       // 클라이언트가 보낸 데이터를 HTTP 요청 프로토콜에 맞춰 읽는다.
       while (true) {
-        String str = in.nextLine(); // 첫번째 라인을 읽는다. 
+        String str = in.nextLine(); // 첫번째 라인을 읽는다. 빈 줄을 보낼때까지 한줄씩 읽는다. 
         System.out.println(str);
-        if (str.equals(""))
-          break;
+        if (str.equals("")) // 요청의 끝, 빈 줄을 보내면 
+          break; // 반복문을 나간다. 
       }
 
       // HTTP 응답 프로토콜에 따라 클라이언트에게 데이터를 보낸다.
       // => macOS에서 JVM을 실행할 때, println()은 문자열 뒤에 0a(LF) 코드만 붙인다.
       // => 이를 해결하려면, 다음과 같이 명확하게 CRLF 코드를 붙여라.
-      //
-      out.print("HTTP/1.1 200 OK\r\n");
-      out.print("Content-Type: text/html; charset=UTF-8\r\n");
-      out.print("\r\n");
-      out.print("<html><body><h1>안녕!-강사</h1></body></html>\r\n");
+      // 구글에 httpSpecification 검색 
+      
+      out.print("HTTP/1.1 200 OK\r\n"); //status line 
+      out.print("Content-Type: text/html; charset=UTF-8\r\n"); // entity header 
+      out.print("\r\n"); // 빈 줄 
+      out.print("<html><body><h1>안녕!-강사</h1></body></html>\r\n"); //클라이언트에게 보낸 데이터 
 
       out.close();
       in.close();

@@ -13,14 +13,16 @@ public class Exam0110 {
     // HTTP 요청을 수행할 수 있다.
     // 특히 HTTPS까지도 처리할 수 있다.
 
-    // => URL 주소를 검증하고 준비한다.
+    // => URL 주소를 검증하고 준비한다. URL객체 지정 
     URL url = new URL("https://www.weather.go.kr/w/index.do");
 
     // => 서버와 연결하고 HTTP 요청을 수행한다.
-    // => 그런 후에 웹서버의 응답 데이터를 읽어들일 도구를 준비한다.
-    InputStream in = url.openStream();
+    // => 그런 후에 웹서버의 응답 데이터를 읽어들일 도구(InputStream)를 준비한다.
+    InputStream in = url.openStream(); //openStream하는순간 연결 
 
-    // => 서버가 보낸 데이터를 한 줄씩 읽기 위해 데코레이터를 붙인다.
+    // => 서버가 보낸 데이터를 한 줄씩 읽기 위해 데코레이터(BufferedReader)를 붙인다.
+    // BufferedReader에는 in.readLine(); 이라는 메서드가 있다. 이 메서드를 통해 한 줄씩 읽는다. 
+    // 서버가 웹브라우저에게 주고자한 데이터만 콘솔에 뿌린다. 리턴한다.  
     BufferedReader in2 = new BufferedReader(new InputStreamReader(in));
 
     while (true) {
