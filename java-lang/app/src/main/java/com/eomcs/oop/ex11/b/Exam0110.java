@@ -11,6 +11,7 @@ public class Exam0110 {
 
   public static void main(String[] args) {
     // 레퍼런스 선언
+    // 소스 코드를 쉽게 관리하기 위해 
     A.X obj;
 
     // 인스턴스 생성

@@ -9,7 +9,9 @@ public class Exam0311 {
     //    protected class A2 {} // 컴파일 오류!
     //    public class A3 {} // 컴파일 오류!
 
-    class A4 {} // OK!
+    class A4 {} // OK! 
+    // 로컬클래스이기 때문에 접근제어자 public 을 붙일 수 없다. 
+    // 내부에서만 쓰이기 때문에  
   }
 
   void m2() {

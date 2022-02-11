@@ -5,10 +5,11 @@ class X {} // Top Level Class
 
 class A {
 
-  class X { // inner class
+  class X { // inner class = non-static class 
     // 컴파일러는 inner 클래스를 컴파일 할 때 다음과 같이 
     // - 바깥 클래스의 인스턴스 주소를 저장할 필드를 추가하고,
-    // - 바깥 인스턴스의 주소를 받는 파라미터로 받는 생성자를 만든다.
+    // - 바깥 클래스의 인스턴스의 주소를 파라미터로 받는 생성자를 만든다.
+    // 중첩클래스는 기본으로 static 을 붙여야한다. 그다음에 붙일지 말지를 고민해야한다. 
     //
     //    A outer;
     //    public X(A obj) {

@@ -1,6 +1,10 @@
 // static nested class : 선언할 수 있는 멤버
 package com.eomcs.oop.ex11.b;
 
+//import com.eomcs.oop.ex11.b.A.X; 
+// 중첩클래스까지 임포트 
+// 마치 top레벨 클래스인냥 사용
+
 class A2 {
 
   static class X {
