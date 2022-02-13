@@ -6,7 +6,7 @@ public class Exam0210 {
   interface A {
     void print();
   }
-
+  
   public static void main(final String[] args) {
 
     A obj = new A() {

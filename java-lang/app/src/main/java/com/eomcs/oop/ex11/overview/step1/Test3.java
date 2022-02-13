@@ -13,6 +13,6 @@ public class Test3 {
     while (myQueue.size() > 0) {
       System.out.println(myQueue.poll());
     }
-    System.out.println(myQueue.size());
+    System.out.println(myQueue.size()); // 0
   }
 }

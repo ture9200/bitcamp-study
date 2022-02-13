@@ -17,15 +17,15 @@ public class ChatClient extends Frame {
   // run configuration > chatClient의 arguments> -Dfile.encoding = MS949 
   
   public ChatClient() {
-    super("채팅");
-    addWindowListener(new WindowAdapter() {
+    super("채팅"); // 수퍼클래스의 기본 생성자를 호출, 수퍼클래스의 채팅을 받는 생성자를 호출 
+    addWindowListener(new WindowAdapter() { // 앞에 this 생략 
       @Override
       public void windowClosing(WindowEvent e) {
         //윈도우의 x버튼을 눌렀을 때 
         System.exit(0); //정상적으로 종료할 때 0 
       }  
   });
-    setSize(500,400); // chatclient의 창 사이즈 , 실무에서는 this 생략 
+    setSize(500,400); // chatclient의 창 사이즈 , 실무에서는 this 생략, 너비 높이 지정
     
     Panel topPanel =new Panel(); 
     topPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); //기본 레이아웃 관리자를 교체 , 왼쪽 정렬 
@@ -52,7 +52,7 @@ public class ChatClient extends Frame {
     bottomPanel.add(sendBtn);
     add(bottomPanel,BorderLayout.SOUTH);
     
-    setVisible(true);   
+    setVisible(true);   // 윈도우가 생긴다. this 생략 
   }
   
   public static void main(String[] args) {

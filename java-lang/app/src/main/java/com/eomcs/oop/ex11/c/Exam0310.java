@@ -8,7 +8,7 @@ class C {
     //
     X obj; // 레퍼런스 선언은 가능!
 
-    //    obj = new X(); // 컴파일 오류! 인스턴스 생성 불가능!
+        obj = new X(); // 컴파일 오류! 인스턴스 생성 불가능!
 
     // 이유?
     // - 인스턴스 멤버를 사용하려면 인스턴스 주소가 있어야 한다.
@@ -37,7 +37,7 @@ public class Exam0310 {
   public static void main(String[] args) {
     C.m1();
 
-    C outer = new C();
+    C outer = new C(); // null 이면 유효한 주소가 넘어가지 않아 에러가 발생. 
     outer.m2();
   }
 

@@ -10,8 +10,10 @@ public class Test2 {
     myStack.push("윤봉길");
     myStack.push("김구");
     
-   while(myStack.size() >0 ) {
-     System.out.println(myStack.pop());
+   while(myStack.size() >0 ) { // 0보다 크다면 
+     
+     // stack은 항상 맨 마지막에 저장한것부터 꺼낸다. 넣을때는 순서대로 
+     System.out.println(myStack.pop()); // 거꾸로 출력됨 이게 stack에서 데이터를 꺼내는 방법 
     }
    System.out.println(myStack.size);
   }

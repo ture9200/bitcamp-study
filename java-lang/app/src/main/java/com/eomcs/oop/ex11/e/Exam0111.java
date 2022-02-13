@@ -16,18 +16,29 @@ public class Exam0111 {
     // => 특히 객체를 사용하려는 곳에 바로 익명 클래스를 정의하면
     //    읽기 쉽기 때문에 소스 코드를 유지보수 하기가 더 좋다.
     //
+    // 익명 클래스 = 클래스 정의 문법 + 인스턴스 생성 문법 
+    //      new 수퍼클래스명() {클래스 정의} 
+    //      new 인터페이스명() {클래스 정의}
+    //
     // 익명 클래스로 인터페이스 구현하기
     // 문법:
     // => 인터페이스명 레퍼런스 = new 인터페이스명() {};
     //    - 호출하는 생성자는 수퍼 클래스의 생성자이다.
     //
-    A obj2 = new A() {
+    A obj2 = new A() { // 인터페이스따라 메서드 생성 
       @Override
       public void print() {
         System.out.println("Hello!");
       }
     };
     obj2.print();
+    
+      new A() { // 인터페이스따라 메서드 생성 
+        @Override
+        public void print() {
+          System.out.println("Hello!");
+        }
+    }.print();
   }
 }
 

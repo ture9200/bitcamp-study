@@ -11,8 +11,8 @@ public class Test1 {
     myList.add("김구");
 
     for (int i = 0; i < myList.size(); i++) {
-      System.out.println(myList.get(i));
+      System.out.println(myList.get(i));// i번째 한개씩 꺼내서 출력, 조회한것 
     }
-    System.out.println(myList.size());
+    System.out.println(myList.size()); // 사이즈 개수 출력 , 조회하기 때문에 6
   }
 }

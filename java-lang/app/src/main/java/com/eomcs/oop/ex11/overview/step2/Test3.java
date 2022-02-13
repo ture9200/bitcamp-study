@@ -11,6 +11,7 @@ public class Test3 {
     myQueue.offer("김구");
 
     QueueIterator iterator = new QueueIterator(myQueue);    
+    // 일관된 방법으로 꺼낼 수 있는게 Iterator 의 존재 이유다. 
     while (myQueue.size() > 0) {
       System.out.println(myQueue.poll());
     }
