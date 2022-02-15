@@ -4,6 +4,7 @@ package com.eomcs.oop.ex11.c;
 class A2 {
   class X {
     // inner class 는 스태틱 멤버를 가질 수 없다.
+    // jdk 15까지는 에런데 16부터 풀림 그리고 현업에 가면 17 안 씀
     // 스태틱 멤버는 오직 
     // - top level class 나 
     // - static nested class 

@@ -5,7 +5,7 @@ public class Product {
   // 상수 관리에 좋다.
   // 그래서 Product 클래스에 정의되었던 상수를
   // Category 클래스로 분리한다.
-  //
+  // 인스턴스 필드 선언 
   int category;
   String name;
   String maker;

@@ -6,6 +6,7 @@ class F {
     // 컴파일러는 모든 생성자에
     // 바깥 클래스의 객체 주소를 받는 파라미터를 추가한다.
     X() {}
+    // => 바깥 객체의 주소를 받는 생성자
     // => .class 파일의 내용
     //    F$X(com.eomcs.oop.ex11.c.F arg0);
     //        0  aload_0 [this]
@@ -19,13 +20,16 @@ class F {
     //         Local variable table:
     //           [pc: 0, pc: 10] local: this index: 0 type: com.eomcs.oop.ex11.c.F.X
     // => 즉 컴파일러는 다음 코드로 변경한다.
+    //    이런 식으로 바뀌었다 하더라도 이렇게 호출할 수는 없다. 
     //    X(F arg0) {}
 
     X(int a) {}
+    // => int 값을 받는 생성자는 앞부분에 바깥클래스의 객체 주소를 받는 파라미터가 추가 
     // => 즉 컴파일러는 다음 코드로 변경한다.
     //    X(F arg0, int a) {}
 
     X(String s, int a) {}
+    // => String과 int 값을 받는 생성자는 바깥클래스의 객체 주소를 받는 F arg0 추가 
     // => 즉 컴파일러는 다음 코드로 변경한다.
     //    X(F arg0, java.lang.String s, int a) {}
   }

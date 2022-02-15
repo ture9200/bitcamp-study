@@ -18,6 +18,7 @@ public class Exam0110 {
 
     Product p3 = new Product();
     p3.category = Product.book_novel; // <=== 잘못된 값을 넣을 수 없다!
+    // 오타내면 바로 빨간 줄 표시 나타난다.  
     p3.name = "토지";
     p3.price = 18000;
 

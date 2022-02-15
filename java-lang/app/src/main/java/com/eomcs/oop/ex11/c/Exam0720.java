@@ -45,6 +45,7 @@ class Musics4 {
 
   // Player 구현 객체를 리턴한다.
   // Player 구현체는 Musics4의 inner 클래스로 되어 있다.
+  // 규칙에 따른 플레이어를 생성 
   public Player createPlayer() {
     return new PlayerImpl(); // ==> this.new PlayerImpl();  // 바깥 클래스의 객체 주소 생략!
   }
@@ -61,5 +62,11 @@ class Musics4 {
 
 
 }
+
+// 인터페이스 구현체를 inner 클래스로 정의한다.
+//나중에 확장성을 생각해서 player 사용법을 아예 인터페이스로 따로 정의한 후
+//player 규칙에 따라서 동작하는 클래스를 만든 후에
+//그 클래스의 인스턴스를 리턴한다.
+//이게 향후 시스템을 확장하기 좋은 구조다
 
 

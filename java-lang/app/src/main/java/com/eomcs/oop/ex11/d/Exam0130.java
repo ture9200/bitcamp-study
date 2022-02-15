@@ -1,4 +1,5 @@
 // local class : .class 파일명
+// $ 표시면 로컬클래스 
 package com.eomcs.oop.ex11.d;
 
 class B2 {

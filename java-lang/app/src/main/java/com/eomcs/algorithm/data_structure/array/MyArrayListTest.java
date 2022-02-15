@@ -2,7 +2,6 @@ package com.eomcs.algorithm.data_structure.array;
 
 public class MyArrayListTest {
 
-
   public static void main(String[] args) {
     MyArrayList.add("aaa"); // aaa
     MyArrayList.add("bbb"); // aaa,bbb

@@ -49,6 +49,10 @@ public class Exam0530 {
   public static void main(String[] args) {
 
     // 리턴 타입 int ===> double
+    int a = 100; 
+    Integer.obj = new Integer(100);
+    Object obj2= Integer.valueOf(a);
+    
     Calculator1 c1 = MyCalculator::plus; // OK!
     // 위 문장은 다음 문장과 같다.
     //    Calculator1 c1 = new Calculator1() {

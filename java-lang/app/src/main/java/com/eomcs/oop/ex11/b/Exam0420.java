@@ -2,6 +2,8 @@
 package com.eomcs.oop.ex11.b;
 
 // 스태틱 멤버를 임포트하기
+// static 메서드, 변수도 import 할 수 있다 (인스턴스 멤버는 안 됨)
+// static 메서드를 import 할 때는 static을 써줘야 함
 import static com.eomcs.oop.ex11.b.E.m1;
 import static com.eomcs.oop.ex11.b.E.v1;
 import static com.eomcs.oop.ex11.b.sub.M.m2;

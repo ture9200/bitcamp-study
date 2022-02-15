@@ -3,6 +3,8 @@ package com.eomcs.oop.ex11.b;
 
 // 각각의 스태틱 멤버를 지정하는 대신 
 // 다음과 같이 wildcard(*)를 사용하여 전체 스태틱 멤버를 한 번에 지정할 수 있다.
+// 그런데 저장하는 순간 컴파일러가 낱개로 된다. 
+// 이럴 때는 Ctrl + Z 하고 다시 저장하면 된다. 
 import static com.eomcs.oop.ex11.b.F.m1;
 import static com.eomcs.oop.ex11.b.F.v1;
 import static com.eomcs.oop.ex11.b.sub.M.m2;

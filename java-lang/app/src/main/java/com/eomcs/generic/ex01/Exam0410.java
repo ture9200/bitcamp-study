@@ -4,6 +4,7 @@ package com.eomcs.generic.ex01;
 public class Exam0410 {
 
   // 제네릭 적용 전
+  // 네카라쿠배에서 손코딩 문제 괄호채우는거 문제 나옴 
   static Object[] reverse(Object[] arr) {
     for (int i = 0; i < arr.length / 2; i++) {
       Object temp = arr[i];

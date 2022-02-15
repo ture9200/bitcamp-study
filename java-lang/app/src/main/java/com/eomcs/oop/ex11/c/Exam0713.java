@@ -7,6 +7,8 @@ import java.util.List;
 public class Exam0713 {
 
   public static void main(String[] args) {
+    // 객체 생성을 Musics3에게 맡긴다
+    // 음악 정보를 갖고 있는 Musics3
     Musics3 m1 = new Musics3();
     m1.add("aaa.mp3");
     m1.add("bbb.mp3");
@@ -18,8 +20,11 @@ public class Exam0713 {
 
     // 바깥 클래스의 인스턴스를 사용하는 inner 클래스라면
     // inner 클래스의 객체를 만드는 역할도 
-    // 바깥 클래스가 하는데 유지보수에 더 낫다.
+    // 바깥 클래스가 하는게 유지보수에 더 낫다.
+    // Gof의 팩토리 메서드
     // => GRASP 설계 기법에서 "정보를 가진자가 그 일을 하라.(Information Expert)"를 적용.
+    // 어떤클래스에게 어떤 일 어떤 역할 어떤 책임을 맡길건지 설계에 대한 기본 패턴
+    //  => GRASP(General Responsibility Assignment Software Patterns)
     Musics3.Player p1 = m1.createPlayer();
     Musics3.Player p2 = m2.createPlayer();
 
@@ -46,7 +51,7 @@ class Musics3 {
     return new Player(); // ==> this.new Player();  // 바깥 클래스의 객체 주소 생략!
   }
 
-  class Player {
+  class Player { // Music3에 종속 
     public void play() {
       for (final String song : Musics3.this.songs) {
         System.out.println(song);

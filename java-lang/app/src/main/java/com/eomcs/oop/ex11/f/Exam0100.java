@@ -1,4 +1,5 @@
 // FilenameFilter 를 정의하는 다양한 방법
+// FilenameFilter를 적용안한 상태 
 package com.eomcs.oop.ex11.f;
 
 import java.io.File;

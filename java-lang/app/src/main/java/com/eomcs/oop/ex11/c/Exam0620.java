@@ -17,12 +17,12 @@ class H {
       // 2) 메서드가 소속된 클래스의 인스턴스 필드를 찾는다.
       // 3) 바깥 클래스의 인스턴스나 스태틱 필드를 찾는다.
 
-      System.out.printf("v1 = %d\n", v1);
-      System.out.printf("this.v1 = %d\n", this.v1);
-      System.out.printf("H.this.v1 = %d\n", H.this.v1);
+      System.out.printf("v1 = %d\n", v1);// 로컬변수 
+      System.out.printf("this.v1 = %d\n", this.v1); // x클래스의 v1인스턴스 변수 
+      System.out.printf("H.this.v1 = %d\n", H.this.v1); // 바깥클래스의 인스턴스 변수 
 
-      System.out.printf("v2 = %d\n", v2);
-      System.out.printf("v3 = %d\n", v3);
+      System.out.printf("v2 = %d\n", v2); // 로컬에서 못찾으면 x클래스의 인스턴스 변수를 찾게된다.
+      System.out.printf("v3 = %d\n", v3); // 로컬변수도 아니고 x클래스도 안붙이면 바깥클래스 변수를 찾게 된다. 
     }
   }
 }

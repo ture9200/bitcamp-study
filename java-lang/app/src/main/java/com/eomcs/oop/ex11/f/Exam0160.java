@@ -17,6 +17,8 @@ public class Exam0160 {
     //    파악하기 위해서는 그 장소가 이동해야 한다.
     // => 그런데 다음과 같이 익명 클래스가 사용될 장소에 바로 클래스 정의가 있기 때문에
     //    그 클래스가 무엇을 하는지 소스 코드를 파악하기 편하다!
+    
+    //파라미터에 익명클래스를  정의해서 직접 지정
     String[] names = dir.list(new FilenameFilter() {
       @Override
       public boolean accept(File dir, String name) {
