@@ -1,4 +1,5 @@
 // anonymous class - 생성자 II
+//클래스를 상속받은 
 package com.eomcs.oop.ex11.e;
 
 public class Exam0220 {
@@ -6,6 +7,8 @@ public class Exam0220 {
   static class A {
     public A() {
       System.out.println("A() 호출!");
+      // 수퍼클래스의 생성자가 먼저 실행되기 때문에  이 문장이 먼저 실행된다.
+      // 그 다음 아래문장이 실행된다. 
     }
   }
 

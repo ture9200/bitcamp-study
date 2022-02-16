@@ -2,7 +2,6 @@
 package com.eomcs.generic.ex02;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Exam0230 {
   public static void main(String[] args) {
@@ -13,13 +12,14 @@ public class Exam0230 {
     // ArrayList가 Object 타입의 데이터를 다루기로 지정되었으면, 
     // ArrayList의 메서드 파라미터나 리턴 타입은 Object로 설정된다.
     
-    // => add(Object)
+    // => add(Object) => 따라서 Object,Integer,String, Member 다 된다. 
     list1.add(new Object());
     list1.add(new String());
     list1.add(new Integer(100));
     list1.add(new Member("홍길동", 20));
     
     // => Object get(int)
+    // Object 변수에 담는건 괜찮은데 꺼낼 때는 형변환 해야한다. 
     Object obj = list1.get(0);
     String str = (String) list1.get(1);
     Integer i = (Integer) list1.get(2);

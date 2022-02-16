@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Exam0110 {
 
-  public static Object echo(Object obj) {
+  public static Object echo(Object obj) { // 리턴타입이 Object
     return obj;
   }
 
@@ -21,7 +21,7 @@ public class Exam0110 {
     String obj2 = (String) echo(new String("Hello"));
 
     // 잘못된 형변환은 컴파일러는 속일 수 있을 지라도, runtime 에서는 오류를 발생시킨다.
-    //    Integer obj3 = (Integer) echo(new String("Hello")); // 실행 오류!
+    //    Integer obj3 = (Integer) echo(new String("Hello")); // 실행 오류! -> classcast Exception
 
     Date obj4 = (Date) echo(new Date());
 

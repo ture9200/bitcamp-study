@@ -9,6 +9,8 @@ public class Exam0110 {
     list.add(new Member("유관순", 16));
     
     // 다음과 같이 Member 가 아닌 다른 타입의 객체를 저장하더라도 막을 수 없다.
+    // add 타입이 Object라서 가능하다. 
+    // Member로 형변환이 안된다. 그래서 컴파일 단계에서 문제점이 걸러진다. 
     list.add(new String("문자열!!!"));
 
     // 값을 꺼내 사용하면 항상 형변환해야 한다.

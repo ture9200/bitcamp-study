@@ -1,4 +1,6 @@
 // anonymous class - 생성자
+// 인터페이스를 구현한 익명클래스 
+
 package com.eomcs.oop.ex11.e;
 
 public class Exam0210 {
@@ -6,6 +8,30 @@ public class Exam0210 {
   interface A {
     void print();
   }
+  
+  // 모든 생성자에 공통으로 들어가는 코드가 있다면 
+  // 인스턴스 블럭을 만들고 공통으로 들어간 코드를 
+  // 초기화 블럭에 집어넣어라! 
+  
+  // 컴파일러가 컴파일할 때 인스턴스 블럭에 있는 코드를 생성자 앞부분에 들어간다. 
+  //(인스턴스 블럭은 사라진다) 
+  // 결국 생성자가 호출될 때 그 인스턴스 블럭에 있는게 먼저 실행된다는 얘기가 나온다.
+//  class x{
+//    public x() {
+//      System.out.println("ABC!");
+//      System.out.println("Hello!");
+//    }
+//    
+//    public x(int a) {
+//      System.out.println("ABC!");
+//      System.out.println("Hello!");
+//    }
+//    
+//    public x(String s) {
+//      System.out.println("ABC!");
+//      System.out.println("Hello!");
+//    }
+//  } //java-lang/bin/main/com/eomcs/oop/ex11/e/Exam0210$X.class
   
   public static void main(final String[] args) {
 

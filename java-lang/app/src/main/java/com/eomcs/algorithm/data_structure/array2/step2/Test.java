@@ -4,7 +4,8 @@ import com.eomcs.algorithm.data_structure.array2.Score;
 
 public class Test {
   public static void main(String[] args) {
-    ArrayList<Score> list = new ArrayList<Score>();
+    ArrayList<Score> list = new ArrayList<Score>(); //arrayList에서 항목을 저장할 객체는 Score
+    //항목타입으로 score를 쓸거다. 
     list.add(new Score("홍길동", 100, 100, 100));
     list.add(new Score("임꺽정", 90, 90, 90));
     list.add(new Score("유관순", 80, 80, 80));
@@ -17,7 +18,10 @@ public class Test {
       // => 그러면 get() 메서드의 리턴 타입은 Score 가 된다.
       // => 따라서 따로 형변환 할 필요가 없다.
       //
-      Score s = list.get(i);
+      Score s = list.get(i); 
+      // 선언하기 전에는 메서드 리턴타입이 Object 지금은 리턴타입이 score 
+      // 따라서 형변환 필요없음 
+      
       System.out.printf("%s: %d, %f\n", s.name, s.sum, s.aver);
     }
   }

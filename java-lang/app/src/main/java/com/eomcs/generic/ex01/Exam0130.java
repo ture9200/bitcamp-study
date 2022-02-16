@@ -19,17 +19,21 @@ public class Exam0130 {
   // => 제네릭을 사용하면 특정 타입을 다루는 메서드 여러 개를 한 개의 메서드로 줄일 수 있다.
   // => 이때 "What"을 가리키는 용어로 "타입(이름을 받는) 파라미터"라고 부른다.
   //
-  static <What> What echo(What obj) {
+  static <What> What echo(What obj) { // What 타입의 값을 리턴  
+    // <What> 을 빼버리면 진짜 클래스나 인터페이스가 된다. => 변수명인것을 가리키기위해 <What> 표시 
+    // 넘어오는 값에 따라서 결정되는 타입 파라미터다. 
+    
     return obj;
   }
 
   public static void main(String[] args) {
 
-    String obj1 = echo(new String("Hello"));
-    Date obj2 = echo(new Date());
-    Calendar obj3 = echo(Calendar.getInstance());
-    File obj4 = echo(new File("okok"));
-    Integer obj5 = echo(Integer.valueOf(100));
+    // 한 개의 메서드를 가지고 다양한 용도의 메서드를 사용할 수 있고 형변환 필요없다. 
+    String obj1 = echo(new String("Hello")); //String 넘기니 리턴타입 String 
+    Date obj2 = echo(new Date()); //Date 넘기니 리턴타입 Date 
+    Calendar obj3 = echo(Calendar.getInstance()); //Calendar 넘기니 리턴타입 Calendar
+    File obj4 = echo(new File("okok")); //File 넘기니 리턴타입 File 
+    Integer obj5 = echo(Integer.valueOf(100)); //Integer 넘기니 리턴타입 Integer 
   }
 }
 

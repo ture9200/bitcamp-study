@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 //ArrayList 클래스에서 다룰 항목의 타입을 파라미터로 받는다.
 //=> 외부에서 타입 정보를 받는 파라미터를 "타입 파라미터(type parameter)"라고 부른다.
-public class ArrayList<itemType> {
+public class ArrayList<itemType> { //itemType 을 받는다. 변수만 선언 , ArrayList에 담을 항목의 타입
+  //add 나 get할때 어떤 타입으로 할건지 알려달라고 선언 , 안넣어주면 기본이 Object 
 
 private static final int DEFAULT_CAPACITY = 5;
 private Object[] elementData;
@@ -58,12 +59,12 @@ public void add(int index, itemType element) {
  size++;
 }
 
-@SuppressWarnings("unchecked")
-public itemType get(int index) {
+@SuppressWarnings("unchecked") // suppress = 경고뜨는거 무시한다. 타입이 체크되지 않은거에 대한 경고 무시
+public itemType get(int index) { // get이라는 메서드는 itemType이라 불리우는 변수타입을 리턴 
  if (index < 0 || index >= size) {
    throw new ArrayIndexOutOfBoundsException("인덱스가 유효하지 않습니다.");
  }
- return (itemType) elementData[index];
+ return (itemType) elementData[index]; // itemType이 리턴 
 }
 
 public Object set(int index, Object element) {

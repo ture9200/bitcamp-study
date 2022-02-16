@@ -3,7 +3,8 @@ package com.eomcs.generic.ex03;
 
 public class Exam0120 {
   public static void main(String[] args) {
-    LinkedList2<Member> list = new LinkedList2<>();
+    LinkedList2<Member> list = new LinkedList2<>(); // e가 멤버 , E라면 아직 정해해지 않은거
+    // 따라서 리턴타입이 멤버 
     list.add(new Member("홍길동", 20));
     list.add(new Member("임꺽정", 30));
     list.add(new Member("유관순", 16));

@@ -11,12 +11,12 @@ public class Test {
     list.add(new Score("안중근", 70, 70, 70));
     list.add(new Score("윤봉길", 80, 90, 100));
 
-    for (int i = 0; i < list.size(); i++) {
+    for (int i = 0; i < list.size(); i++) { // i는 list.size 보다 작은동안 i++ 
       // 불편1:
       // => 목록에서 값을 꺼낼 때마다 원래의 타입으로 형변환 해야 한다.
       //
-      Score s = (Score) list.get(i);
-      System.out.printf("%s: %d, %f\n", s.name, s.sum, s.aver);
+      Score s = (Score) list.get(i); // 꺼내서 출력 , score 형변환하고 Score s에 저장 
+      System.out.printf("%s: %d, %f\n", s.name, s.sum, s.aver); 
     }
   }
 }

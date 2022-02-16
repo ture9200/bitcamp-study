@@ -22,6 +22,7 @@ public class Exam0231 {
   public static void main(String[] args) {
 
     ArrayList<B1> list1 = new ArrayList<>();
+    // new ArrayList<>();  에 <> 부분 B1을 생략해도 되고 적어도 된다. 
 
     // ArrayList의 항목 타입을 B1으로 지정했기 때문에  
     // ArrayList의 메서드 파라미터나 리턴 타입은 B1으로 설정된다.
@@ -34,7 +35,7 @@ public class Exam0231 {
     //    list1.add(new A()); // 컴파일 오류!
     list1.add(new B1());
     //    list1.add(new B2()); // 컴파일 오류!
-    list1.add(new C());
+    list1.add(new C()); //c는 B1의 자식이라 가능하다. 
 
     System.out.println("종료!");
   }

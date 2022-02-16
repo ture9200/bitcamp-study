@@ -13,7 +13,8 @@ public class Test2 {
 
     // 불편2:
     // => 목록을 값을 저장할 때 원하지 않는 타입의 값이 들어가는 것을 막을 수 없다.
-    list.add(new String("오호라!"));
+    // 들어가지 못하게 하는 절 지원하는 문법이 제네릭 문법이다. 
+    list.add(new String("오호라!")); // 오호라 추가하기 class cast 에러발생
 
     for (int i = 0; i < list.size(); i++) {
       Score s = (Score) list.get(i);

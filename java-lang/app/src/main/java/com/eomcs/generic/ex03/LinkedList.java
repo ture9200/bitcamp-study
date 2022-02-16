@@ -3,7 +3,7 @@ package com.eomcs.generic.ex03;
 public class LinkedList {
 
   protected class Bucket { 
-    public Object value; 
+    public Object value; //타입이 Object라 모든 값을 다 담을 수 있고 모든 값을 꺼낼 수 있다. 
     public Bucket next; 
     public Bucket prev; 
   }
@@ -16,7 +16,7 @@ public class LinkedList {
     tail = head;
   }
 
-  public void add(Object value) {
+  public void add(Object value) { // 리턴타입이 Object , 그래서 String을 담아도 오류라고 생각 안한다. 
     tail.value = value;
     Bucket bucket = new Bucket();
     tail.next = bucket;

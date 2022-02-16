@@ -1,4 +1,5 @@
 // anonymous class - 호출할 수퍼 클래스의 생성자 지정하기
+// A 클래스를 상속받은 익명클래스 
 package com.eomcs.oop.ex11.e;
 
 public class Exam0230 {

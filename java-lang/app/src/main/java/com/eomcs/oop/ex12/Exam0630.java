@@ -10,7 +10,7 @@ public class Exam0630 {
     // Predicate<String> 인터페이스 구현체 준비하기
 
     // 1) 로컬 클래스로 인터페이스 구현체 만들기
-    class MyPredicate<T> implements Predicate<T> {
+    class MyPredicate<T> implements Predicate<T> { //<T> 타입은 String 
       @Override
       public boolean test(T value) {
         return ((String)value).isEmpty();

@@ -12,18 +12,18 @@ public class Exam0310 {
     // 컴파일러가 경고를 띄운다. 물론 경고시 무시해도 실행에 문제가 없다.
     // Object 타입으로 지정하더라도 클래스 이름을 명시하는 것이 좋다.
     HashMap map = new HashMap(); // Object key, Object value를 다룬다.
-    map.put("aaa", "문자열");
-    map.put(new Integer(100), new Member("홍길동", 20));
+    map.put("aaa", "문자열"); // aaa로 문자열을 저장 
+    map.put(new Integer(100), new Member("홍길동", 20)); // 100이라는 Integer값으로 멤버 객체를 저장 
 
-    System.out.println(map.get("aaa"));
-    System.out.println(map.get(100));
+    System.out.println(map.get("aaa")); // 꺼낼 때도 aaa로 꺼냄
+    System.out.println(map.get(100)); 
     System.out.println("----------------------------------");
     // 위와 같이 제네릭 정보를 넘기지 않는 것 보다,
     // 차라리 다음과 같이 명확하게 Object 타입을 지정하는 것이 좋다. 
     // => 어떤 타입의 key와 어떤 타입의 value를 저장할 것인지
     //    다른 개발자에게 명확하게 알려주는 효과가 있기 때문에 다음을 권장한다.
     HashMap<Object,Object> map2 = new HashMap<>();
-    map2.put("aaa", "문자열");
+    map2.put("aaa", "문자열"); // key는 일관성있게 string 아님 int으로 
     map2.put(new Integer(100), new Member("홍길동", 20));
 
     // key: String

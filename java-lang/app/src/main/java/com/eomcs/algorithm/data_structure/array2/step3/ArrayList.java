@@ -3,8 +3,8 @@ package com.eomcs.algorithm.data_structure.array2.step3;
 import java.util.Arrays;
 
 //타입 파라미터 이름 
-//=> T, E ,K , V, N , S/U/V
-public class ArrayList<E> {
+//=> T(Type), E (Element) ,K ( key) , V(Value), N(Number), S/U/V
+public class ArrayList<E> { // 타입 이름을 받는 파라미터 변수 = E 
 
 private static final int DEFAULT_CAPACITY = 5;
 private Object[] elementData;
@@ -22,7 +22,7 @@ public ArrayList(int initialCapacity) {
  }
 }
 
-public boolean add(E e) {
+public boolean add(E e) { // 그래서 E 로 바꾼다. 
  if (size == elementData.length) {
    grow();
  }

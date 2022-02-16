@@ -25,6 +25,9 @@ public class Exam0111 {
     // => 인터페이스명 레퍼런스 = new 인터페이스명() {};
     //    - 호출하는 생성자는 수퍼 클래스의 생성자이다.
     //
+    // 자바의 모든 클래스는 따로 수퍼 클래스를 지정하지 않으면
+    //java.lang.Object 클래스가 수퍼 클래스로 자동 설정된다.
+    // Object 클래스의 생성자는 기본 생성자 하나 뿐이다.
     A obj2 = new A() { // 인터페이스따라 메서드 생성 
       @Override
       public void print() {
@@ -33,6 +36,10 @@ public class Exam0111 {
     };
     obj2.print();
     
+    //A라는 인터페이스를 구현한 익명클래스를 만들고 
+    // 즉시 인스턴스를 만들고
+    // 인스턴스 주소가 자리에 놓인다. 
+    // 그런후에 print 호출 
       new A() { // 인터페이스따라 메서드 생성 
         @Override
         public void print() {
