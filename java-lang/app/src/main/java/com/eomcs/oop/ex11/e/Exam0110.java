@@ -1,4 +1,5 @@
 // anonymous class : 인터페이스를 구현한 익명 클래스 정의
+// 클래스와 객체 생성합쳐서 익명클래스가 생성 
 package com.eomcs.oop.ex11.e;
 
 public class Exam0110 {
