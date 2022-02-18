@@ -6,8 +6,8 @@ public class Prompt {
   static Scanner KeyScan = new Scanner(System.in);
   
   public static String promptString(String titleFormat, Object...args) {
-    System.out.println(String.format(titleFormat,args));
-    return KeyScan.nextLine();
+    System.out.println(String.format(titleFormat,args)); // Strigformat으로 아규먼트에 따라서 출력 
+    return KeyScan.nextLine(); //
   }
   
   public static int promptInt(String titleFormat, Object...args) {
@@ -16,6 +16,7 @@ public class Prompt {
     // 입력된 다음 행의 값을 읽어 숫자로 변경해서 리턴
     //return Integer.parseInt(KeyScan.nextLine());
     //return Integer.parseInt(String.format(titleFormat,args));
-    return Integer.parseInt(promptString(titleFormat,args));
+    return Integer.parseInt(promptString(titleFormat,args)); 
+    // 꺼낸걸 문자열로 parsing 해서 Int로 바꾼다
   }
 }

@@ -38,7 +38,7 @@ public class ScoreTable {
   }
 
   public static Score[] selectList() {
-    return scores.toArray(new Score[0]);
+    return scores.toArray(new Score[0]);  //배열을 리턴 
   }
 
   public static Score selectOne(int no) {
