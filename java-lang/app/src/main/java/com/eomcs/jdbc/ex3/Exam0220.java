@@ -25,7 +25,7 @@ public class Exam0220 {
     }
 
     try (Connection con = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/studydb?user=study&password=1111");
+        "jdbc:mariadb://localhost:3306/studydb?user=study&password=0000");
 
         // PreparedStatement는 미리 SQL 문장을 준비하여 값을 삽입하는 기법이다.
         PreparedStatement stmt = con.prepareStatement(
@@ -51,7 +51,6 @@ public class Exam0220 {
       stmt.setString(1, title); // int 컬럼의 값을 setString() 으로 설정할 수 있다.
       stmt.setString(2, contents);
       stmt.setString(3, no);
-
       // PreparedStatement에서는 SQL 문을 서버에 보내기 위해
       // executeUpdate()를 호출할 때 파라미터로 전달하지 않는다.
       // 이미 객체를 생성할 때 SQL 문을 준비했기 때문이다.
@@ -62,6 +61,7 @@ public class Exam0220 {
       } else {
         System.out.println("변경하였습니다.");
       }
+      // 기술면접에 등장함 
       // Statement vs PreparedStatement
       // 1) SQL 문장의 간결함
       // [Statement]

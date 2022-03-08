@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
@@ -27,6 +26,7 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
 	<classpathentry sourcepath="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.13/a6f2ad29fc2124e7eb22441e2c82b096d25a8e05/spring-context-5.3.13-sources.jar" kind="lib" path="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.13/e328db1c30ffe1c58328e4ab42cd3855a5307469/spring-context-5.3.13.jar">
 		<attributes>
@@ -59,6 +59,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/3.0.3/b8f02d6ce0aa5a4c29fad58970ead9a08805f7e0/mariadb-java-client-3.0.3-sources.jar" kind="lib" path="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/3.0.3/d88d6d447b8d6194bd3895c96abedd21b4d83355/mariadb-java-client-3.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.5.0.0/bc15f00ebacbeb0669f0ed925917c177912db7af/ojdbc11-21.5.0.0-sources.jar" kind="lib" path="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.5.0.0/3e588fed4618a39c7d655bfc1159ecb57fabc217/ojdbc11-21.5.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/com.microsoft.sqlserver/mssql-jdbc/10.2.0.jre11/f6f0b3f4c092631f26f6cae1bbcb2169d3591b89/mssql-jdbc-10.2.0.jre11-sources.jar" kind="lib" path="C:/Users/swyang/.gradle/caches/modules-2/files-2.1/com.microsoft.sqlserver/mssql-jdbc/10.2.0.jre11/281c4ff3de0f5a36bf77951a0a8ff829469a41d1/mssql-jdbc-10.2.0.jre11.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
