@@ -36,5 +36,15 @@ alter table ml_board
 
 - JDBC Driver를 이용하여 MariaDB를 통해 데이터를 처리한다.
 
+### 4단계 - DAO클래스에서 사용자 정의 RuntimeException 예외를 던진다.
+
+- 자바에서 제공하는 예외 클래스 대신 개발자가 정의한 RuntimeException 예외를 던진다.
+  -com.eomcs.mylist.dao.DaoException 클래스 생성
+   -com.eomcs.mylist.dao.BoardDao 인터페이스 변경
+   - 각 메서드에서 Exception을 던지는 선언문을 제거한다.
+- com.eomcs.mylist.dao.JdbcBoardDao 클래스 변경
+  -각 메서드에서 예외가 발생하면 DaoException 런타입 예외를 던진다.
+- com.eomcs.mylist.controller.BoardController 클래스 변경 
+  - 각 메서드의 선언부에 있는 예외 던지는 문장을 제거한다.
 
 ## 프론트엔드 개발 실습
