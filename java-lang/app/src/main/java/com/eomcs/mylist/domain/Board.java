@@ -1,7 +1,6 @@
 package com.eomcs.mylist.domain;
 
 public class Board {
-
   int no;
   String title;
   String content;
@@ -11,13 +10,13 @@ public class Board {
   public Board() {
     System.out.println("Board() 호출됨!");
   }
-
+  
   @Override
   public String toString() {
     return "Board [no=" + no + ", title=" + title + ", content=" + content + ", viewCount="
         + viewCount + ", createdDate=" + createdDate + "]";
   }
-
+  
   public int getNo() {
     return no;
   }
@@ -57,6 +56,6 @@ public class Board {
   public void setCreatedDate(java.sql.Date createdDate) {
     this.createdDate = createdDate;
   }
-
-
 }
+
+

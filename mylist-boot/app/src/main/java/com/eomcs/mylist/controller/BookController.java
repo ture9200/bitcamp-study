@@ -49,31 +49,6 @@ public class BookController {
   }
 }
 
-//  @RequestMapping("/book/save")
-//  public Object save() throws Exception {
-//    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("books.json")));
-//    ObjectMapper mapper = new ObjectMapper();
-//    String jsonStr = mapper.writeValueAsString(bookList.toArray()); 
-//    out.println(jsonStr);
-//    out.close();
-//    return bookList.size();
-//    Object[] arr = bookList.toArray();
-//    for (Object obj : arr) {
-//      Book book = (Book) obj;
-//      out.writeUTF(book.getAuthor());
-//      out.writeInt(book.getPage());
-//      out.writeUTF(book.getPress());
-//      out.writeInt(book.getPrice());
-//out.writeUTF(book.getReadDate().toString());
-//      if(book.getReadDate() == null) {
-//        out.writeUTF("");
-//      } else { 
-//        out.writeUTF(book.getReadDate().toString());
-//      }
-//      out.writeUTF(book.getReview());
-//      out.writeUTF(book.getTitle());
-//    }
-
 
 
 

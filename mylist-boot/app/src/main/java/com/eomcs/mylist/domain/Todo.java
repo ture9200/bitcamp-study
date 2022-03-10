@@ -1,18 +1,18 @@
 package com.eomcs.mylist.domain;
 
-public class Todo implements java.io.Serializable{
+public class Todo implements java.io.Serializable {
   String title;
   boolean done;
 
   public Todo() {
     System.out.println("Todo() 호출됨!");
-  } 
+  }
 
   public Todo(String csvStr) {
-    // 예) csvStr => "제목, 완료여부"
+    // 예) csvStr => "제목,완료여부"
 
-    String[] values = csvStr.split(","); // 예) ["홍길동","hong@test.com","010-1111-2222","비트캠프"]
-    this.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.
+    String[] values = csvStr.split(","); 
+    this.setTitle(values[0]); 
     this.setDone(Boolean.valueOf(values[1]));
   }
 
@@ -36,36 +36,32 @@ public class Todo implements java.io.Serializable{
     return todo;
   }
 
+  // 적용 기술
+  // => 인스턴스 메서드: 특정 인스턴스를 사용한다면 인스턴스 메서드로 만들라! 
+  // => GRASP의 Information Expert 패턴
+  //    데이터를 가공하는 기능은 그 데이터를 갖고 있는 클래스에 둬야 한다.
   public String toCsvString() {
-    return String.format("%s, %s", 
-        this.getTitle(),
-        this.getDone());
+    return String.format("%s,%s", 
+        this.getTitle(), 
+        this.isDone());
   }
 
   public String getTitle() {
     return title;
   }
-
   public void setTitle(String title) {
     this.title = title;
   }
-
   public boolean isDone() {
     return done;
   }
-
-  private Object getDone() {
-    // TODO Auto-generated method stub
-    return done;
-  }
-
   public void setDone(boolean done) {
     this.done = done;
   }
-
   @Override
   public String toString() {
     return "Todo [title=" + title + ", done=" + done + "]";
   }
+
 
 }
