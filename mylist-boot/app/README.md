@@ -44,7 +44,15 @@ alter table ml_board
    - 각 메서드에서 Exception을 던지는 선언문을 제거한다.
 - com.eomcs.mylist.dao.JdbcBoardDao 클래스 변경
   -각 메서드에서 예외가 발생하면 DaoException 런타입 예외를 던진다.
-- com.eomcs.mylist.controller.BoardController 클래스 변경 
+- com.eomcs.mylist.controller.BoardController 클래스 변경
   - 각 메서드의 선언부에 있는 예외 던지는 문장을 제거한다.
+
+### 5단계 - DAO클래스를 별도의 패키지로 분리한다.
+
+- com.eomcs.mylist.dao.mariadb 패키지 생성
+- JdbcBoardDao 클래스를 mariadb 패키지로 이동
+- JdbcBoardDao 클래스 이름을 BoardDaoImpl 로 변경
+
+
 
 ## 프론트엔드 개발 실습
