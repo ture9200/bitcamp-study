@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>독서록</title>
   <style>
-  <style>
   @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 #book-list tbody tr td input { width: 98%; }
 table { font-family:'Poor Story'; border-collapse: collapse; border-spacing: 0; margin:auto;}
@@ -80,7 +79,7 @@ var tbody = document.querySelector("#x-book-table tbody")
         tr.innerHTML=`<td><a href= "view.html?index=${i}">${i+1}</a></td>
            <td>${book.title}</td><td>${book.author}</td><td>${book.press}</td>
            <td>${book.page}</td><td>${book.price}</td>
-           <td>${book.review}</td>`;
+           <td>${book.feed}</td>`;
         tbody.appendChild(tr);
       }
     });

@@ -71,7 +71,7 @@ thead{
           </tr>
           <tr>
             <th>소감*</th>
-            <td><textarea rows="10" id="x-review" cols="60" type="text"></textarea></td>
+            <td><textarea rows="10" id="x-feed" cols="60" type="text"></textarea></td>
           </tr>
         </tbody>
       </table>
@@ -124,7 +124,7 @@ var xPress = document.querySelector("#x-press");
 var xPage = document.querySelector("#x-page");
 var xPrice = document.querySelector ("#x-price");
 var xReadDate = document.querySelector ("#x-readDate");
-var xReview = document.querySelector ("#x-review");
+var xFeed = document.querySelector ("#x-feed");
 
 //3) 서버에서 데이터 가져오기
 fetch(`/book/get?index=${index}`) //서버 요청
@@ -142,7 +142,7 @@ fetch(`/book/get?index=${index}`) //서버 요청
   xPage.value= book.page;
   xPrice.value = book.price;
   xReadDate.value = book.readDate;
-  xReview.value = book.review;
+  xFeed.value = book.feed;
 });
 
 document.querySelector("#x-update-btn").onclick =function(){
@@ -151,7 +151,7 @@ document.querySelector("#x-update-btn").onclick =function(){
     return;
 }
 var qs = `index=${index}&title=${xTitle.value}&author=${xAuthor.value}&press=${xPress.value}`;
-    qs += `&page=${xPage.value}&price=${xPrice.value}&review=${xReview.value}`;
+    qs += `&page=${xPage.value}&price=${xPrice.value}&feed=${xFeed.value}`;
 
 // var params = `&title=${xTitle.value}`;
 // params += `&author=${xAuthor.value}`;

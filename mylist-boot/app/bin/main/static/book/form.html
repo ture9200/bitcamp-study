@@ -26,7 +26,7 @@
     font-family:'Poor Story';
     font-weight: bold;
     color: red;
-     text-align:center;\
+     text-align:center;
   }
   #body {
     margin:0 auto;
@@ -71,7 +71,7 @@
       </tr>
       <tr>
         <th>소감*</th>
-        <td><textarea rows="10" id="x-review" cols="60" type="text"></textarea></td>
+        <td><textarea rows="10" id="x-feed" cols="60" type="text"></textarea></td>
       </tr>
     </tbody>
   </table>
@@ -97,16 +97,16 @@ var xPress = document.querySelector("#x-press");
 var xPage = document.querySelector("#x-page");
 var xPrice = document.querySelector ("#x-price");
 var xReadDate = document.querySelector ("#x-readDate");
-var xReview = document.querySelector ("#x-review");
+var xFeed = document.querySelector ("#x-feed");
 
 document. querySelector("#x-add-btn").onclick=function() {
-  if (xTitle.value == "" || xReview.value == "") {
+  if (xTitle.value == "" || xFeed.value == "") {
       window.alert("★다시 확인해주세용★");
       return;
     }
 
     var qs = `title=${xTitle.value}&author=${xAuthor.value}&press=${xPress.value}`;
-        qs += `&page=${xPage.value}&price=${xPrice.value}&review=${xReview.value}`;
+        qs += `&page=${xPage.value}&price=${xPrice.value}&feed=${xFeed.value}`;
   // fetch(`/book/add?title=${xTitle.value}&author=${xAuthor.value}&press=${xPress.value}
   //   &page=${xPage.value}&price=${xPrice.value}&readDate=${xReadDate.value}&review=${xReview.value}`)
 

@@ -50,7 +50,7 @@
 ### 08.1 DAO 역할 도입: 데이터 보관 처리 코드를 별도의 클래스로 분리
 ### 08.2 DAO 역할 도입: 인터페이스 도입하여 DAO 사용 규칙을 통일하기
 ### 08.3 DAO 역할 도입: 상속의 generalization을 수행하여 추상 클래스 정의하기
- 
+
 
 
 ### 02.1 값 다루기 : 리터럴과 콘솔 출력
@@ -224,3 +224,24 @@
 ### 53 - Log4j를 사용하여 애플리케이션 로그 처리하기
 
 ### 54 - Web 기술 도입하기
+
+
+
+
+'''
+create table ml_book(
+  book_no int not null,
+  title varchar(255) not null,
+  author varchar(100) not null,
+  press varchar(100) not null,
+  feed text not null,
+  read_date date,
+  page int,
+  price int
+  );
+
+  alter table ml_book
+   add constraint primary key(book_no),
+   modify column book_no int not null auto_increment;
+
+  '''
