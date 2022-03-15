@@ -42,13 +42,13 @@ thead{
 </head>
   <body>
     <h1>독서록</h1>
-    <a href="form.html">글쓰기</a>
+    <a href="form.html">새 독서록</a>
     <table id = "x-book-table" border="1">
       <thead>
     <tr>
   <th>번호</th>
-  <th>제목</th>
-  <th>작가</th>
+  <th>책</th>
+  <th>저자</th>
   <th>출판사</th>
   <th>페이지</th>
   <th>가격</th>
@@ -76,6 +76,7 @@ var tbody = document.querySelector("#x-book-table tbody")
     for (var i = 0; i < books.length; i++) {
         var book = books[i];
         var tr = document.createElement("tr");
+         tr.innerHTML= '<td>${book.no}</td>';
         tr.innerHTML=`<td><a href= "view.html?index=${i}">${i+1}</a></td>
            <td>${book.title}</td><td>${book.author}</td><td>${book.press}</td>
            <td>${book.page}</td><td>${book.price}</td>

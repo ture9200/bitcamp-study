@@ -110,13 +110,13 @@ if(arr. length == 1) {
 //2) 쿼리 스트링에서 이메일 값을 추출한다.
 //예) email = aaa@test.com&name=aaa&tel=1111
 var params = new URLSearchParams(qs);
-var index = params.get("index");
+var NO = params.get("NO");
 
 if (index == null) {
   alert("독서록 번호가 없습니다.");
   throw "파라미터 오류!";
 }
-console.log(index);
+console.log(NO);
 
 var xTitle = document.querySelector ("#x-title");
 var xAuthor = document.querySelector ("#x-author");
@@ -127,7 +127,7 @@ var xReadDate = document.querySelector ("#x-readDate");
 var xFeed = document.querySelector ("#x-feed");
 
 //3) 서버에서 데이터 가져오기
-fetch(`/book/get?index=${index}`) //서버 요청
+fetch(`/book/get?no=${no}`) //서버 요청
 .then(function(response) {
   return response.json();
   //서버로부터 json형식으로 받음 parsing해서 자바스크립트 객체로 만들어줘 parsing이 끝나면 다음 메서드 호출해주고 끝난 데이터를 파라미터로 넘겨줘
@@ -150,7 +150,7 @@ document.querySelector("#x-update-btn").onclick =function(){
     window.alert("필수 입력 항목이 비어있습니다.");
     return;
 }
-var qs = `index=${index}&title=${xTitle.value}&author=${xAuthor.value}&press=${xPress.value}`;
+var qs = `no=${no}&title=${xTitle.value}&author=${xAuthor.value}&press=${xPress.value}`;
     qs += `&page=${xPage.value}&price=${xPrice.value}&feed=${xFeed.value}`;
 
 // var params = `&title=${xTitle.value}`;
@@ -182,7 +182,7 @@ document. querySelector("#x-cancel-btn").onclick=function() {
 };
 
 document. querySelector("#x-delete-btn").onclick= function() {
-  fetch(`/book/delete?index=${index}`)
+  fetch(`/book/delete?no=${no}`)
   .then(function(response) {
     return response.json();
   })

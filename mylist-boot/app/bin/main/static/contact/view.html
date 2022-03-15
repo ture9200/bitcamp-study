@@ -10,8 +10,8 @@
 
   <form>
   이름*: <input id ="x-name" type= "text"><br>
-  이메일*: <input id ="x-email" type= "text" readonly><br>
   전화*: <input id= "x-tel" type= "text"><br>
+  이메일*: <input id ="x-email" type= "text"><br>
   회사: <input id = "x-company" type= "text"><br>
   별표(*) 항목은 필수 입력입니다.<br>
   <button id="x-update-btn" type="button"> 변경 </button>
@@ -37,13 +37,13 @@ if(arr. length == 1) {
 //2) 쿼리 스트링에서 이메일 값을 추출한다.
 //예) email = aaa@test.com&name=aaa&tel=1111
 var params = new URLSearchParams(qs);
-var email=params.get("email");
+var no=params.get("no");
 
-if (email == null) {
-  alert("이메일 값이 없습니다.");
+if (no == null) {
+  alert("해당 번호의 연락처가 없습니다.");
   throw "파라미터 오류!";
 }
-console.log(email);
+console.log(no);
 
 var xName = document.querySelector ("#x-name");
 var xEmail = document.querySelector ("#x-email");
@@ -51,7 +51,7 @@ var xTel = document.querySelector ("#x-tel");
 var xCompany = document.querySelector ("#x-company");
 
 //3) 서버에서 데이터 가져오기
-fetch(`/contact/get?email=${email}`) //서버 요청
+fetch(`/contact/get?no=${no}`) //서버 요청
 .then(function(response) {
   return response.json();
   //서버로부터 json형식으로 받음 parsing해서 자바스크립트 객체로 만들어줘 parsing이 끝나면 다음 메서드 호출해주고 끝난 데이터를 파라미터로 넘겨줘
@@ -72,7 +72,7 @@ document. querySelector("#x-update-btn").onclick=function() {
     return;
   }
 
-  fetch(`/contact/update?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
+  fetch(`/contact/update?no=${no}&name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`)
   .then(function(response) {
     return response.text(); //json 형식 문자열 => 자바스크립트 문자열 객체
   })
@@ -87,7 +87,7 @@ document. querySelector("#x-cancel-btn").onclick=function() {
 };
 
 document. querySelector("#x-delete-btn").onclick= function() {
-  fetch(`/contact/delete?email=${email}`)
+  fetch(`/contact/delete?no=${no}`)
   .then(function(response) {
     return response.json();
   })

@@ -1,5 +1,6 @@
 package com.eomcs.mylist.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.dao.ContactDao;
@@ -18,8 +19,8 @@ import com.eomcs.mylist.domain.Contact;
 @RestController 
 public class ContactController {
 
+  @Autowired
   ContactDao contactDao;
-
 
   @RequestMapping("/contact/list")
   public Object list() {
@@ -28,35 +29,27 @@ public class ContactController {
 
   @RequestMapping("/contact/add")
   public Object add(Contact contact) throws Exception {
-    //    System.out.println(contact);
     contactDao.insert(contact);
     return contactDao.countAll();
   }
 
 
   @RequestMapping("/contact/get")
-  public Object get(String email) throws Exception {
-    Contact contact = contactDao.findByEmail(email);
-    if (email == null) {
-      return "";
-    }
-    return contact;
+  public Object get(int no) {
+    Contact contact = contactDao.findByNo(no);
+    return contact != null ? contact : "";
   }
 
   @RequestMapping("/contact/update")
-  public Object update(String email, Contact contact) throws Exception {
-    Contact old = contactDao.findByEmail(email);
-    if (old == null) {
-      return 0;
-    }
-    contact.setEmail(old.getEmail());
+  public Object update(Contact contact) throws Exception {
     return contactDao.update(contact);
   }
 
   @RequestMapping("/contact/delete")
-  public Object delete(String email) throws Exception {
-    return contactDao.delete(email);
+  public Object delete(int no) throws Exception {
+    return contactDao.delete(no);
   }
+
 }
 
 
