@@ -229,19 +229,14 @@
 
 
 '''
-create table ml_book(
-  book_no int not null,
+create table ml_todo(
+  todo_no int not null,
   title varchar(255) not null,
-  author varchar(100) not null,
-  press varchar(100) not null,
-  feed text not null,
-  read_date date,
-  page int,
-  price int
+  done boolean default false
   );
 
-  alter table ml_book
-   add constraint primary key(book_no),
-   modify column book_no int not null auto_increment;
+  alter table ml_todo
+   add constraint primary key(todo_no),
+   modify column todo_no int not null auto_increment;
 
   '''
