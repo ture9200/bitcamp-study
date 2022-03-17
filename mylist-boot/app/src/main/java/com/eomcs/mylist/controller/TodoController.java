@@ -26,7 +26,7 @@ public class TodoController {
   @RequestMapping("/todo/update")
   public Object update(Todo todo) throws Exception {
     return todoDao.update(todo);
-    }
+  }
 
   @RequestMapping("/todo/check")
   public Object check(int no, boolean done) throws Exception {
