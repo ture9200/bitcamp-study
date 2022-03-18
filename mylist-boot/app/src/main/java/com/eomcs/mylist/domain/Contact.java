@@ -1,16 +1,20 @@
 package com.eomcs.mylist.domain;
 
+import java.util.List;
+
 public class Contact  {
   int no;
   String name;
   String email;
   String tel;
   String company;
+  List<ContactTel> tels;
+  
   
   @Override
   public String toString() {
     return "Contact [no=" + no + ", name=" + name + ", email=" + email + ", tel=" + tel
-        + ", company=" + company + "]";
+        + ", company=" + company + ", tels=" + tels + "]";
   }
   
   public int getNo() {
@@ -43,7 +47,14 @@ public class Contact  {
   public void setCompany(String company) {
     this.company = company;
   }
-
+  public List<ContactTel> getTels() {
+    return tels;
+  }
+  public void setTels(List<ContactTel> tels) {
+    this.tels = tels;
+  }
+  
+  
   
 
 

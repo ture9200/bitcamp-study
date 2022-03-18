@@ -33,7 +33,7 @@ var tbody = document.querySelector("#x-contact-table tbody")
   })
   .then(function(contacts) {  //이전 함수에 작업이 끝나면 호출
     //리턴한 객체를 contacts 가 받는다. 리턴받으면 아래 작업을 할것이다.
-    console.log(contacts); //자바스크립트 객체배열을 출력
+    //console.log(contacts); //자바스크립트 객체배열을 출력
     for(var contact of contacts) { //contacts는 문자열이 아니고 객체이기 때문에 더이상 콤마로 분류하는것이 아니다. 
     //  var values=contact.split(",");  // 주어진 문자열을 콤마를 기준으로 쪼개라
       var tr= document.createElement("tr");
@@ -41,7 +41,7 @@ var tbody = document.querySelector("#x-contact-table tbody")
       tr.innerHTML=`<td>${contact.no}</td>
       <td><a href= "view.html?no=${contact.no}">${contact.name}</a></td>
       <td>${contact.email}</td>
-      <td>${contact.tel}</td>
+      <td>${contact.tels.length>0 ? contact.tels[0].tel : ""}</td>
       <td>${contact.company}</td>`;
 
       tbody.appendChild(tr);
