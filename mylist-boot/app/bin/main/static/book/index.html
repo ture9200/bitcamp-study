@@ -1,60 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>독서록</title>
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
-#book-list tbody tr td input { width: 98%; }
-table { font-family:'Poor Story'; border-collapse: collapse; border-spacing: 0; margin:auto;}
-table tbody td {font-family:'Poor Story';border: 1px solid #ccc; text-align:center;
-margin-right:auto; margin-left:auto;background-color: pink;}
-h1{
-  font-family:'Poor Story';
-  margin:0 auto;
-  text-align: center;
-}
-a{
-  font-family:'Poor Story';
-  margin:0 auto;
-  width:50%;
-  height:50px;
-  display:block;
-  text-align: center;
-}
-
-thead{
-  font-family:'Poor Story';
-  text-align: center;
-  font-weight: bold;
-  font-size:30px;
-  border-style:solid;
-  background-color:coral;
-}
-#x-warning{
-  font-family:'Poor Story';
-  font-weight: bold;
-  text-align: center;
-  color: red;
-}
-.mt-1 { margin-top: 10px; }
+    .x-photo-box {
+      display: inline-block;
+      text-align: center; 
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+    } 
   </style>
 </head>
-  <body>
-    <h1>독서록</h1>
-    <a href="form.html">새 독서록</a>
-    <table id = "x-book-table" border="1">
-      <thead>
-    <tr>
-  <th>번호</th>
-  <th>책</th>
-  <th>저자</th>
-  <th>출판사</th>
-  <th>페이지</th>
-  <th>가격</th>
-
-  <th>소감</th>
-
+<body>
+<h1>독서록</h1>
+<a href="form.html">새 독서록</a>
+<table id="x-book-table" border="1">
+<thead>
+  <tr>
+    <th>번호</th>
+    <th>책</th>
+    <th>저자</th>
+    <th>출판사</th>
+    <th>페이지</th>
   </tr>
 </thead>
 <tbody>
@@ -62,30 +31,38 @@ thead{
 </table>
 
 <script type="text/javascript">
-var tbody = document.querySelector("#x-book-table tbody")
+  var tbody = document.querySelector("#x-book-table tbody")
 
   fetch("/book/list")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(books) {
-    console.log(books); //자바스크립트 객체배열을 출력
-  //  for(var i=0; books.length; i++)
-
-    //for(var i=0; i < books.length; i++)
-    for (var i = 0; i < books.length; i++) {
-        var book = books[i];
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(books) {
+      for (var book of books) {
+        if (book.photo == null) {
+          book.photo = "default.jpg";
+        }
         var tr = document.createElement("tr");
-         tr.innerHTML= '<td>${book.no}</td>';
-        tr.innerHTML=`<td><a href= "view.html?index=${i}">${i+1}</a></td>
-           <td>${book.title}</td><td>${book.author}</td><td>${book.press}</td>
-           <td>${book.page}</td><td>${book.price}</td>
-           <td>${book.feed}</td>`;
+        tr.innerHTML = `<td>${book.no}</td>
+        <td><a href="view.html?no=${book.no}">
+          <div class="x-photo-box"><img src="photo?filename=50x50_${book.photo}"></div>
+          ${book.title}
+        </a></td>
+        <td>${book.author}</td>
+        <td>${book.press}</td>
+        <td>${book.page}</td>`;
         tbody.appendChild(tr);
       }
     });
-
 </script>
 
-  </body>
-  </html>
+
+
+
+
+
+
+
+
+</body>
+</html>

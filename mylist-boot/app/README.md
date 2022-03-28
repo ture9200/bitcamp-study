@@ -30,6 +30,11 @@ alter table ml_board
 
 alter table ml_board
   modify column board_no int not null auto_increment;
+
+  alter table ml_book
+   add column photo varchar(255);
+
+
 ```
 
 ### 3단계 - JdbcXxxDao 클래스를 생성한다.
