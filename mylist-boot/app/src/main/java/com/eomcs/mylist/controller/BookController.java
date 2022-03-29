@@ -103,7 +103,8 @@ public class BookController {
           .body(resource); // 응답 콘텐트를 생성한 후 리턴한다.
 
     } catch (Exception e) {
-      e.printStackTrace();
+    //  e.printStackTrace();
+      System.out.println("요청한 파일이 없습니다!");
       return null;
     }
   }
