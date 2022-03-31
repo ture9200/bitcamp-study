@@ -31,5 +31,16 @@
       email=#{email} and password=password(#{password})
   </select>
   <!-- 기존의 인코딩한 값과 비번을 비교해야하는 것 그리고  @Param으로 준값이 들어간다. -->
+  
+   <select id="findByEmail" resultMap="memberMap" parameterType="string">
+    select 
+      no,
+      name,
+      email
+    from 
+      ml_member
+    where
+      email=#{email} 
+  </select>
 </mapper>
 
