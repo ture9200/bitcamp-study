@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>연락처</title>
-</head>
-<body>
+<h1>새 연락처</h1>
 
-  <h1>새 연락처</h1>
-
-  <form>
-  이름*: <input id="x-name" type="text"><br>
+<form>
+이름*: <input id="x-name" type="text"><br>
 <div id="x-tel-div-container">
 <div class="x-tel-div">
 전화*: <select>
@@ -62,12 +54,12 @@
       })
       .then(function(text) {
         console.log(text);
-        location.href = "index.html";
+        location.href = "?content=/contact/index.html";
       });
   };
 
   document.querySelector("#x-cancel-btn").onclick = function() {
-    window.location.href = "index.html";
+    window.location.href = "?content=/contact/index.html";
   };
   
   document.querySelector("#x-add-tel-btn").onclick = function() {
@@ -82,31 +74,4 @@
       xTelDivContainer.removeChild(e.target.parentNode);
     }
   }
-  
-  
-/*
-fetch(`/contact/add?${qs}`)
- //서버에 요청한후
-.then(function(response) {
-  //서버에서 응답이 오면 이 함수를 호출해달라고 얘기
-  return response.text();
-    //response 에 들어있는 것을 text로 리턴
-
-  //json 형식 문자열 => 자바스크립트 문자열 객체
-  //json형식의 문자열은 "" 이 나와야한다.
-  // 객체 :{} , 배열: [] , 숫자는 그냥 숫자로.
-  // 최신 문법, 아직 회사에서는 많이 안쓴다.
-})
-.then(function(text) {
-  //text로 리턴되었으면 ()이 함수를 호출/등록) 
-  console.log(text);
-  // console로 출력해볼게
-  location.href ="index.html" ;
-});
-
-};
-*/
 </script>
-
-</body>
-</html>
