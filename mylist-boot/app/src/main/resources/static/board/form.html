@@ -2,7 +2,6 @@
 <h1>새 게시글</h1>
 
 <form name="form1">
-번호: <input name="no" type="text" readonly><br>
 제목*: <input name="title" type="text"><br>
 내용*: <textarea name="content" cols="50" rows="10"></textarea><br>
 별표(*) 항목은 필수 입력입니다.<br>
@@ -29,11 +28,11 @@
         return response.json();
       })
       .then(function(result) {
+    	  console.log(result);
         if (result.status == "success") {
           location.href = "?content=/board/index.html";
         } else {
-          window.alert("게시글 등록 실패!");
-          console.log(result.data);
+          alert(result.data);
         }
       });
   };
