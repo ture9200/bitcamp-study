@@ -1,7 +1,7 @@
 package com.eomcs.mylist.conf;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,7 +14,7 @@ import com.eomcs.mylist.interceptor.AuthInterceptor;
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer {
   
-  private static final Logger log = LogManager.getLogger(MvcConfiguration.class);
+  private static final Logger log = LoggerFactory.getLogger(MvcConfiguration.class);
   // WebMvcConfigurer 인터페이스
   // => 이 규칙에 따라 메서드를 작성하면 
   //    스프링부트는 해당 메소드를 호출하여 그 메서드가 요구하는대로 설정한다.
