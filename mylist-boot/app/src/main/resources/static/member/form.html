@@ -29,10 +29,10 @@ document.querySelector("form[name=form1]").onsubmit = function() {
       body: new URLSearchParams(fd)
     }) 
     .then(function(response) {
-      return response.text();
+      return response.json();
     })
-    .then(function(text) {
-      if (text == "success") {
+    .then(function(result) {
+      if (result.status == "success") {
         location.href = "?content=/member/signin.html";
       } else {
         window.alert("회원가입 실패!!");

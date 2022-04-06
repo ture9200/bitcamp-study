@@ -22,9 +22,9 @@ public class MemberController {
   @RequestMapping("/member/signup")
   public Object signUp(Member member) {
     if (memberService.add(member) == 1) {
-      return "success";
+      return new ResultMap().setStatus(SUCCESS);
     } else {
-      return "fail";
+      return new ResultMap().setStatus(FAIL);
     }
   }
 
@@ -32,7 +32,7 @@ public class MemberController {
   public Object signin(String email, String password, boolean saveEmail, HttpServletResponse response, HttpSession session) {
     Member loginUser = memberService.get(email, password);
     if (loginUser == null) {
-      return "fail";
+      return new ResultMap().setStatus(FAIL);
     }
 
     // 로그인이 성공하면, 
@@ -49,7 +49,7 @@ public class MemberController {
     }
     response.addCookie(cookie); // 응답할 때 쿠키 정보를 응답헤더에 포함시킨다.
 
-    return "success";
+    return new ResultMap().setStatus(SUCCESS);
   }
 
   @RequestMapping("/member/getLoginUser")
@@ -108,3 +108,9 @@ public class MemberController {
   }
 
 }
+
+
+
+
+
+
