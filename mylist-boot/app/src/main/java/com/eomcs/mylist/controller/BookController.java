@@ -25,9 +25,9 @@ import net.coobird.thumbnailator.geometry.Positions;
 
 @RestController 
 public class BookController {
-  
+
   private static final Logger log = LoggerFactory.getLogger(BookController.class);
-  
+
   @Autowired
   BookService bookService;
 
@@ -163,6 +163,5 @@ public class BookController {
       return null;
     }
   }
-
-
 }
+
