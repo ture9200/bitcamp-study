@@ -94,7 +94,7 @@ public class BoardListServlet extends HttpServlet {
 
     out.println("<div id=\"content\">");
     out.println("<h1>게시글</h1>");
-    out.println("<a href=\"?content=/board/form.html\">새 게시글</a>");
+    out.println("<a href=\"add\">새 게시글</a>");
     out.println("<table id=\"x-board-table\" border=\"1\">");
     out.println("<thead>");
     out.println("  <tr>");
@@ -147,3 +147,4 @@ public class BoardListServlet extends HttpServlet {
 
   }
 }
+
