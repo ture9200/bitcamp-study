@@ -29,6 +29,7 @@ public class BoardDeleteServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
 
+    try {
     Board board = new Board();
     int no= Integer.parseInt(req.getParameter("no"));
     
@@ -39,6 +40,12 @@ public class BoardDeleteServlet extends HttpServlet {
 
     
     resp.sendRedirect("list");
+    
+    }catch (Exception e) {
+      req.setAttribute("exception", e);
+      //포워드하기전에 출력한 콘텐트가 있다면 모두 버리고 다른 서블릿에게 책임을 위임한다. 
+      req.getRequestDispatcher("/error").forward(req, resp);
+    }
     
   }
 }
