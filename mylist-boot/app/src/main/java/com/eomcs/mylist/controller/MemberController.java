@@ -30,6 +30,8 @@ public class MemberController {
 
   @RequestMapping("/member/signin")
   public Object signin(String email, String password, boolean saveEmail, HttpServletResponse response, HttpSession session) {
+    System.out.println(email);
+    System.out.println("tntnt");
     Member loginUser = memberService.get(email, password);
     if (loginUser == null) {
       return new ResultMap().setStatus(FAIL);
