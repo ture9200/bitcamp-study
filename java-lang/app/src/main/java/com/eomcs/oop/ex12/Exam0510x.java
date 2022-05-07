@@ -29,6 +29,10 @@ public class Exam0510x {
      System.out.println(c1.compute(200, 17));
      
     // 2) 익명 클래스 
+     //1. 인터페이스 이름을 적는다. 
+     //2. 중괄호를 넣어준다. 
+     //3. 중괄호안에 넣어주는데 interface안에 모든 메서드는 public 이다. 
+     //4. 
     // System.out.println(c2.compute(200,17));
      
     Calculator c2 = new Calculator() {
