@@ -15,19 +15,19 @@ repositories {
 }
 
 dependencies {
-  //썸네일 이미지 생성 라이브러리 
+  //�뜽�꽕�씪 �씠誘몄� �깮�꽦 �씪�씠釉뚮윭由� 
   implementation 'net.coobird:thumbnailator:0.4.17'
   
- // MariaDB JDBC 드라이버
+ // MariaDB JDBC �뱶�씪�씠踰�
   implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.3'
   
-  //Mybatis 프레임워크 (직접 구성)
+  //Mybatis �봽�젅�엫�썙�겕 (吏곸젒 援ъ꽦)
   //implementation 'org.mybatis:mybatis:3.5.9'
   //implementation 'org.mybatis:mybatis-spring:2.0.7'
   
   //implementation 'org.springframework:spring-jdbc:5.3.13'
   
-  //Mybatis 프레임워크 (스프링 스타터로 간접 구성)
+  //Mybatis �봽�젅�엫�썙�겕 (�뒪�봽留� �뒪���꽣濡� 媛꾩젒 援ъ꽦)
   implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
   
   implementation 'org.springframework.boot:spring-boot-starter-jdbc'
@@ -42,7 +42,7 @@ test {
   useJUnitPlatform()
 }
 
-// eclipse 프로젝트 이름을 설정하기
+// eclipse �봽濡쒖젥�듃 �씠由꾩쓣 �꽕�젙�븯湲�
 eclipse {
     project {
         name = "mylist-boot"

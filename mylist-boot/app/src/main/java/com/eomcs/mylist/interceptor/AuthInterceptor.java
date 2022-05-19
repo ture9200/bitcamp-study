@@ -11,7 +11,7 @@ import com.eomcs.mylist.controller.ResultMap;
 import com.eomcs.mylist.domain.Member;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-// ì‚¬ìš©ì ì¸ì¦ ì—¬ë¶€ë¥¼ ê²€ì‚¬í•˜ëŠ” ì¸í„°ì…‰í„°
+// »ç¿ëÀÚ ÀÎÁõ ¿©ºÎ¸¦ °Ë»çÇÏ´Â ÀÎÅÍ¼ÁÅÍ
 public class AuthInterceptor implements HandlerInterceptor {
 
   private static final Logger log = LoggerFactory.getLogger(AuthInterceptor.class);
@@ -19,28 +19,28 @@ public class AuthInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
       throws Exception {
-    log.trace("preHandle() í˜¸ì¶œë¨!");
+    log.trace("preHandle() È£ÃâµÊ!");
 
-    // ë¡œê·¸ì¸ ì—¬ë¶€ ê²€ì‚¬
+    // ·Î±×ÀÎ ¿©ºÎ °Ë»ç
     HttpSession session = request.getSession();
     Member loginUser = (Member) session.getAttribute("loginUser");
     if (loginUser == null) {
-      // ë¡œê·¸ì¸ì„ í•˜ì§€ ì•Šì•˜ìœ¼ë©´ ì˜¤ë¥˜ ë©”ì‹œì§€ë¥¼ JSON í˜•ì‹ìœ¼ë¡œ ì§ì ‘ ì‘ë‹µí•œë‹¤.
+      // ·Î±×ÀÎÀ» ÇÏÁö ¾Ê¾ÒÀ¸¸é ¿À·ù ¸Ş½ÃÁö¸¦ JSON Çü½ÄÀ¸·Î Á÷Á¢ ÀÀ´äÇÑ´Ù.
       response.setContentType("application/json;charset=UTF-8");
       response.getWriter().write(new ObjectMapper().writeValueAsString(new ResultMap()
           .setStatus(ResultMap.FAIL)
-          .setData("ë¡œê·¸ì¸ í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!")));
+          .setData("·Î±×ÀÎ ÇÏÁö ¾Ê¾Ò½À´Ï´Ù!")));
 
-      return false; // í˜ì´ì§€ ì»¨íŠ¸ë¡¤ëŸ¬ë¥¼ ì‹¤í–‰í•˜ì§€ ë§ê³  ì¦‰ì‹œ ì‘ë‹µí•˜ë¼!
+      return false; // ÆäÀÌÁö ÄÁÆ®·Ñ·¯¸¦ ½ÇÇàÇÏÁö ¸»°í Áï½Ã ÀÀ´äÇÏ¶ó!
     }
 
-    return true; // ë¡œê·¸ì¸ ëœ ìƒíƒœë¼ë©´, ê³„ì† ì§„í–‰í•˜ë¼! (ìš”ì²­í•œ í˜ì´ì§€ ì»¨íŠ¸ë¡¤ëŸ¬ì˜ ë©”ì„œë“œë¥¼ í˜¸ì¶œí•˜ë¼!)
+    return true; // ·Î±×ÀÎ µÈ »óÅÂ¶ó¸é, °è¼Ó ÁøÇàÇÏ¶ó! (¿äÃ»ÇÑ ÆäÀÌÁö ÄÁÆ®·Ñ·¯ÀÇ ¸Ş¼­µå¸¦ È£ÃâÇÏ¶ó!)
   }
 
   @Override
   public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
       ModelAndView modelAndView) throws Exception {
-    log.trace("postHandle() í˜¸ì¶œë¨!");
+    log.trace("postHandle() È£ÃâµÊ!");
     HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
   }
 }

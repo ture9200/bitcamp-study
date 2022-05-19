@@ -15,47 +15,40 @@ import com.eomcs.mylist.service.BoardService;
 @RestController 
 public class BoardController {
 
-  //logë¥¼ ì¶œë ¥í•˜ëŠ” ë„êµ¬ ì¤€ë¹„ 
+  // log¸¦ Ãâ·ÂÇÏ´Â µµ±¸ ÁØºñ
   private static final Logger log = LoggerFactory.getLogger(BoardController.class);
-  
+
   @Autowired
   BoardService boardService;
 
   @RequestMapping("/board/list")
   public Object list() {
-    log.error("error...");
-    log.warn("warn...");
-    log.info("info...");
-    log.debug("debug...");
-    log.trace("trace...");
-    
-    log.info("ê²Œì‹œë¬¼ ëª©ë¡ ì¡°íšŒ!");
-//    log.fatal("fatal...");
-//    log.error("error...");
-//    log.warn("warn...");
-//    log.info("info...");
-//    log.debug("debug...");
-//    log.trace("trace...");
+    log.error("error.....");
+    log.warn("warn.....");
+    log.info("info.....");
+    log.debug("debug.....");
+    log.trace("trace.....");
+
+    log.info("°Ô½Ç¹° ¸ñ·Ï Á¶È¸!");
     return new ResultMap().setStatus(SUCCESS).setData(boardService.list());
   }
 
   @RequestMapping("/board/add")
   public Object add(Board board, HttpSession session) {
-    log.info("ê²Œì‹œë¬¼ ë“±ë¡!"); // ìš´ì˜ìê°€ í™•ì¸í•˜ê¸°ë¥¼ ì›í•˜ëŠ” ì •ë³´ 
-    log.debug(board.toString()); //ê°œë°œìê°€ í™•ì¸í•˜ê¸°ë¥¼ ì›í•˜ëŠ” ì •ë³´ 
-    
+    log.info("°Ô½Ã±Û µî·Ï!"); // ¿î¿µÀÚ°¡ È®ÀÎÇÏ±â¸¦ ¿øÇÏ´Â Á¤º¸
+    log.debug(board.toString()); // °³¹ßÀÚ°¡ È®ÀÎÇÏ±â¸¦ ¿øÇÏ´Â Á¤º¸
+
     Member member = (Member) session.getAttribute("loginUser");
     board.setWriter(member);
     boardService.add(board);
     return new ResultMap().setStatus(SUCCESS);
   }
 
-
   @RequestMapping("/board/get")
   public Object get(int no) {
     Board board = boardService.get(no);
     if (board == null) {
-      return new ResultMap().setStatus(FAIL).setData("í•´ë‹¹ ë²ˆí˜¸ì˜ ê²Œì‹œê¸€ì´ ì—†ìŠµë‹ˆë‹¤.");
+      return new ResultMap().setStatus(FAIL).setData("ÇØ´ç ¹øÈ£ÀÇ °Ô½Ã±ÛÀÌ ¾ø½À´Ï´Ù.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(board);
   }
@@ -69,7 +62,7 @@ public class BoardController {
     if (count == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
-      return new ResultMap().setStatus(FAIL).setData("ê²Œì‹œê¸€ ë²ˆí˜¸ê°€ ìœ íš¨í•˜ì§€ ì•Šê±°ë‚˜ ê²Œì‹œê¸€ ì‘ì„±ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
+      return new ResultMap().setStatus(FAIL).setData("°Ô½Ã±Û ¹øÈ£°¡ À¯È¿ÇÏÁö ¾Ê°Å³ª °Ô½Ã±Û ÀÛ¼ºÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
     }
   }
 
@@ -85,7 +78,8 @@ public class BoardController {
     if (count == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
-      return new ResultMap().setStatus(FAIL).setData("ê²Œì‹œê¸€ ë²ˆí˜¸ê°€ ìœ íš¨í•˜ì§€ ì•Šê±°ë‚˜ ê²Œì‹œê¸€ ì‘ì„±ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
+      return new ResultMap().setStatus(FAIL).setData("°Ô½Ã±Û ¹øÈ£°¡ À¯È¿ÇÏÁö ¾Ê°Å³ª °Ô½Ã±Û ÀÛ¼ºÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
     }
   }
 }
+

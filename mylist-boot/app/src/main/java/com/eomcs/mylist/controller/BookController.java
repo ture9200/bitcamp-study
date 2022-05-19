@@ -57,7 +57,7 @@ public class BookController {
   public Object get(int no) {
     Book book = bookService.get(no);
     if (book == null) {
-      return new ResultMap().setStatus(FAIL).setData("해당 번호의 독서록이 없습니다.");
+      return new ResultMap().setStatus(FAIL).setData("�빐�떦 踰덊샇�쓽 �룆�꽌濡앹씠 �뾾�뒿�땲�떎.");
     }
     return new ResultMap().setStatus(SUCCESS).setData(book);
   }
@@ -71,7 +71,7 @@ public class BookController {
       if (count == 1) {
         return new ResultMap().setStatus(SUCCESS);
       } else {
-        return new ResultMap().setStatus(FAIL).setData("독서록 번호가 유효하지 않거나 독서록 작성자가 아닙니다.");
+        return new ResultMap().setStatus(FAIL).setData("�룆�꽌濡� 踰덊샇媛� �쑀�슚�븯吏� �븡嫄곕굹 �룆�꽌濡� �옉�꽦�옄媛� �븘�떃�땲�떎.");
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -86,7 +86,7 @@ public class BookController {
     if (count == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
-      return new ResultMap().setStatus(FAIL).setData("독서록 번호가 유효하지 않거나 독서록 작성자가 아닙니다.");
+      return new ResultMap().setStatus(FAIL).setData("�룆�꽌濡� 踰덊샇媛� �쑀�슚�븯吏� �븡嫄곕굹 �룆�꽌濡� �옉�꽦�옄媛� �븘�떃�땲�떎.");
     }
   }
 
@@ -94,39 +94,39 @@ public class BookController {
   public ResponseEntity<Resource> photo(String filename) {
 
     try {
-      // 다운로드할 파일의 입력 스트림 자원을 준비한다.
-      File downloadFile = new File("./upload/book/" + filename); // 다운로드 상대 경로 준비
-      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath()); // 다운로드 파일의 실제 경로를 지정하여 입력 스트림 준비
-      InputStreamResource resource = new InputStreamResource(fileIn); // 입력 스트림을 입력 자원으로 포장
+      // �떎�슫濡쒕뱶�븷 �뙆�씪�쓽 �엯�젰 �뒪�듃由� �옄�썝�쓣 以�鍮꾪븳�떎.
+      File downloadFile = new File("./upload/book/" + filename); // �떎�슫濡쒕뱶 �긽�� 寃쎈줈 以�鍮�
+      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath()); // �떎�슫濡쒕뱶 �뙆�씪�쓽 �떎�젣 寃쎈줈瑜� 吏��젙�븯�뿬 �엯�젰 �뒪�듃由� 以�鍮�
+      InputStreamResource resource = new InputStreamResource(fileIn); // �엯�젰 �뒪�듃由쇱쓣 �엯�젰 �옄�썝�쑝濡� �룷�옣
 
-      // HTTP 응답 헤더를 준비한다.
+      // HTTP �쓳�떟 �뿤�뜑瑜� 以�鍮꾪븳�떎.
       HttpHeaders header = new HttpHeaders();
       header.add("Cache-Control", "no-cache, no-store, must-revalidate");
       header.add("Pragma", "no-cache");
       header.add("Expires", "0");
 
-      // 다운로드 파일명을 지정하고 싶다면 다음의 응답 헤더를 추가하라!
-      // => 다운로드 파일을 지정하지 않으면 요청 URL이 파일명으로 사용된다.
+      // �떎�슫濡쒕뱶 �뙆�씪紐낆쓣 吏��젙�븯怨� �떢�떎硫� �떎�쓬�쓽 �쓳�떟 �뿤�뜑瑜� 異붽��븯�씪!
+      // => �떎�슫濡쒕뱶 �뙆�씪�쓣 吏��젙�븯吏� �븡�쑝硫� �슂泥� URL�씠 �뙆�씪紐낆쑝濡� �궗�슜�맂�떎.
       header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
 
 
 
-      //      // HTTP 응답 생성기를 사용하여 다운로드 파일의 응답 데이터를 준비한다.
-      //      BodyBuilder http응답생성기 = ResponseEntity.ok(); // 요청 처리에 성공했다는 응답 생성기를 준비한다.
-      //      http응답생성기.headers(header); // HTTP 응답 헤더를 설정한다.
-      //      http응답생성기.contentLength(downloadFile.length()); // 응답 콘텐트의 파일 크기를 설정한다.
-      //      http응답생성기.contentType(MediaType.APPLICATION_OCTET_STREAM); // 응답 데이터의 MIME 타입을 설정한다.
+      //      // HTTP �쓳�떟 �깮�꽦湲곕�� �궗�슜�븯�뿬 �떎�슫濡쒕뱶 �뙆�씪�쓽 �쓳�떟 �뜲�씠�꽣瑜� 以�鍮꾪븳�떎.
+      //      BodyBuilder http�쓳�떟�깮�꽦湲� = ResponseEntity.ok(); // �슂泥� 泥섎━�뿉 �꽦怨듯뻽�떎�뒗 �쓳�떟 �깮�꽦湲곕�� 以�鍮꾪븳�떎.
+      //      http�쓳�떟�깮�꽦湲�.headers(header); // HTTP �쓳�떟 �뿤�뜑瑜� �꽕�젙�븳�떎.
+      //      http�쓳�떟�깮�꽦湲�.contentLength(downloadFile.length()); // �쓳�떟 肄섑뀗�듃�쓽 �뙆�씪 �겕湲곕�� �꽕�젙�븳�떎.
+      //      http�쓳�떟�깮�꽦湲�.contentType(MediaType.APPLICATION_OCTET_STREAM); // �쓳�떟 �뜲�씠�꽣�쓽 MIME ���엯�쓣 �꽕�젙�븳�떎.
       //      
-      //      // 응답 데이터를 포장한다.
-      //      ResponseEntity<Resource> 응답데이터 = http응답생성기.body(resource);
+      //      // �쓳�떟 �뜲�씠�꽣瑜� �룷�옣�븳�떎.
+      //      ResponseEntity<Resource> �쓳�떟�뜲�씠�꽣 = http�쓳�떟�깮�꽦湲�.body(resource);
       //      
-      //      return 응답데이터; // 포장한 응답 데이터를 클라이언트로 리턴한다.
+      //      return �쓳�떟�뜲�씠�꽣; // �룷�옣�븳 �쓳�떟 �뜲�씠�꽣瑜� �겢�씪�씠�뼵�듃濡� 由ы꽩�븳�떎.
 
-      return ResponseEntity.ok() // HTTP 응답 프로토콜에 따라 응답을 수행할 생성기를 준비한다.
-          .headers(header) // 응답 헤더를 설정한다.
-          .contentLength(downloadFile.length()) // 응답할 파일의 크기를 설정한다.
-          .contentType(MediaType.APPLICATION_OCTET_STREAM) // 응답 콘텐트의 MIME 타입을 설정한다.
-          .body(resource); // 응답 콘텐트를 생성한 후 리턴한다.
+      return ResponseEntity.ok() // HTTP �쓳�떟 �봽濡쒗넗肄쒖뿉 �뵲�씪 �쓳�떟�쓣 �닔�뻾�븷 �깮�꽦湲곕�� 以�鍮꾪븳�떎.
+          .headers(header) // �쓳�떟 �뿤�뜑瑜� �꽕�젙�븳�떎.
+          .contentLength(downloadFile.length()) // �쓳�떟�븷 �뙆�씪�쓽 �겕湲곕�� �꽕�젙�븳�떎.
+          .contentType(MediaType.APPLICATION_OCTET_STREAM) // �쓳�떟 肄섑뀗�듃�쓽 MIME ���엯�쓣 �꽕�젙�븳�떎.
+          .body(resource); // �쓳�떟 肄섑뀗�듃瑜� �깮�꽦�븳 �썑 由ы꽩�븳�떎.
 
     } catch (Exception e) {
 
@@ -137,20 +137,20 @@ public class BookController {
 
   private String saveFile(MultipartFile file) throws Exception {
     if (file != null && file.getSize() > 0) { 
-      // 파일을 저장할 때 사용할 파일명을 준비한다.
+      // �뙆�씪�쓣 ���옣�븷 �븣 �궗�슜�븷 �뙆�씪紐낆쓣 以�鍮꾪븳�떎.
       String filename = UUID.randomUUID().toString();
 
-      // 파일명의 확장자를 알아낸다.
+      // �뙆�씪紐낆쓽 �솗�옣�옄瑜� �븣�븘�궦�떎.
       int dotIndex = file.getOriginalFilename().lastIndexOf(".");
       if (dotIndex != -1) {
         filename += file.getOriginalFilename().substring(dotIndex);
       }
 
-      // 파일을 지정된 폴더에 저장한다.
-      File photoFile = new File("./upload/book/" + filename); // App 클래스를 실행하는 프로젝트 폴더
-      file.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
+      // �뙆�씪�쓣 吏��젙�맂 �뤃�뜑�뿉 ���옣�븳�떎.
+      File photoFile = new File("./upload/book/" + filename); // App �겢�옒�뒪瑜� �떎�뻾�븯�뒗 �봽濡쒖젥�듃 �뤃�뜑
+      file.transferTo(photoFile.getCanonicalFile()); // �봽濡쒖젥�듃 �뤃�뜑�쓽 �쟾泥� 寃쎈줈瑜� �쟾�떖�븳�떎.
 
-      // 썸네일 이미지 파일 생성
+      // �뜽�꽕�씪 �씠誘몄� �뙆�씪 �깮�꽦
       Thumbnails.of(photoFile)
       .size(50, 50)
       .crop(Positions.CENTER)

@@ -7,27 +7,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import com.eomcs.mylist.domain.Member;
 
-//ì—­í• :
-//-HttpSession ê°ì²´ë¥¼ ìƒì„±í•  ë•Œ, ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸ë¥¼ ìœ„í•´ ìë™ìœ¼ë¡œ ë¡œê·¸ì¸ ì‹œí‚¨ë‹¤. 
-//-ìš”ì²­ì´ ë“¤ì–´ì˜¬ë•Œ , ê¸°ëŠ¥ í…ŒìŠ¤íŠ¸ë¥¼ ìœ„í•´ ìë™ìœ¼ë¡œ ë¡œê·¸ì¸ ì‹œí‚¨ë‹¤. 
-
+// ¿ªÇÒ:
+// - ¿äÃ»ÀÌ µé¾î ¿Ã ¶§, ±â´É Å×½ºÆ®¸¦ À§ÇØ ÀÚµ¿À¸·Î ·Î±×ÀÎ ½ÃÅ²´Ù.
+//
 @WebListener
 public class AutoLoginListener implements ServletRequestListener {
   @Override
   public void requestInitialized(ServletRequestEvent sre) {
-    System.out.println("AutoLoginUser.sessionCreated() í˜¸ì¶œë¨!");
-   Member loginUser = new Member();
-   loginUser.setNo(2);
-   loginUser.setName("user2");
-   
-   HttpServletRequest httpRequest = (HttpServletRequest)sre.getServletRequest();
-   
-   HttpSession session = httpRequest.getSession();
-   session.setAttribute("loginUser", loginUser);
-   }
+    System.out.println("AutoLoginListener.requestInitialized() È£ÃâµÊ!");
+    Member loginUser = new Member();
+    loginUser.setNo(2);
+    loginUser.setName("user2");
+
+    HttpServletRequest httpRequest = (HttpServletRequest) sre.getServletRequest(); 
+    HttpSession session = httpRequest.getSession();
+    session.setAttribute("loginUser", loginUser);
   }
-
-
-
-
+}
 
