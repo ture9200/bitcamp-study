@@ -369,7 +369,7 @@ https://meet.google.com/cyz-mbfk-qaa
 - MyList 프로젝트 실습
   - 07.5 파일 API 활용: 데이터를 바이너리 형식으로 읽고 쓰기
   - 07.6 파일 API 활용: 데이터를 객체 단위로 읽고 쓰기
-
+   create table
   create table patient_list (
          mno int not null,
          name varchar(20) not null,
@@ -380,7 +380,16 @@ https://meet.google.com/cyz-mbfk-qaa
          birth int default null,
          etc text default null
        );
-       
+
+       create table supplies(
+         name varchar(100) not null,
+         quantity int not null
+         );
+
+         alter table supplies
+         add constraint primary key (no),
+         modify column no int not null auto_increment;
+
   drop table ml_contact;
   drop table ml_tel_type;
   drop table ml_cont_tel;
