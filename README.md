@@ -985,7 +985,7 @@ https://meet.google.com/cyz-mbfk-qaa
     - 팀원 소개 및 담당 모듈
     - 프로젝트 소감
 
-##
+## SQL 코드 참고 
 
 drop table ml_contact; drop table ml_tel_type; drop table ml_cont_tel;
 
