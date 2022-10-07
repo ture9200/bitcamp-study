@@ -24,7 +24,7 @@ https://meet.google.com/cyz-mbfk-qaa
 - 웹 개발자가 갖춰야 할 주요 기술을 알고 있는가?
     - 각 기술의 용도를 간단히 설명할 수 있는가?
 
-## 14일차(2021-11-25,목)❤💔
+## 14일차(2021-11-25,목)
 - git 개발 도구를 설치하고 원격의 깃 저장소를 로컬로 가져올 수 있는가?
     - 깃 디렉토리와 워킹 디렉토리를 설명할 수 있는가?
 - 변경한 파일을 로컬 저장소로 백업하고 원격 저장소에 업로드 할 수 있는가?
@@ -97,7 +97,7 @@ https://meet.google.com/cyz-mbfk-qaa
 - 인코딩과 디코딩에 대해 설명할 수 있는가?
 - 이스케이프 문자에 대해 설명할 수 있는가?
 - 요청 파라미터와 변수를 설명할 수 있는가?
-- 코로나로 휴강
+- 코로나로 휴강(오전 2교시까지만 수업함)
 
 ## 20일차(2021-12-03,금)
 - 변수 선언이 무엇인지 설명할 수 있는가?
@@ -358,106 +358,656 @@ https://meet.google.com/cyz-mbfk-qaa
   - ex06: 버퍼를 사용해야 하는 이유와 입출력에 적용하는 방법
   - ex07: 상속을 이용한 기능 확장의 한계를 이해하기
 
-## 52일차(2022-01-19,수)😀😉
-
+## 52일차(2022-01-19,수)
 
 - I/O 스트림 문법(com.eomcs.io)
   - ex08: 포함관계를 이용한 기능 확장 및 한계
   - ex09: 데코레이터 패턴을 이용한 기능 확장
   - ex10: java.io 패키지의 클래스를 사용하기
-  - ex11: 인스턴스 직렬화
+  - ex11: 인스턴스 직렬화, serialVersionUID, transient
 - MyList 프로젝트 실습
   - 07.5 파일 API 활용: 데이터를 바이너리 형식으로 읽고 쓰기
   - 07.6 파일 API 활용: 데이터를 객체 단위로 읽고 쓰기
-   create table
-  create table patient_list (
-         mno int not null,
-         name varchar(20) not null,
-         age int not null,
-         test_data text not null,
-         gender boolean default null,
-         id  varchar(20) not null,
-         birth int default null,
-         etc text default null
-       );
 
-       create table supplies(
-         name varchar(100) not null,
-         quantity int not null
-         );
+## 53일차(2022-01-20,목)
 
-         alter table supplies
-         add constraint primary key (no),
-         modify column no int not null auto_increment;
+- I/O 스트림 문법(com.eomcs.io)
+  - ex11: 인스턴스 직렬화, serialVersionUID, transient(계속)
+- 자바 기본 클래스(com.eomcs.basic)
+  - ex01: Object 클래스
 
-  drop table ml_contact;
-  drop table ml_tel_type;
-  drop table ml_cont_tel;
+## 54일차(2022-01-21,금)
 
-  -- 연락처
-  create table ml_contact(
-    contact_no int not null,
-    name varchar(50) not null,
-    email varchar(20) not null,
-    company varchar(50)
-  );
+- 자바 기본 클래스(com.eomcs.basic)
+  - ex01: Object 클래스(계속)
+    - shallow/deep copy
+  - ex02: Wrapper 클래스 사용법
+- 미니 프로젝트(project-app1): 계산기 만들기
+  - 1단계 ~ 8단계
+  - 클라이언트/서버 애플리케이션 만들기 소개
 
-  alter table ml_contact
-    add constraint primary key (contact_no),
-    modify column contact_no int not null auto_increment;
+## 55일차(2022-01-24,월)
 
-  -- 전화번호 유형
-  create table ml_tel_type(
-    tt_no int not null,
-    title varchar(20) not null
-  );
+- MyList 프로젝트 실습
+  - 07.7 파일 API 활용: 데이터를 JSON 형식으로 읽고 쓰기
+  - 08.1 DAO 역할 도입: 데이터 보관 처리 코드를 별도의 클래스로 분리
 
-  alter table ml_tel_type
-    add constraint primary key (tt_no),
-    modify column tt_no int not null auto_increment;
+## 56일차(2022-01-25,화)
 
-  -- 연락처 전화번호
-  create table ml_cont_tel(
-    ct_no int not null, -- 전화번호 PK
-    contact_no int not null, -- 연락처 PK
-    tt_no int not null, -- 전화번호 유형 PK
-    tel varchar(20) not null -- 전화번호
-  );
+- MyList 프로젝트 실습
+  - 08.1 DAO 역할 도입: 데이터 보관 처리 코드를 별도의 클래스로 분리(계속)
+  - 08.2 DAO 역할 도입: 인터페이스 도입하여 DAO 사용 규칙을 통일하기
+  - 08.3 DAO 역할 도입: 상속의 generalization을 수행하여 추상 클래스 정의하기
 
-  alter table ml_cont_tel
-    add constraint primary key (ct_no),
-    modify column ct_no int not null auto_increment;
+## 57일차(2022-01-26,수)
 
-  alter table ml_cont_tel
-    add constraint ml_cont_tel_fk1
-        foreign key (contact_no) references ml_contact(contact_no),
-    add constraint ml_cont_tel_fk2
-        foreign key (tt_no) references ml_tel_type(tt_no);   
+- 자바 OOP 문법(com.eomcs.oop)
+  - ex07: 추상 클래스 사용법
+  - ex09: 인터페이스 사용법
+
+## 58일차(2022-01-27,목)
+
+- 자바 OOP 문법(com.eomcs.oop)
+  - ex09: 인터페이스 사용법(계속)
+- 미니 프로젝트(project-app1): 계산기 만들기
+  - 9단계: 클라이언트/서버 애플리케이션으로 구조를 변경하기
+- AWS EC2 서버 구축
+  - AMI 리눅스 인스턴스 생성
+  - 패키지 매니저의 정보 갱신: `sudo yum update`
+  - Amazon JDK 설치: `sudo yum install java-11-amazon-corretto-headless`
+  - JDK 설치 폴더 알아내기: `readlink -f /usr/bin/java`
+    - 실행 결과: `/usr/lib/jvm/java-11-amazon-corretto.x86_64/bin/java`
+  - JAVA_HOME 환경 변수 설정: `nano .bash_profile`
+    - 맨 끝에 추가: `export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto.x86_64`
+    - 저장 및 nano 종료
+    - 변경된 환경 설정 적용: `source .bash_profile`
+    - 환경 변수 설정 확인: `echo $JAVA_HOME`
+  - GIT 클라이언트 설치: `sudo yum install git`
+    - 설치 확인: `git --version`
+  - bitcamp-study 저장소 복사해오기
+    - 저장소를 둘 폴더 생성: `mkdir git`
+    - git 폴더로 이동: `cd git`
+    - 본인 저장소 복제: `git clone https://github.com/본인아이디/bitcamp-study.git`
+  - app-server 빌드
+    - 프로젝트 폴더로 이동: `cd ~/git/bitcamp-study/project-app1`
+    - gradlew 파일에 실행 권한 부여: `chmod 764 ./gradlew`
+    - 빌드하기: `./gradlew build`
+  - app-server 실행
+    - ServerApp 클래스 실행: `java -Dfile.encoding=UTF-8 -cp ./app-server/build/classes/java/main com.eomcs.app1.ServerApp`
+  - 인바운드 포트 8888 열기
+    - ec2 > 인스턴스 > 서버아이디 > 보안탭 > [보안그룹] 클릭
+    - [인바운드 규칙 편집] 클릭
+    - [규칙추가] 클릭
+    - 유형(사용자지정TCP), 포트 범위(8888), CIDR 블록(0.0.0.0/0) 설정
+    - [규칙저장] 클릭
+  - 클라이언트 접속 테스트
+    - 서버 주소를 ec2 public IP로 설정한 다음에 실행한다.
+
+## 59일차(2022-01-28,금)
+
+- 미니 프로젝트(project-app1): 계산기 만들기
+  - 9단계: 클라이언트/서버 애플리케이션으로 구조를 변경하기
+    - Thread를 이용한 멀티태스킹 적용
+    - encoding/decoding 활용하여 보내는 데이터의 문자 충돌 방지
+    - URLEncoding/URLDecoding 의 원리와 존재 이유
+  - 10단계: 클라이언트를 웹브라우저로 대체하기
+    - ServerApp을 HTTP 서버로 변경한다.
+
+## 60일차(2022-02-03,목)
+
+- 미니 프로젝트(project-app1): 계산기 만들기
+  - 11단계: 웹기술 도입 - 스프링 부트 적용
+  - 12단계: 웹기술 도입 - HTML/CSS/JavaScript로 UI 생성
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex01: 클라이언트/서버 프로그래밍 소개
+  - ex02: ServerSocket/Socket, 대기열, accept() 다루기
+
+## 61일차(2022-02-04,금)
+
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex03: 데이터 주고 받기
+- 미니 프로젝트(project-app1): 계산기 만들기
+  - 8.1단계: 예외 처리 문법 적용
+- 예외 처리(com.eomcs.exception)
+  - ex1: 예외 처리 문법이 없을 경우 오류 상황을 알리는 방법
+  - ex2: 예외 처리 문법을 이용하여 오류 상황을 알리기
+  - ex3: 예외처리 문법
+  - ex4: Exception과 RuntimeException의 차이
+  - ex5: 사용자 정의 예외 클래스 만들기
+
+## 62일차(2022-02-07,월)
+
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex03: 데이터 주고 받기(계속)
+  - ex04: Stateful/Stateless 통신
+
+## 63일차(2022-02-08,화)
+
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex05: Connection-oriented/Connectionless 통신
+  - ex06: HTTP Client/Server 만들기
+  - ex07: URL 클래스 사용법
+  - ex08: URL, URLConnection 클래스를 사용하여 HTTP 요청하기
+  - ex11: 계산기 클라이언트/서버 만들기
+
+## 64일차(2022-02-09,수)
+
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex12: 채팅 클라이언트/서버 만들기
+    - AWT 채팅 클라이언트
+    - Swing 채팅 클라이언트
+    - 멀티스레딩과 중첩클래스
+
+## 65일차(2022-02-10,목)
+
+- 자바 네트워킹 프로그래밍(com.eomcs.net)
+  - ex12: 채팅 클라이언트/서버 만들기(계속)
+- 객체지향 문법(com.eomcs.oop)
+  - ex11: 중첩클래스 사용법
+    - overview: 패키지 멤버 클래스에서 익명 클래스까지
+
+## 66일차(2022-02-11,금)
+
+- 객체지향 문법(com.eomcs.oop)
+  - ex11: 중첩클래스 사용법(계속)
 
 
-        -- 연락처 기본 정보 입력
-insert into ml_contact(contact_no,name,email,company)
-  values(1, '사람1', 'user1@test.com', '비트캠프');
-insert into ml_contact(contact_no,name,email,company)
-  values(2, '사람2', 'user2@test.com', '비트캠프');
-insert into ml_contact(contact_no,name,email,company)
-  values(3, '사람3', 'user3@test.com', '비트캠프');
+## 67일차(2022-02-14,월)
 
-  -- 전화번호 유형 입력
-insert into ml_tel_type(tt_no, title) values(1, '전화');
-insert into ml_tel_type(tt_no, title) values(2, '팩스');
-insert into ml_tel_type(tt_no, title) values(3, '휴대전화');
-insert into ml_tel_type(tt_no, title) values(4, '직장전화');
-insert into ml_tel_type(tt_no, title) values(5, '직장팩스');
-insert into patient_list(key_value,mno, name, age,gender,id,birth) values(1, 1, ㅇㅇ, 12,여,heheh123,19960923);
--- 연락처에 전화번호 추가
-insert into ml_cont_tel(ct_no, contact_no, tt_no, tel)
-  values(1, 1, 1, '02-1111-1111');
-insert into ml_cont_tel(ct_no, contact_no, tt_no, tel)
-  values(2, 1, 2, '02-1111-1112');
-insert into ml_cont_tel(ct_no, contact_no, tt_no, tel)
-  values(3, 1, 3, '010-1111-1111');
-insert into ml_cont_tel(ct_no, contact_no, tt_no, tel)
-  values(4, 2, 3, '010-1111-2222');
-insert into ml_cont_tel(ct_no, contact_no, tt_no, tel)
-  values(5, 3, 3, '010-1111-3333');    
+- 객체지향 문법(com.eomcs.oop)
+  - ex11: 중첩클래스 사용법(계속)
+  - ex12: 람다(lambda) 및 메서드 레퍼런스 사용법
+    - Exam0110 ~ Exam0620
+    - Exam0810
+- 자료구조(com.eomcs.algorithm.data_structure)
+  - linkedlist2 패키지 예제
+
+
+## 68일차(2022-02-15,화)
+
+- 제네릭 문법(com.eomcs.generic)
+  - ex01: 제네릭 기초 사용법
+  - ex02: 제네릭 레퍼런스와 인스턴스
+  - ex03: LinkedList에 대해 제네릭 적용 전/후
+- 자바 기본 클래스 사용법(com.eomcs.basic) : 자습!!
+  - ex03: java.util.ArrayList 컬렉션 클래스 사용법
+  - ex04: java.util.LinkedList 컬렉션 클래스 사용법
+  - ex05: java.util.Stack 클래스 사용법
+  - ex06: java.util.Queue 클래스 사용법
+  - ex07: java.util.HashSet 클래스 사용법
+  - ex08: java.util.Map 클래스 사용법
+  - ex09: 자바에서 외부 프로그램을 실행하는 방법
+
+## 69일차(2022-02-16,수)
+
+- 미니 프로젝트(project-app2): 성적관리시스템 만들기
+  - 1단계: 파일 I/O 스탠드얼론 프로그램
+  - 2단계: 파일 I/O 기능을 별도의 프로그램으로 분리하기
+    - 클라이언트/서버 구조로 변경
+
+## 70일차(2022-02-17,목)
+
+- 미니 프로젝트(project-app2): 성적관리시스템 만들기
+  - 3단계: 멀티스레딩으로 클라이언트의 요청을 동시에 처리하기
+  - 4단계: 서버 통신 기능을 캡슐화하기
+- DB 프로그래밍
+  - MariaDB 설치하기(로컬 PC)
+
+## 71일차(2022-02-18,금)
+
+- DB 프로그래밍
+  - MariaDB 설치하기(AWS EC2 서버)
+  - SQL : DDL 문법
+- 파이널 프로젝트 팀 빌딩
+  - 명단
+    - A반
+      - 1팀: 조원석 전영민 김민수 김기현 강동우 정창성
+      - 2팀: 장창훈 오승지 최리나 장효범 박력 임성현
+      - 3팀: 허정윤 오민현 채다해 서영범 이장일
+    - B반
+      - 4팀: 정요섭 곽민규 박경현 명준호 김재원 이상준
+      - 5팀: 김지현 한상은 김규범 양성은 양승범 김주은
+
+## 72일차(2022-02-21,월)
+
+- 자바 입출력 기초(com.eomcs.io)
+  - ex15: Base64 인코딩/디코딩
+- SQL 문법(eomcs-docs/sql)
+  - DDL: Exam01.sql
+
+
+## 73일차(2022-02-22,화)
+
+- SQL 문법(eomcs-docs/sql)
+  - DDL: Exam01.sql(계속)
+  - DML: Exam02.sql
+  - DQL: Exam03.sql
+
+## 74일차(2022-02-23,수)
+
+- SQL 문법(eomcs-docs/sql)
+  - DQL: Exam04.sql
+
+## 75일차(2022-02-24,목)
+
+- DB 모델링
+  - 논리 모델링
+
+## 76일차(2022-02-25,금)
+
+- DB 모델링
+  - 물리 모델링(계속)
+- 파이널 프로젝트
+  - 팀별 1차 논리 모델링 및 검토
+
+## 77일차(2022-02-28,월)
+
+- 파이널 프로젝트
+  - 팀별 1차 논리 모델링 및 검토(계속)
+- SQL 문법(eomcs-docs/sql)
+  - DQL: Exam05.sql ~ Exam07_5.sql
+
+## 78일차(2022-03-02,수)
+
+- 파이널 프로젝트
+  - 1차 UI 프로토타입 발표
+  - 2차 UI 프로토타입 준비
+- SQL 문법(eomcs-docs/sql)
+  - DQL: Exam07_6.sql ~ Exam07_7.sql
+
+
+## 79일차(2022-03-03,목)
+
+- JDBC 프로그래밍(com.eomcs.jdbc)
+  - JDBC API 와 드라이버의 개념
+  - ex01: java.sql.Driver 구현체 생성 및 등록
+
+## 80일차(2022-03-04,금)
+
+- JDBC 프로그래밍(com.eomcs.jdbc)
+  - ex01: JDBC API를 사용하여 SQL을 실행하는 방법
+- 파이널 프로젝트
+  - 2차 UI 프로토타입 발표
+  - 1차 DB 모델링 준비
+
+## 81일차(2022-03-07,월)
+
+- JDBC 프로그래밍(com.eomcs.jdbc)
+  - ex02: CRUD 구현과 DAO 객체 도입
+  - ex03: SQL 삽입 공격과 해결법, Statement vs PreparedStatement
+  - ex04: 자동 증가 PK값 알아내기, 수동 커밋 모드 다루기
+- 파이널 프로젝트
+  - 1차 DB 모델링 준비(계속)
+
+## 82일차(2022-03-08,화)
+
+- MyList 프로젝트 실습
+  - 09.1 자바 컬렉션 API 활용 : ArrayList 및 제네릭 사용법  
+  - 10.1 데이터 관리를 DBMS에게 맡기기 : JDBC API 사용
+- 파이널 프로젝트
+  - 1차 DB 모델링 검토
+    - 포워드 엔지니어링 수행 : DDL 생성 및 테이블 생성
+    - 예제 데이터 등록
+
+## 83일차(2022-03-10,목)
+
+- MyList 프로젝트 실습
+  - 10.1 데이터 관리를 DBMS에게 맡기기 : JDBC API 사용(계속)
+- git 저장소를 팀 멤버와 공유하기
+  - 저장소 생성 및 팀원 등록
+  - 저장소에 파일을 공유하는 방법
+
+## 84일차(2022-03-11,금)
+
+- MyList 프로젝트 실습
+  - 10.2 데이터 관리를 DBMS에게 맡기기 : DB 커넥션풀을 이용하여 DB 커넥션 재활용하기
+- 파이널 프로젝트
+  - 2차 DB 모델링 검토
+
+
+## 85일차(2022-03-14,월)
+
+- MyList 프로젝트 실습
+  - 11.1 DB 프로그래밍을 더 쉽고 간단히 하는 방법 : Mybatis 퍼시스턴스 프레임워크 도입
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 개발
+    - 일부 테이블에 대해 CRUD 구현  
+
+
+## 86일차(2022-03-15,화)
+
+- CSS(eomcs-web/css)
+  - 스타일 사용법: 04 ~ 07
+- MyList 프로젝트 실습
+  - 11.1 DB 프로그래밍을 더 쉽고 간단히 하는 방법 : Mybatis 퍼시스턴스 프레임워크 도입(계속)
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 개발
+    - 일부 테이블에 대해 CRUD 구현  
+
+## 87일차(2022-03-16,수)
+
+- CSS(eomcs-web/css)
+  - 스타일 사용법: 08 ~ 11
+- MyList 프로젝트 실습
+  - 11.1 DB 프로그래밍을 더 쉽고 간단히 하는 방법 : Mybatis 퍼시스턴스 프레임워크 도입(계속)
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 개발
+    - 일부 테이블에 대해 CRUD 구현  
+
+## 88일차(2022-03-17,목)
+
+- MyList 프로젝트 실습
+  - 12.1 jQuery 라이브러리 활용하기: jQuery 미니 라이브러리 만들기 및 jQuery 사용하기
+  - bootstrap 및 jQuery 기본 사용법
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 및 프론트엔드 개발
+    - 일부 테이블에 대해 CRUD 구현  
+
+## 89일차(2022-03-18,금)
+
+- MyList 프로젝트 실습
+  - 13.1 서비스 객체 도입 : 데이터를 쪼개 부모 테이블과 자식테이블에 분산 저장하기
+  - 13.2 서비스 객체 도입 : 전화번호 입력 화면 동적으로 추가하기
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 및 프론트엔드 개발
+
+## 90일차(2022-03-21,월)
+
+- MyList 프로젝트 실습
+  - 13.3 서비스 객체 도입 : 트랜잭션이 필요한 이유와 다루는 방법
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 및 프론트엔드 개발
+
+
+## 91일차(2022-03-22,화)
+
+- MyList 프로젝트 실습
+  - 14.1 자바스크립트 템플릿 엔진 도입 : Handlebars 템플릿 엔진 적용
+  - 15.1 Mybatis 고급 기능 활용 : 테이블 조인과 동적 SQL 다루기
+- 파이널 프로젝트
+  - 팀프로젝트 시범 백엔드 및 프론트엔드 개발
+
+
+## 92일차(2022-03-23,수)
+
+- HTTP 프로토콜(eomcs-java/eomcs-web/html/form/)
+  - HTTP 요청/응답 프로토콜
+  - GET/POST 요청 및 처리 방법
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 93일차(2022-03-24,목)
+
+- HTTP 프로토콜(eomcs-java/eomcs-web/html/form/)
+  - form 태그를 이용한 파일 업로드
+  - AJAX를 통한 파일 업로드
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 94일차(2022-03-28,월)
+
+- MyList 프로젝트 실습
+  - 16.1 파일 업로드 : 자바스크립트 빌트인 객체 사용하기
+  - 17.1 Lombok 적용
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 95일차(2022-03-29,화)
+
+- 세션 및 쿠키 활용(eomcs-web)
+  - com.eomcs.web.Controller1/2
+- MyList 프로젝트 실습
+  - 18.1 세션과 쿠키의 활용 : 로그인/로그아웃 처리하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 96일차(2022-03-30,수)
+
+- MyList 프로젝트 실습
+  - 18.1 세션과 쿠키의 활용 : 회원가입/로그인/로그아웃 처리하기(계속)
+  - 18.2 세션과 쿠키의 활용 : 세션 활용하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 97일차(2022-03-31,목)
+
+- MyList 프로젝트 실습
+  - 18.3 세션과 쿠키의 활용 : 페이스북 로그인 연동하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 98일차(2022-04-01,금)
+
+- MyList 프로젝트 실습
+  - 18.4 세션과 쿠키의 활용 : 쿠키 활용하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+    - 1차 구현 검토
+
+## 99일차(2022-04-04,월)
+
+- MyList 프로젝트 실습
+  - 19.1 UI 레이아웃을 다루는 방법 : 헤더, 사이드바, 풋터 넣기
+  - 19.2 UI 레이아웃을 다루는 방법 : 템플릿 페이지를 활용하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 100일차(2022-04-05,화)
+
+- MyList 프로젝트 실습
+  - 20.1 인터셉터 활용 : 사용자 인증 확인 코드를 필터로 분리하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 101일차(2022-04-06,수)
+
+- MyList 프로젝트 실습
+  - 21.1 로그 출력 : Log4j2 적용하기
+  - 21.2 로그 출력 : 스프링부트의 기본 로그 사용하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 102일차(2022-04-07,목)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 웹애플리케이션 아키텍처 소개
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 103일차(2022-04-08,금)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - JavaEE와 Servlet 기술 소개
+  - 톰캣 서버 설치
+  - 웹프로젝트 생성 및 배포(project-app3)
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+    - 2차 구현 검토
+
+## 104일차(2022-04-11,월)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 01.서블릿, 필터, 리스너 구현 및 구동원리
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+
+## 105일차(2022-04-12,화)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 02.게시글 CRUD 만들기(서블릿, 리스너 활용)
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 106일차(2022-04-13,수)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 02.게시글 CRUD 만들기(서블릿, 리스너 활용)(계속)
+  - 03.서블릿 include/forward, 필터 활용
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발
+
+## 107일차(2022-04-14,목)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 04.JSP를 사용하여 MVC 모델1 방식으로 전환
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+
+## 108일차(2022-04-15,금)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 04.JSP를 사용하여 MVC 모델1 방식으로 전환(계속)
+  - 05.페이징 처리 추가
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+    - 3차 구현 검토
+
+## 109일차(2022-04-18,월)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 06.서블릿과 JSP를 함께 사용하여 MVC 모델2 방식으로 전환
+  - 07.JSP 액션 태그, JSTL, EL 활용하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+
+## 110일차(2022-04-19,화)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 08.프론트 컨트롤러 도입
+  - 09.페이지 컨트롤러를 일반 클래스(POJO)로 만들기
+  - 10.애노테이션과 리플렉션 API를 활용하여 페이지 컨트롤러 객체를 자동 생성하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+
+
+## 111일차(2022-04-20,수)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 11.애노테이션으로 요청을 처리할 메서드를 표시하기
+  - 11.1.request handler를 추출하는 코드를 리팩토링
+  - 12.페이지 컨트롤러에 request handler를 여러 개 두기
+  - 13.request handler의 파라미터 값 자동처리하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+
+## 112일차(2022-04-21,목)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 14.Spring WebMVC 프레임워크 도입
+  - 14.1.DAO를 자동으로 생성하도록 Mybatis를 설정하기
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발    
+
+## 113일차(2022-04-22,금)
+
+- 미니 프로젝트(project-app3): 웹애플리케이션
+  - 15.tomcat embed 라이브러리를 사용하여 웹 애플리케이션과 톰캣 서버를 함께 묶기
+  - 16.Spring Boot로 전환
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발  
+    - 4차 구현 검토  
+
+## 114일차(2022-04-25,월)
+
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발  
+
+## 115일차(2022-04-26,화)
+
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발  
+
+## 116일차(2022-04-27,수)
+
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발  
+  - 발표 자료 준비
+    - 프로젝트 소개
+      - 현황 및 문제점
+      - 해결 방안 및 이점
+    - 주요 기능 소개
+      - 주요 화면 캡쳐 및 기능 소개
+    - 시연
+      - 시스템 사용 시연
+    - 시스템 아키텍처
+      - 클라이언트/서버 시스템의 H/W, S/W 구조
+    - 팀원 소개
+      - 팀원 별 맡은 역할
+    - 질문/답변
+    - 프로젝트 최종 소감
+
+## 117일차(2022-04-28,목)
+
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 개발   
+
+## 118일차(2022-04-29,금)
+
+- 파이널 프로젝트
+  - 팀프로젝트 백엔드 및 프론트엔드 최종 리뷰
+    - 발표 자료 중간 리뷰
+    - 최종 시연
+    - 데이터를 실제처럼 초기화시킬 것.
+
+## 119일차(2022-05-02,월)
+
+- 파이널 프로젝트
+  - 팀별 프로젝트 최종 발표
+    - 1. BTS 팀
+    - 2. 디벨라 팀
+    - 3. NULL 팀
+    - 4. 디버거 팀
+    - 5. 놀당갑서 팀
+
+
+## 프로젝트 절차
+
+- 프로젝트 주제 선정
+  - 팀 당 2개의 후보 주제 선정 및 발표(2/23,수)
+   - 현황 및 문제점
+   - 해결 방안 및 이점
+  - 최종 한 개의 주제 선택
+- UI 프로토타입 설계
+  - 1차 UI 프로토타입 발표(2/28,월)
+  - 2차 UI 프로토타입 발표(3/4,금)
+- DB 모델링 및 테이블정의
+  - 1차 DB 모델링 검토(3/8,화)
+  - 2차 DB 모델링 검토(3/10,목)
+- 구현
+  - 1차 구현 검토(4/1,금)
+- 발표
+  - 프로젝트 시연 및 발표(5/2,월)
+    - 프로젝트 개요(현황 및 문제점, 해결 방안 및 이점)
+    - 주요 기능 소개
+    - 시연
+    - 시스템 아키텍처
+    - 팀원 소개 및 담당 모듈
+    - 프로젝트 소감
+
+##
+
+drop table ml_contact; drop table ml_tel_type; drop table ml_cont_tel;
+
+-- 연락처
+ create table ml_contact( contact_no int not null, name varchar(50) not null, email varchar(20) not null, company varchar(50) );
+
+alter table ml_contact add constraint primary key (contact_no), modify column contact_no int not null auto_increment;
+
+-- 전화번호 유형 
+create table ml_tel_type( tt_no int not null, title varchar(20) not null );
+
+alter table ml_tel_type add constraint primary key (tt_no), modify column tt_no int not null auto_increment;
+
+-- 연락처 전화번호
+ create table ml_cont_tel( ct_no int not null, -- 전화번호 PK contact_no int not null, -- 연락처 PK tt_no int not null, -- 전화번호 유형 PK tel varchar(20) not null -- 전화번호 );
+
+alter table ml_cont_tel add constraint primary key (ct_no), modify column ct_no int not null auto_increment;
+
+alter table ml_cont_tel add constraint ml_cont_tel_fk1 foreign key (contact_no) references ml_contact(contact_no), add constraint ml_cont_tel_fk2 foreign key (tt_no) references ml_tel_type(tt_no);
+
+  -- 연락처 기본 정보 입력
+insert into ml_contact(contact_no,name,email,company) values(1, '사람1', 'user1@test.com', '비트캠프'); insert into ml_contact(contact_no,name,email,company) values(2, '사람2', 'user2@test.com', '비트캠프'); insert into ml_contact(contact_no,name,email,company) values(3, '사람3', 'user3@test.com', '비트캠프');
+
+-- 전화번호 유형 입력 
+insert into ml_tel_type(tt_no, title) values(1, '전화'); insert into ml_tel_type(tt_no, title) values(2, '팩스'); insert into ml_tel_type(tt_no, title) values(3, '휴대전화'); insert into ml_tel_type(tt_no, title) values(4, '직장전화'); insert into ml_tel_type(tt_no, title) values(5, '직장팩스'); insert into patient_list(key_value,mno, name, age,gender,id,birth) values(1, 1, ㅇㅇ, 12,여,heheh123,19960923); -- 연락처에 전화번호 추가 insert into ml_cont_tel(ct_no, contact_no, tt_no, tel) values(1, 1, 1, '02-1111-1111'); insert into ml_cont_tel(ct_no, contact_no, tt_no, tel) values(2, 1, 2, '02-1111-1112'); insert into ml_cont_tel(ct_no, contact_no, tt_no, tel) values(3, 1, 3, '010-1111-1111'); insert into ml_cont_tel(ct_no, contact_no, tt_no, tel) values(4, 2, 3, '010-1111-2222'); insert into ml_cont_tel(ct_no, contact_no, tt_no, tel) values(5, 3, 3, '010-1111-3333');
